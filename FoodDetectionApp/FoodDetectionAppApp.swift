@@ -6,12 +6,35 @@
 //
 
 import SwiftUI
+import FirebaseCore
+import UserNotifications
+
+class AppDelegate: NSObject, UIApplicationDelegate {
+    func application(_ application: UIApplication,
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
+        FirebaseApp.configure()
+        NotificationManager.shared.requestPermission()
+        return true
+    }
+}
 
 @main
 struct FoodDetectionAppApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    @AppStorage("appTheme") private var appTheme: String = "system"
+
+    private var colorScheme: ColorScheme? {
+        switch appTheme {
+        case "light": return .light
+        case "dark": return .dark
+        default: return nil
+        }
+    }
+
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .preferredColorScheme(colorScheme)
         }
     }
 }

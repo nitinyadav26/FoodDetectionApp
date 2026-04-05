@@ -1,0 +1,70 @@
+# macOS
+.DS_Store
+*.swp
+*~
+
+# Xcode
+DerivedData/
+*.xcuserstate
+*.xcuserdatad
+xcuserdata/
+*.xccheckout
+*.moved-aside
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+
+# CocoaPods
+Pods/
+
+# iOS build artifacts
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Android
+android/app/build/
+android/.gradle/
+android/.gradle-bin/
+android/build/
+android/local.properties
+*.apk
+*.aab
+
+# Gradle
+.gradle/
+*.hprof
+
+# Keystore (never commit signing keys)
+*.keystore
+*.jks
+
+# Secrets & config (never commit API keys)
+Secrets.xcconfig
+.env
+*.env.local
+
+# Build logs
+build*.log
+
+# Python
+__pycache__/
+*.pyc
+INDB_data/.venv/
+
+# Interview prep (not app code)
+interview_prep/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Firebase config (contains project-specific keys — generate from console)
+# GoogleService-Info.plist
+# google-services.json
