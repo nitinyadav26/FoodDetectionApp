@@ -3,18 +3,10 @@ package com.foodsense.android.services
 import android.content.Context
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import java.time.Instant
 import java.time.LocalDate
 import java.time.ZoneId
-
-data class Badge(
-    val name: String,
-    val icon: String,
-    val requirement: Int,
-    val earned: Boolean,
-)
 
 class StreakManager(
     private val context: Context,
@@ -26,9 +18,6 @@ class StreakManager(
         private set
 
     var longestStreak by mutableStateOf(prefs.getInt("longestStreak", 0))
-        private set
-
-    var badges by mutableStateOf(defaultBadges(longestStreak))
         private set
 
     init {
@@ -43,8 +32,6 @@ class StreakManager(
             longestStreak = currentStreak
             prefs.edit().putInt("longestStreak", longestStreak).apply()
         }
-
-        badges = defaultBadges(longestStreak)
     }
 
     companion object {
@@ -66,11 +53,5 @@ class StreakManager(
 
             return streak
         }
-
-        fun defaultBadges(longestStreak: Int): List<Badge> = listOf(
-            Badge("Week Warrior", "flame", 7, longestStreak >= 7),
-            Badge("Monthly Master", "star", 30, longestStreak >= 30),
-            Badge("Century Champion", "trophy", 100, longestStreak >= 100),
-        )
     }
 }
