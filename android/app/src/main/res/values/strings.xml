@@ -81,6 +81,47 @@
     <string name="all_set">You\'re all set!</string>
     <string name="calculate_plan">Calculate My Plan</string>
 
+    <!-- Social -->
+    <string name="tab_social">Social</string>
+    <string name="social_friends">Friends</string>
+    <string name="social_feed">Feed</string>
+    <string name="social_challenges">Challenges</string>
+    <string name="social_leaderboard">Leaderboard</string>
+    <string name="social_pending_requests">Pending Requests</string>
+    <string name="social_wants_to_connect">wants to connect</string>
+    <string name="social_accept">Accept</string>
+    <string name="social_decline">Decline</string>
+    <string name="social_friends_count">Friends (%1$d)</string>
+    <string name="social_no_friends">No friends yet. Add some friends to get started!</string>
+    <string name="social_streak_days">%1$d day streak</string>
+    <string name="social_add_friend">Add Friend</string>
+    <string name="social_search_users">Search users\u2026</string>
+    <string name="social_no_posts">No posts yet. Add friends to see their activity!</string>
+    <string name="social_active">Active</string>
+    <string name="social_available">Available</string>
+    <string name="social_completed">Completed</string>
+    <string name="social_no_challenges">No challenges in this category.</string>
+    <string name="social_participants">%1$d participants</string>
+    <string name="social_join_challenge">Join Challenge</string>
+    <string name="social_create_challenge">Create Challenge</string>
+    <string name="social_challenge_title">Title</string>
+    <string name="social_challenge_description">Description</string>
+    <string name="social_challenge_type">Type</string>
+    <string name="social_target_value">Target Value</string>
+    <string name="social_duration_days">Duration (days)</string>
+    <string name="social_create">Create</string>
+    <string name="social_weekly">Weekly</string>
+    <string name="social_monthly">Monthly</string>
+    <string name="social_all_time">All Time</string>
+    <string name="social_no_leaderboard">No leaderboard data yet.</string>
+    <string name="social_remove_friend">Remove Friend</string>
+    <string name="social_send_request">Send Request</string>
+    <string name="social_request_sent">Request Sent</string>
+    <string name="social_react">React</string>
+    <string name="social_progress">Progress</string>
+    <string name="social_rank">Rank</string>
+    <string name="social_score">Score</string>
+    <string name="social_points">%1$d pts</string>
     <!-- Voice Log -->
     <string name="voice_log_title">Voice Food Log</string>
     <string name="voice_log_hint">Tap the microphone and say what you ate</string>

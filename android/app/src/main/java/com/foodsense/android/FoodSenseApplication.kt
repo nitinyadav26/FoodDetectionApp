@@ -11,7 +11,9 @@ import com.foodsense.android.services.FoodDatabase
 import com.foodsense.android.services.HealthDataManager
 import com.foodsense.android.services.LocalModelDetector
 import com.foodsense.android.services.NetworkMonitor
+import com.foodsense.android.services.NetworkService
 import com.foodsense.android.services.NutritionManager
+import com.foodsense.android.services.SocialManager
 import com.foodsense.android.services.StreakManager
 import com.foodsense.android.services.VoiceLoggingManager
 import com.foodsense.android.services.XPManager
@@ -35,6 +37,8 @@ class FoodSenseApplication : Application() {
     val localModelDetector: LocalModelDetector by lazy { LocalModelDetector(this) }
     val networkMonitor: NetworkMonitor by lazy { NetworkMonitor(this) }
     val streakManager: StreakManager by lazy { StreakManager(this, nutritionManager) }
+    val networkService: NetworkService by lazy { NetworkService() }
+    val socialManager: SocialManager by lazy { SocialManager(networkService) }
     val xpManager: XPManager by lazy { XPManager(this) }
     val badgeManager: BadgeManager by lazy { BadgeManager(this) }
 

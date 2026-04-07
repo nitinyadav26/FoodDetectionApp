@@ -15,6 +15,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.BarChart
 import androidx.compose.material.icons.filled.Bluetooth
 import androidx.compose.material.icons.filled.CameraAlt
+import androidx.compose.material.icons.filled.People
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Psychology
 import androidx.compose.material3.Icon
@@ -50,6 +51,7 @@ import com.foodsense.android.ui.PairScaleScreen
 import com.foodsense.android.ui.ProfileScreen
 import com.foodsense.android.ui.ScanScreen
 import com.foodsense.android.ui.SettingsScreen
+import com.foodsense.android.ui.SocialHubScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -66,6 +68,7 @@ enum class AppTab(val label: String) {
     Scan("Scan"),
     Coach("AI Coach"),
     Pair("Pair Scale"),
+    Social("Social"),
     Profile("Profile"),
 }
 
@@ -166,6 +169,7 @@ private fun FoodSenseApp(app: FoodSenseApplication) {
                                     AppTab.Scan to Icons.Default.CameraAlt,
                                     AppTab.Coach to Icons.Default.Psychology,
                                     AppTab.Pair to Icons.Default.Bluetooth,
+                                    AppTab.Social to Icons.Default.People,
                                     AppTab.Profile to Icons.Default.Person,
                                 )
                                 items.forEach { (tab, icon) ->
@@ -185,6 +189,7 @@ private fun FoodSenseApp(app: FoodSenseApplication) {
                                 AppTab.Scan -> ScanScreen(app)
                                 AppTab.Coach -> CoachScreen(app)
                                 AppTab.Pair -> PairScaleScreen(app)
+                                AppTab.Social -> SocialHubScreen(app)
                                 AppTab.Profile -> ProfileScreen(app, onSettingsClick = { showSettings = true })
                             }
                         }
