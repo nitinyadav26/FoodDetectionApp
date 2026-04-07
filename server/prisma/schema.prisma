@@ -1,0 +1,302 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String    @id @default(uuid())
+  firebaseUid   String    @unique @map("firebase_uid")
+  email         String    @unique
+  displayName   String?   @map("display_name")
+  photoUrl      String?   @map("photo_url")
+  createdAt     DateTime  @default(now()) @map("created_at")
+  updatedAt     DateTime  @updatedAt @map("updated_at")
+
+  profile               Profile?
+  foodLogs              FoodLog[]
+  badges                UserBadge[]
+  sentFriendRequests    Friend[]            @relation("SentRequests")
+  receivedFriendRequests Friend[]           @relation("ReceivedRequests")
+  feedPosts             FeedPost[]
+  reactions             Reaction[]
+  challengeParticipants ChallengeParticipant[]
+  leaderboards          Leaderboard[]
+  leagueMembers         LeagueMember[]
+  recipes               Recipe[]
+  chatSessions          ChatSession[]
+  mealPlans             MealPlan[]
+  quizScores            QuizScore[]
+  pushTokens            PushToken[]
+  createdChallenges     Challenge[]
+
+  @@map("users")
+}
+
+model Profile {
+  id              String   @id @default(uuid())
+  userId          String   @unique @map("user_id")
+  age             Int?
+  gender          String?
+  heightCm        Float?   @map("height_cm")
+  weightKg        Float?   @map("weight_kg")
+  activityLevel   String?  @map("activity_level")
+  dietaryGoal     String?  @map("dietary_goal")
+  allergies       String[] @default([])
+  dailyCalorieTarget Int?  @map("daily_calorie_target")
+  xp              Int      @default(0)
+  level           Int      @default(1)
+  streak          Int      @default(0)
+  lastActiveDate  DateTime? @map("last_active_date")
+  createdAt       DateTime @default(now()) @map("created_at")
+  updatedAt       DateTime @updatedAt @map("updated_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("profiles")
+}
+
+model FoodLog {
+  id              String   @id @default(uuid())
+  userId          String   @map("user_id")
+  dishName        String   @map("dish_name")
+  imageUrl        String?  @map("image_url")
+  calories        Float?
+  carbsG          Float?   @map("carbs_g")
+  proteinG        Float?   @map("protein_g")
+  fatsG           Float?   @map("fats_g")
+  servingSize     String?  @map("serving_size")
+  mealType        String?  @map("meal_type")
+  micronutrients  Json?
+  healthierRecipe String?  @map("healthier_recipe")
+  source          String?
+  loggedAt        DateTime @default(now()) @map("logged_at")
+  createdAt       DateTime @default(now()) @map("created_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, loggedAt])
+  @@map("food_logs")
+}
+
+model Badge {
+  id          String   @id @default(uuid())
+  key         String   @unique
+  name        String
+  description String
+  iconUrl     String?  @map("icon_url")
+  category    String
+  xpReward    Int      @default(0) @map("xp_reward")
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  userBadges UserBadge[]
+
+  @@map("badges")
+}
+
+model UserBadge {
+  id        String   @id @default(uuid())
+  userId    String   @map("user_id")
+  badgeId   String   @map("badge_id")
+  earnedAt  DateTime @default(now()) @map("earned_at")
+
+  user  User  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  badge Badge @relation(fields: [badgeId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, badgeId])
+  @@map("user_badges")
+}
+
+model Friend {
+  id         String   @id @default(uuid())
+  senderId   String   @map("sender_id")
+  receiverId String   @map("receiver_id")
+  status     String   @default("pending")
+  createdAt  DateTime @default(now()) @map("created_at")
+  updatedAt  DateTime @updatedAt @map("updated_at")
+
+  sender   User @relation("SentRequests", fields: [senderId], references: [id], onDelete: Cascade)
+  receiver User @relation("ReceivedRequests", fields: [receiverId], references: [id], onDelete: Cascade)
+
+  @@unique([senderId, receiverId])
+  @@map("friends")
+}
+
+model FeedPost {
+  id        String   @id @default(uuid())
+  userId    String   @map("user_id")
+  type      String
+  content   String?
+  imageUrl  String?  @map("image_url")
+  metadata  Json?
+  createdAt DateTime @default(now()) @map("created_at")
+
+  user      User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  reactions Reaction[]
+
+  @@index([createdAt])
+  @@map("feed_posts")
+}
+
+model Reaction {
+  id        String   @id @default(uuid())
+  userId    String   @map("user_id")
+  postId    String   @map("post_id")
+  type      String
+  createdAt DateTime @default(now()) @map("created_at")
+
+  user User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  post FeedPost @relation(fields: [postId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, postId])
+  @@map("reactions")
+}
+
+model Challenge {
+  id          String   @id @default(uuid())
+  creatorId   String   @map("creator_id")
+  title       String
+  description String?
+  type        String
+  goal        Json
+  startDate   DateTime @map("start_date")
+  endDate     DateTime @map("end_date")
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  creator      User                   @relation(fields: [creatorId], references: [id], onDelete: Cascade)
+  participants ChallengeParticipant[]
+
+  @@map("challenges")
+}
+
+model ChallengeParticipant {
+  id          String   @id @default(uuid())
+  challengeId String   @map("challenge_id")
+  userId      String   @map("user_id")
+  progress    Json?
+  joinedAt    DateTime @default(now()) @map("joined_at")
+
+  challenge Challenge @relation(fields: [challengeId], references: [id], onDelete: Cascade)
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([challengeId, userId])
+  @@map("challenge_participants")
+}
+
+model Leaderboard {
+  id        String   @id @default(uuid())
+  userId    String   @map("user_id")
+  type      String
+  score     Float
+  period    String
+  periodKey String   @map("period_key")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, type, period, periodKey])
+  @@index([type, period, periodKey, score(sort: Desc)])
+  @@map("leaderboards")
+}
+
+model League {
+  id        String   @id @default(uuid())
+  name      String
+  tier      Int
+  minXp     Int      @map("min_xp")
+  maxXp     Int?     @map("max_xp")
+  iconUrl   String?  @map("icon_url")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  members LeagueMember[]
+
+  @@map("leagues")
+}
+
+model LeagueMember {
+  id        String   @id @default(uuid())
+  leagueId  String   @map("league_id")
+  userId    String   @map("user_id")
+  xp        Int      @default(0)
+  joinedAt  DateTime @default(now()) @map("joined_at")
+
+  league League @relation(fields: [leagueId], references: [id], onDelete: Cascade)
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([leagueId, userId])
+  @@map("league_members")
+}
+
+model Recipe {
+  id           String   @id @default(uuid())
+  userId       String   @map("user_id")
+  title        String
+  description  String?
+  ingredients  Json
+  instructions Json
+  calories     Float?
+  prepTimeMins Int?     @map("prep_time_mins")
+  tags         String[] @default([])
+  imageUrl     String?  @map("image_url")
+  isPublic     Boolean  @default(true) @map("is_public")
+  createdAt    DateTime @default(now()) @map("created_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("recipes")
+}
+
+model ChatSession {
+  id        String   @id @default(uuid())
+  userId    String   @map("user_id")
+  messages  Json     @default("[]")
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("chat_sessions")
+}
+
+model MealPlan {
+  id        String   @id @default(uuid())
+  userId    String   @map("user_id")
+  date      DateTime
+  meals     Json
+  calories  Float?
+  createdAt DateTime @default(now()) @map("created_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, date])
+  @@map("meal_plans")
+}
+
+model QuizScore {
+  id        String   @id @default(uuid())
+  userId    String   @map("user_id")
+  topic     String
+  score     Int
+  total     Int
+  xpEarned  Int      @default(0) @map("xp_earned")
+  takenAt   DateTime @default(now()) @map("taken_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("quiz_scores")
+}
+
+model PushToken {
+  id        String   @id @default(uuid())
+  userId    String   @map("user_id")
+  token     String   @unique
+  platform  String
+  createdAt DateTime @default(now()) @map("created_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("push_tokens")
+}

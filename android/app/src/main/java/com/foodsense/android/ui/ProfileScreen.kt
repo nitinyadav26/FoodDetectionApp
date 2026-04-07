@@ -6,8 +6,11 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
@@ -16,6 +19,7 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
@@ -27,16 +31,22 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.foodsense.android.FoodSenseApplication
+import com.foodsense.android.data.AllBadges
 import com.foodsense.android.data.UserStats
 
 @Composable
 fun ProfileScreen(app: FoodSenseApplication, onSettingsClick: () -> Unit = {}) {
     val manager = app.nutritionManager
+    val xpManager = app.xpManager
+    val badgeManager = app.badgeManager
+    val streakManager = app.streakManager
 
     var isEditing by rememberSaveable { mutableStateOf(false) }
     var weight by rememberSaveable { mutableStateOf((manager.userStats?.weight ?: 70.0).toString()) }
@@ -79,6 +89,46 @@ fun ProfileScreen(app: FoodSenseApplication, onSettingsClick: () -> Unit = {}) {
                 isEditing = !isEditing
             }) {
                 Text(if (isEditing) "Save" else "Edit")
+            }
+        }
+
+        // Achievements card
+        Card(colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant)) {
+            Column(modifier = Modifier.fillMaxWidth().padding(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                Text("Achievements", fontWeight = FontWeight.Bold, fontSize = 16.sp)
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Text(
+                        "Lv ${xpManager.level}",
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 18.sp,
+                        color = Color(0xFFFFD700),
+                    )
+                    Spacer(modifier = Modifier.width(8.dp))
+                    Text(xpManager.title, fontWeight = FontWeight.SemiBold, color = MaterialTheme.colorScheme.onSurface)
+                    Spacer(modifier = Modifier.weight(1f))
+                    Text("${xpManager.totalXP} XP", color = MaterialTheme.colorScheme.onSurfaceVariant, fontSize = 13.sp)
+                }
+                LinearProgressIndicator(
+                    progress = xpManager.progress,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(6.dp)
+                        .clip(RoundedCornerShape(3.dp)),
+                    color = Color(0xFFFFD700),
+                    trackColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f),
+                )
+                Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
+                    Text(
+                        "Badges: ${badgeManager.unlockedCount}/${AllBadges.list.size}",
+                        fontSize = 13.sp,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    )
+                    Text(
+                        "Streak: ${streakManager.currentStreak} days",
+                        fontSize = 13.sp,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    )
+                }
             }
         }
 

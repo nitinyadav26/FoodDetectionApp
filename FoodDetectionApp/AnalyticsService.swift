@@ -41,4 +41,22 @@ enum AnalyticsService {
             "ml": ml,
         ])
     }
+
+    // MARK: - Social
+
+    static func logFriendAdded() {
+        Analytics.logEvent("friend_added", parameters: nil)
+    }
+
+    static func logChallengeJoined() {
+        Analytics.logEvent("challenge_joined", parameters: nil)
+    }
+
+    static func logChallengeCompleted() {
+        Analytics.logEvent("challenge_completed", parameters: nil)
+    }
+
+    static func logReactionSent() {
+        Analytics.logEvent("reaction_sent", parameters: nil)
+    }
 }
