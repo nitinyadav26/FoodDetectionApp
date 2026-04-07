@@ -139,7 +139,7 @@ struct DashboardView: View {
                                         .font(.headline)
                                     Text("Longest: \(streakManager.longestStreak) days")
                                         .font(.caption)
-                                        .foregroundColor(.gray)
+                                        .foregroundColor(.secondary)
                                 }
                                 Spacer()
                             }
@@ -152,7 +152,7 @@ struct DashboardView: View {
                                     ForEach(earnedBadges) { badge in
                                         HStack(spacing: 4) {
                                             Image(systemName: badge.icon)
-                                                .foregroundColor(.yellow)
+                                                .foregroundColor(.orange)
                                             Text(badge.name)
                                                 .font(.caption2)
                                         }
@@ -175,7 +175,7 @@ struct DashboardView: View {
                         
                         if logs.isEmpty {
                             Text("No food logged for this day")
-                                .foregroundColor(.gray)
+                                .foregroundColor(.secondary)
                                 .listRowBackground(Color.clear)
                         } else {
                             ForEach(logs) { log in
@@ -189,7 +189,7 @@ struct DashboardView: View {
                                                 .foregroundColor(.primary)
                                             Text(log.time, style: .time)
                                                 .font(.caption)
-                                                .foregroundColor(.gray)
+                                                .foregroundColor(.secondary)
                                         }
                                         Spacer()
                                         Text("\(log.calories) kcal")
@@ -340,7 +340,7 @@ struct LogDetailView: View {
                     Button(action: { presentationMode.wrappedValue.dismiss() }) {
                         Image(systemName: "xmark.circle.fill")
                             .font(.title)
-                            .foregroundColor(.gray)
+                            .foregroundColor(.secondary)
                     }
                     .accessibilityLabel("Close")
                     .accessibilityHint("Dismisses the food detail view")
@@ -354,7 +354,7 @@ struct LogDetailView: View {
                     .multilineTextAlignment(.center)
                 
                 Text(log.time, style: .date)
-                    .foregroundColor(.gray)
+                    .foregroundColor(.secondary)
                 
                 // Macros
                 HStack(spacing: 20) {
@@ -376,7 +376,7 @@ struct LogDetailView: View {
                                 HStack {
                                     Text(key)
                                         .font(.subheadline)
-                                        .foregroundColor(.gray)
+                                        .foregroundColor(.secondary)
                                     Spacer()
                                     Text(value)
                                         .font(.subheadline)
@@ -465,7 +465,7 @@ struct StatRing: View {
             
             Text(label)
                 .font(.caption2)
-                .foregroundColor(.gray)
+                .foregroundColor(.secondary)
         }
     }
 }

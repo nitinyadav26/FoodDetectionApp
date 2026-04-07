@@ -116,7 +116,7 @@ fun ProfileScreen(app: FoodSenseApplication, onSettingsClick: () -> Unit = {}) {
         Text("Goal", fontWeight = FontWeight.SemiBold)
         ChipSelector(options = goals, selected = goal, onSelect = { if (isEditing) goal = it })
 
-        Card(colors = CardDefaults.cardColors(containerColor = Color(0xFF161616))) {
+        Card(colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant)) {
             Row(modifier = Modifier.fillMaxWidth().padding(16.dp), verticalAlignment = Alignment.CenterVertically) {
                 Text("Daily Calorie Budget")
                 Spacer(modifier = Modifier.weight(1f))

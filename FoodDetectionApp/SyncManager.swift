@@ -1,4 +1,5 @@
 import Foundation
+import Combine
 
 // SyncManager placeholder for Firestore cloud sync.
 // Requires: pod 'FirebaseFirestore' in Podfile and a configured Firebase project.

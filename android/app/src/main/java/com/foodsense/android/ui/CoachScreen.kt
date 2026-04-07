@@ -111,7 +111,7 @@ fun CoachScreen(app: FoodSenseApplication) {
         Row(verticalAlignment = Alignment.CenterVertically) {
             Column(modifier = Modifier.weight(1f)) {
                 Text("AI Health Coach", style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.Bold)
-                Text("Your 30-day health companion", color = Color.Gray)
+                Text("Your 30-day health companion", color = MaterialTheme.colorScheme.onSurfaceVariant)
             }
             Icon(Icons.Default.Psychology, contentDescription = "AI Health Coach", tint = Color(0xFFB388FF), modifier = Modifier.size(42.dp))
         }
@@ -122,7 +122,7 @@ fun CoachScreen(app: FoodSenseApplication) {
             },
         )
 
-        Card(colors = CardDefaults.cardColors(containerColor = Color(0xFF161616))) {
+        Card(colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant)) {
             Column(modifier = Modifier.fillMaxWidth().padding(14.dp)) {
                 if (isLoading) {
                     Row(verticalAlignment = Alignment.CenterVertically) {
@@ -141,7 +141,7 @@ fun CoachScreen(app: FoodSenseApplication) {
         }
 
         if (showHistory) {
-            Card(colors = CardDefaults.cardColors(containerColor = Color(0xFF161616))) {
+            Card(colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant)) {
                 Text(
                     historyString,
                     modifier = Modifier.padding(12.dp),

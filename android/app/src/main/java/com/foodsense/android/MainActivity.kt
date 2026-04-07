@@ -90,27 +90,43 @@ private fun FoodSenseApp(app: FoodSenseApplication) {
         app.healthDataManager.requestAuthorization()
     }
 
+    // Dark theme: high contrast with bright text on dark backgrounds
     val darkColors = androidx.compose.material3.darkColorScheme(
-        primary = Color(0xFF1DB954),
-        secondary = Color(0xFF4FC3F7),
-        tertiary = Color(0xFFFF9800),
-        surface = Color(0xFF111111),
+        primary = Color(0xFF4ADE80),         // bright green
+        onPrimary = Color(0xFF003314),
+        secondary = Color(0xFF60A5FA),        // bright blue
+        onSecondary = Color(0xFF002952),
+        tertiary = Color(0xFFFBBF24),         // bright amber
+        onTertiary = Color(0xFF3D2800),
+        surface = Color(0xFF1C1C1E),          // iOS-style dark surface
+        onSurface = Color(0xFFF5F5F5),        // bright white text
+        surfaceVariant = Color(0xFF2C2C2E),
+        onSurfaceVariant = Color(0xFFD1D1D6), // light gray text
         background = Color(0xFF000000),
+        onBackground = Color(0xFFF5F5F5),
+        outline = Color(0xFF636366),
+        error = Color(0xFFFF6B6B),
     )
+    // Light theme: dark text on light backgrounds
     val lightColors = androidx.compose.material3.lightColorScheme(
-        primary = Color(0xFF1DB954),
-        secondary = Color(0xFF0288D1),
-        tertiary = Color(0xFFE65100),
-        surface = Color(0xFFF5F5F5),
+        primary = Color(0xFF16A34A),          // green
+        onPrimary = Color(0xFFFFFFFF),
+        secondary = Color(0xFF2563EB),        // blue
+        onSecondary = Color(0xFFFFFFFF),
+        tertiary = Color(0xFFD97706),         // amber
+        onTertiary = Color(0xFFFFFFFF),
+        surface = Color(0xFFF9FAFB),
+        onSurface = Color(0xFF111827),        // near-black text
+        surfaceVariant = Color(0xFFF3F4F6),
+        onSurfaceVariant = Color(0xFF4B5563), // dark gray text
         background = Color(0xFFFFFFFF),
+        onBackground = Color(0xFF111827),
+        outline = Color(0xFFD1D5DB),
+        error = Color(0xFFDC2626),
     )
 
-    val colorScheme = when {
-        Build.VERSION.SDK_INT >= Build.VERSION_CODES.S && themePref == "system" ->
-            if (isDark) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
-        isDark -> darkColors
-        else -> lightColors
-    }
+    // Always use our custom colors for consistent contrast (Material You can produce bad contrast)
+    val colorScheme = if (isDark) darkColors else lightColors
 
     MaterialTheme(
         colorScheme = colorScheme,

@@ -440,7 +440,7 @@ fun ResultSheet(
                 .fillMaxWidth()
                 .height(560.dp),
             shape = RoundedCornerShape(topStart = 22.dp, topEnd = 22.dp),
-            colors = CardDefaults.cardColors(containerColor = Color(0xFF0F0F0F)),
+            colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
         ) {
             Column(
                 modifier = Modifier
@@ -461,7 +461,7 @@ fun ResultSheet(
                     )
                 }
 
-                Text(dishName, style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.Bold)
+                Text(dishName, style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurface)
 
                 if (bluetoothManager.isConnected) {
                     Row(verticalAlignment = Alignment.CenterVertically) {
@@ -491,12 +491,12 @@ fun ResultSheet(
                 }
 
                 displayed.micros?.takeIf { it.isNotEmpty() }?.let { micros ->
-                    Text("Micronutrients", fontWeight = FontWeight.SemiBold)
-                    micros.forEach { (k, v) -> Text("$k: $v", color = Color.LightGray, fontSize = 13.sp) }
+                    Text("Micronutrients", fontWeight = FontWeight.SemiBold, color = MaterialTheme.colorScheme.onSurface)
+                    micros.forEach { (k, v) -> Text("$k: $v", color = MaterialTheme.colorScheme.onSurfaceVariant, fontSize = 13.sp) }
                 }
 
-                Text("Healthier Advice", fontWeight = FontWeight.SemiBold)
-                Text(displayed.recipe, color = Color.LightGray)
+                Text("Healthier Advice", fontWeight = FontWeight.SemiBold, color = MaterialTheme.colorScheme.onSurface)
+                Text(displayed.recipe, color = MaterialTheme.colorScheme.onSurfaceVariant)
 
                 Row(horizontalArrangement = Arrangement.spacedBy(10.dp), modifier = Modifier.fillMaxWidth()) {
                     OutlinedButton(onClick = onCancel, modifier = Modifier.weight(1f)) { Text("Cancel") }
@@ -545,7 +545,7 @@ fun MultiObjectResultSheet(
                 .fillMaxWidth()
                 .height(560.dp),
             shape = RoundedCornerShape(topStart = 22.dp, topEnd = 22.dp),
-            colors = CardDefaults.cardColors(containerColor = Color(0xFF0F0F0F)),
+            colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
         ) {
             Column(modifier = Modifier.fillMaxSize().padding(14.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
                 image?.let {
@@ -560,8 +560,8 @@ fun MultiObjectResultSheet(
                     )
                 }
 
-                Text("Detected Items", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)
-                Text("Select items to log", color = Color.Gray)
+                Text("Detected Items", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurface)
+                Text("Select items to log", color = MaterialTheme.colorScheme.onSurfaceVariant)
 
                 LazyColumn(
                     modifier = Modifier.weight(1f),
@@ -569,7 +569,7 @@ fun MultiObjectResultSheet(
                 ) {
                     items(results, key = { it.label }) { result ->
                         val checked = result.label in selectedItems
-                        Card(colors = CardDefaults.cardColors(containerColor = Color(0xFF1A1A1A))) {
+                        Card(colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant)) {
                             Row(
                                 modifier = Modifier.fillMaxWidth().padding(10.dp),
                                 verticalAlignment = Alignment.CenterVertically,
@@ -583,10 +583,10 @@ fun MultiObjectResultSheet(
                                 Spacer(modifier = Modifier.width(8.dp))
 
                                 Column(modifier = Modifier.weight(1f)) {
-                                    Text(result.label, fontWeight = FontWeight.SemiBold)
+                                    Text(result.label, fontWeight = FontWeight.SemiBold, color = MaterialTheme.colorScheme.onSurface)
                                     Text(
                                         nutritionManager.getNutrition(result.label)?.let { "${it.calories} kcal / 100g" } ?: "No nutrition info",
-                                        color = Color.Gray,
+                                        color = MaterialTheme.colorScheme.onSurfaceVariant,
                                         fontSize = 12.sp,
                                     )
                                 }

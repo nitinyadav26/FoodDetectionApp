@@ -7,6 +7,7 @@
 
 import Foundation
 import UserNotifications
+import Combine
 
 class NotificationManager: ObservableObject {
     static let shared = NotificationManager()

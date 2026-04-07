@@ -28,7 +28,7 @@ struct ProfileView: View {
                                 .multilineTextAlignment(.trailing)
                         } else {
                             Text("\(nutritionManager.userStats?.weight ?? 70, specifier: "%.1f")")
-                                .foregroundColor(.gray)
+                                .foregroundColor(.secondary)
                         }
                     }
                     
@@ -41,7 +41,7 @@ struct ProfileView: View {
                                 .multilineTextAlignment(.trailing)
                         } else {
                             Text("\(nutritionManager.userStats?.height ?? 170, specifier: "%.0f")")
-                                .foregroundColor(.gray)
+                                .foregroundColor(.secondary)
                         }
                     }
                     
@@ -54,7 +54,7 @@ struct ProfileView: View {
                                 .multilineTextAlignment(.trailing)
                         } else {
                             Text("\(nutritionManager.userStats?.age ?? 25)")
-                                .foregroundColor(.gray)
+                                .foregroundColor(.secondary)
                         }
                     }
                     
@@ -67,7 +67,7 @@ struct ProfileView: View {
                             Text("Gender")
                             Spacer()
                             Text(nutritionManager.userStats?.gender ?? "Male")
-                                .foregroundColor(.gray)
+                                .foregroundColor(.secondary)
                         }
                     }
                 }
@@ -85,13 +85,13 @@ struct ProfileView: View {
                             Text("Activity Level")
                             Spacer()
                             Text(nutritionManager.userStats?.activityLevel ?? "Moderate")
-                                .foregroundColor(.gray)
+                                .foregroundColor(.secondary)
                         }
                         HStack {
                             Text("Goal")
                             Spacer()
                             Text(nutritionManager.userStats?.goal ?? "Maintain")
-                                .foregroundColor(.gray)
+                                .foregroundColor(.secondary)
                         }
                     }
                 }

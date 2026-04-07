@@ -71,7 +71,7 @@ fun DashboardScreen(app: FoodSenseApplication) {
             Text("FoodSense", fontSize = 28.sp, fontWeight = FontWeight.Bold)
             Spacer(modifier = Modifier.weight(1f))
             IconButton(onClick = { showManualLog = true }) {
-                Icon(Icons.Default.Add, contentDescription = "Add", tint = Color(0xFF4FC3F7))
+                Icon(Icons.Default.Add, contentDescription = "Add", tint = MaterialTheme.colorScheme.secondary)
             }
         }
 
@@ -86,12 +86,13 @@ fun DashboardScreen(app: FoodSenseApplication) {
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(horizontal = 12.dp),
-                    colors = CardDefaults.cardColors(containerColor = Color(0xFF151515)),
+                    colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant),
                 ) {
                     Column(modifier = Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
                         Text(
                             if (selectedDate == LocalDate.now()) "Nutrition Today" else "Nutrition for ${selectedDate.format(DateTimeFormatter.ofPattern("MMM d"))}",
                             fontWeight = FontWeight.SemiBold,
+                            color = MaterialTheme.colorScheme.onSurface,
                         )
                         Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceAround) {
                             StatRing("Cals", summary.cals, nutritionManager.calorieBudget, Color(0xFF1DB954))
@@ -108,12 +109,13 @@ fun DashboardScreen(app: FoodSenseApplication) {
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(horizontal = 12.dp),
-                    colors = CardDefaults.cardColors(containerColor = Color(0xFF151515)),
+                    colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant),
                 ) {
                     Column(modifier = Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
                         Text(
                             if (selectedDate == LocalDate.now()) "Activity & Health (Today)" else "Activity & Health (${selectedDate.format(DateTimeFormatter.ofPattern("MMM d"))})",
                             fontWeight = FontWeight.SemiBold,
+                            color = MaterialTheme.colorScheme.onSurface,
                         )
 
                         Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
@@ -123,7 +125,7 @@ fun DashboardScreen(app: FoodSenseApplication) {
                         }
 
                         Row(verticalAlignment = Alignment.CenterVertically) {
-                            Text("Water: ${"%.1f".format(healthData.water)} L", fontWeight = FontWeight.SemiBold)
+                            Text("Water: ${"%.1f".format(healthData.water)} L", fontWeight = FontWeight.SemiBold, color = MaterialTheme.colorScheme.onSurface)
                             Spacer(modifier = Modifier.weight(1f))
                             if (selectedDate == LocalDate.now()) {
                                 AssistChip(onClick = {
@@ -159,7 +161,7 @@ fun DashboardScreen(app: FoodSenseApplication) {
                     Text(
                         "No food logged for this day",
                         modifier = Modifier.padding(horizontal = 16.dp),
-                        color = Color.Gray,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
                 }
             } else {
@@ -169,7 +171,7 @@ fun DashboardScreen(app: FoodSenseApplication) {
                             .fillMaxWidth()
                             .padding(horizontal = 12.dp)
                             .clickable { selectedLog = log },
-                        colors = CardDefaults.cardColors(containerColor = Color(0xFF141414)),
+                        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant),
                     ) {
                         Row(
                             modifier = Modifier
@@ -178,13 +180,13 @@ fun DashboardScreen(app: FoodSenseApplication) {
                             verticalAlignment = Alignment.CenterVertically,
                         ) {
                             Column {
-                                Text(log.food, fontWeight = FontWeight.SemiBold)
+                                Text(log.food, fontWeight = FontWeight.SemiBold, color = MaterialTheme.colorScheme.onSurface)
                                 Text(
                                     Instant.ofEpochMilli(log.timeEpochMillis)
                                         .atZone(ZoneId.systemDefault())
                                         .toLocalTime()
                                         .format(DateTimeFormatter.ofPattern("hh:mm a")),
-                                    color = Color.Gray,
+                                    color = MaterialTheme.colorScheme.onSurfaceVariant,
                                     fontSize = 12.sp,
                                 )
                             }
@@ -217,7 +219,7 @@ fun StreakCard(currentStreak: Int, longestStreak: Int, badges: List<Badge>) {
         modifier = Modifier
             .fillMaxWidth()
             .padding(horizontal = 12.dp),
-        colors = CardDefaults.cardColors(containerColor = Color(0xFF151515)),
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant),
     ) {
         Column(modifier = Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
             Row(verticalAlignment = Alignment.CenterVertically) {
@@ -228,10 +230,11 @@ fun StreakCard(currentStreak: Int, longestStreak: Int, badges: List<Badge>) {
                         "$currentStreak Day Streak",
                         fontWeight = FontWeight.Bold,
                         fontSize = 16.sp,
+                        color = MaterialTheme.colorScheme.onSurface,
                     )
                     Text(
                         "Longest: $longestStreak days",
-                        color = Color.Gray,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
                         fontSize = 12.sp,
                     )
                 }
@@ -249,7 +252,7 @@ fun StreakCard(currentStreak: Int, longestStreak: Int, badges: List<Badge>) {
                                 modifier = Modifier.size(14.dp),
                             )
                             Spacer(modifier = Modifier.width(2.dp))
-                            Text(badge.name, fontSize = 11.sp, color = Color.LightGray)
+                            Text(badge.name, fontSize = 11.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
                         }
                     }
                 }
@@ -273,12 +276,12 @@ fun LogDetailDialog(log: FoodLog, onDismiss: () -> Unit) {
                 log.recipe?.let {
                     Divider(modifier = Modifier.padding(vertical = 6.dp))
                     Text("Healthier Advice")
-                    Text(it, color = Color.LightGray)
+                    Text(it, color = MaterialTheme.colorScheme.onSurfaceVariant)
                 }
                 if (!log.micros.isNullOrEmpty()) {
                     Divider(modifier = Modifier.padding(vertical = 6.dp))
                     Text("Micronutrients")
-                    log.micros.forEach { (k, v) -> Text("$k: $v", color = Color.LightGray) }
+                    log.micros.forEach { (k, v) -> Text("$k: $v", color = MaterialTheme.colorScheme.onSurfaceVariant) }
                 }
             }
         },

@@ -12,6 +12,7 @@ import com.foodsense.android.services.LocalModelDetector
 import com.foodsense.android.services.NetworkMonitor
 import com.foodsense.android.services.NutritionManager
 import com.foodsense.android.services.StreakManager
+import com.google.firebase.FirebaseApp
 
 class FoodSenseApplication : Application() {
     val database: FoodSenseDatabase by lazy {
@@ -30,6 +31,12 @@ class FoodSenseApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
+        // Initialize Firebase safely (won't crash with placeholder google-services.json)
+        try {
+            FirebaseApp.initializeApp(this)
+        } catch (e: Exception) {
+            android.util.Log.w("FoodSense", "Firebase init failed (placeholder config?): ${e.message}")
+        }
         nutritionManager
         foodDatabase
         apiService

@@ -85,10 +85,10 @@ struct FoodDetailView: View {
                     } else {
                         HStack {
                             Image(systemName: "scalemass")
-                                .foregroundColor(.gray)
+                                .foregroundColor(.secondary)
                                 .accessibilityHidden(true)
                             Text("SmartScale Disconnected")
-                                .foregroundColor(.gray)
+                                .foregroundColor(.secondary)
                             Spacer()
                             NavigationLink(destination: BluetoothPairingView()) {
                                 Text("Connect")
@@ -146,7 +146,7 @@ struct FoodDetailView: View {
                     }
                 }
                 .padding()
-                .background(Color.gray.opacity(0.1))
+                .background(Color(UIColor.secondarySystemBackground))
                 .cornerRadius(12)
                 .padding(.horizontal)
                 
@@ -207,7 +207,7 @@ struct MacroView: View {
     let label: String
     let value: String
     let color: Color
-    
+
     var body: some View {
         VStack {
             Text(value)
@@ -215,7 +215,7 @@ struct MacroView: View {
                 .foregroundColor(color)
             Text(label)
                 .font(.caption)
-                .foregroundColor(.gray)
+                .foregroundColor(.secondary)
         }
     }
 }

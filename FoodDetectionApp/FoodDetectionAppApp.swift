@@ -12,7 +12,12 @@ import UserNotifications
 class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
-        FirebaseApp.configure()
+        // Only configure Firebase if GoogleService-Info.plist exists
+        if Bundle.main.path(forResource: "GoogleService-Info", ofType: "plist") != nil {
+            FirebaseApp.configure()
+        } else {
+            print("[FoodSense] GoogleService-Info.plist not found — Firebase disabled. Download from Firebase Console.")
+        }
         NotificationManager.shared.requestPermission()
         return true
     }

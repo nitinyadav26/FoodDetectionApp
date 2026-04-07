@@ -22,8 +22,8 @@ class BarcodeScanner: ObservableObject {
             }
 
             // Look for EAN-13 or UPC-A barcodes
-            let barcode = results.first(where: {
-                $0.symbology == .ean13 || $0.symbology == .upca
+            let barcode = results.first(where: { (obs: VNBarcodeObservation) -> Bool in
+                obs.symbology == VNBarcodeSymbology.ean13 || obs.symbology == VNBarcodeSymbology.ean8 || obs.symbology == VNBarcodeSymbology.upce
             })
 
             DispatchQueue.main.async {
@@ -32,7 +32,7 @@ class BarcodeScanner: ObservableObject {
         }
 
         // Limit to the barcode symbologies we care about
-        request.symbologies = [.ean13, .upca]
+        request.symbologies = [VNBarcodeSymbology.ean13, VNBarcodeSymbology.ean8, VNBarcodeSymbology.upce]
 
         let handler = VNImageRequestHandler(cgImage: cgImage, options: [:])
         DispatchQueue.global(qos: .userInitiated).async {

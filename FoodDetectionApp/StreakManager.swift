@@ -1,4 +1,5 @@
 import Foundation
+import Combine
 
 class StreakManager: ObservableObject {
     static let shared = StreakManager()

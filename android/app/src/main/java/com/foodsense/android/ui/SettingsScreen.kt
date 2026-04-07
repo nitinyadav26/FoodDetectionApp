@@ -102,7 +102,7 @@ fun SettingsScreen(app: FoodSenseApplication, onBack: () -> Unit) {
 
         // About
         SectionHeader("About")
-        Card(colors = CardDefaults.cardColors(containerColor = Color(0xFF161616))) {
+        Card(colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant)) {
             Row(
                 modifier = Modifier.fillMaxWidth().padding(16.dp),
                 verticalAlignment = Alignment.CenterVertically,
@@ -111,7 +111,7 @@ fun SettingsScreen(app: FoodSenseApplication, onBack: () -> Unit) {
                 Spacer(modifier = Modifier.weight(1f))
                 Text(
                     context.packageManager.getPackageInfo(context.packageName, 0).versionName ?: "1.0",
-                    color = Color.Gray,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
             }
         }
@@ -153,7 +153,7 @@ private fun SectionHeader(title: String) {
 @Composable
 private fun SettingsRow(title: String, textColor: Color = Color.Unspecified, onClick: () -> Unit) {
     Card(
-        colors = CardDefaults.cardColors(containerColor = Color(0xFF161616)),
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant),
         modifier = Modifier
             .fillMaxWidth()
             .clickable(onClick = onClick),

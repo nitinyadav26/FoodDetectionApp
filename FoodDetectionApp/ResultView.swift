@@ -37,7 +37,7 @@ struct ResultView: View {
                         .cornerRadius(20)
                 } else {
                     Rectangle()
-                        .fill(Color.gray.opacity(0.3))
+                        .fill(Color(UIColor.secondarySystemBackground))
                         .frame(height: 250)
                         .cornerRadius(20)
                         .overlay(Text(dishName).font(.largeTitle))
@@ -75,10 +75,10 @@ struct ResultView: View {
                         HStack {
                             if !bluetoothManager.isConnected {
                                 Image(systemName: "scalemass")
-                                    .foregroundColor(.gray)
+                                    .foregroundColor(.secondary)
                                 Text("Scale Disconnected")
                                     .font(.caption)
-                                    .foregroundColor(.gray)
+                                    .foregroundColor(.secondary)
                             }
                             
                             Spacer()
@@ -89,9 +89,9 @@ struct ResultView: View {
                                 .font(.title2)
                                 .frame(width: 80)
                                 .padding(5)
-                                .background(Color.gray.opacity(0.1))
+                                .background(Color(UIColor.secondarySystemBackground))
                                 .cornerRadius(8)
-                            
+
                             Text("g")
                                 .font(.title2)
                                 .foregroundColor(.secondary)
@@ -100,7 +100,7 @@ struct ResultView: View {
                     }
                 }
                 .padding(.vertical)
-                .background(Color.gray.opacity(0.05))
+                .background(Color(UIColor.secondarySystemBackground))
                 .cornerRadius(12)
                 .padding(.horizontal)
                 
@@ -124,14 +124,14 @@ struct ResultView: View {
                                 HStack {
                                     Text(key)
                                         .font(.subheadline)
-                                        .foregroundColor(.gray)
+                                        .foregroundColor(.secondary)
                                     Spacer()
                                     Text(value)
                                         .font(.subheadline)
                                         .bold()
                                 }
                                 .padding(10)
-                                .background(Color.gray.opacity(0.1))
+                                .background(Color(UIColor.secondarySystemBackground))
                                 .cornerRadius(8)
                             }
                         }
@@ -148,7 +148,7 @@ struct ResultView: View {
                         .font(.body)
                         .foregroundColor(.secondary)
                         .padding()
-                        .background(Color.gray.opacity(0.1))
+                        .background(Color(UIColor.secondarySystemBackground))
                         .cornerRadius(10)
                 }
                 .padding(.horizontal)
@@ -157,10 +157,10 @@ struct ResultView: View {
                 HStack(spacing: 15) {
                     Button(action: onCancel) {
                         Text("Cancel")
-                            .foregroundColor(.gray)
+                            .foregroundColor(.secondary)
                             .frame(maxWidth: .infinity)
                             .padding()
-                                .background(Color.gray.opacity(0.1))
+                            .background(Color(UIColor.secondarySystemBackground))
                             .cornerRadius(15)
                     }
                     
@@ -181,7 +181,7 @@ struct ResultView: View {
                 .padding()
             }
         }
-        .background(Color.black)
+        .background(Color(UIColor.systemBackground))
         .edgesIgnoringSafeArea(.top)
         .onAppear {
             bluetoothManager.startScanning()
@@ -212,10 +212,10 @@ struct MacroRing: View {
             
             Text(label)
                 .font(.caption2)
-                .foregroundColor(.gray)
+                .foregroundColor(.secondary)
         }
     }
-    
+
     func parse(_ val: String) -> String {
         let allowed = CharacterSet(charactersIn: "0123456789.")
         let filtered = val.components(separatedBy: allowed.inverted).joined()

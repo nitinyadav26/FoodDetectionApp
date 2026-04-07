@@ -18,6 +18,7 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FilterChip
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
@@ -67,9 +68,9 @@ fun StatRing(label: String, value: Int, target: Int, color: Color) {
                     style = Stroke(width = 8f),
                 )
             }
-            Text(value.toString(), fontSize = 11.sp, fontWeight = FontWeight.Bold)
+            Text(value.toString(), fontSize = 11.sp, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurface)
         }
-        Text(label, color = Color.Gray, fontSize = 11.sp)
+        Text(label, color = MaterialTheme.colorScheme.onSurfaceVariant, fontSize = 11.sp)
     }
 }
 
@@ -85,9 +86,9 @@ fun MacroRing(label: String, value: String, color: Color) {
                 drawCircle(color.copy(alpha = 0.24f), style = Stroke(6f))
                 drawArc(color, -90f, 250f, false, style = Stroke(6f))
             }
-            Text(parsed, fontSize = 11.sp, fontWeight = FontWeight.Bold)
+            Text(parsed, fontSize = 11.sp, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurface)
         }
-        Text(label, color = Color.Gray, fontSize = 11.sp)
+        Text(label, color = MaterialTheme.colorScheme.onSurfaceVariant, fontSize = 11.sp)
     }
 }
 
@@ -95,7 +96,7 @@ fun MacroRing(label: String, value: String, color: Color) {
 fun HealthCard(title: String, value: String, color: Color, modifier: Modifier = Modifier) {
     Card(
         modifier = modifier.semantics { contentDescription = "$title: $value" },
-        colors = CardDefaults.cardColors(containerColor = Color(0xFF1E1E1E)),
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant),
     ) {
         Column(
             modifier = Modifier
@@ -104,7 +105,7 @@ fun HealthCard(title: String, value: String, color: Color, modifier: Modifier = 
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             Text(title, color = color, fontWeight = FontWeight.SemiBold, fontSize = 12.sp)
-            Text(value, fontWeight = FontWeight.Bold, textAlign = TextAlign.Center)
+            Text(value, fontWeight = FontWeight.Bold, textAlign = TextAlign.Center, color = MaterialTheme.colorScheme.onSurface)
         }
     }
 }
@@ -123,14 +124,14 @@ fun DateSlider(selectedDate: LocalDate, onSelectDate: (LocalDate) -> Unit) {
             val isSelected = date == selectedDate
             val isToday = date == LocalDate.now()
             val bg = when {
-                isSelected -> Color(0xFF4FC3F7)
-                isToday -> Color(0x334FC3F7)
-                else -> Color(0xFF1A1A1A)
+                isSelected -> MaterialTheme.colorScheme.secondary
+                isToday -> MaterialTheme.colorScheme.secondary.copy(alpha = 0.2f)
+                else -> MaterialTheme.colorScheme.surfaceVariant
             }
             val fg = when {
-                isSelected -> Color.White
-                isToday -> Color(0xFF4FC3F7)
-                else -> Color.LightGray
+                isSelected -> MaterialTheme.colorScheme.onSecondary
+                isToday -> MaterialTheme.colorScheme.secondary
+                else -> MaterialTheme.colorScheme.onSurfaceVariant
             }
 
             Column(

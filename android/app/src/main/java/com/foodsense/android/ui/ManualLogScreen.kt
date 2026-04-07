@@ -70,7 +70,7 @@ fun ManualLogScreen(app: FoodSenseApplication, onClose: () -> Unit) {
 
     Surface(
         modifier = Modifier.fillMaxSize(),
-        color = Color(0xFF050505).copy(alpha = 0.98f),
+        color = MaterialTheme.colorScheme.background,
     ) {
         Column(modifier = Modifier.fillMaxSize()) {
             Row(
@@ -101,7 +101,7 @@ fun ManualLogScreen(app: FoodSenseApplication, onClose: () -> Unit) {
                         Text(
                             "Type to search for Indian dishes...",
                             modifier = Modifier.padding(horizontal = 16.dp),
-                            color = Color.Gray,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant,
                         )
                     }
                 } else if (localResults.isEmpty()) {
@@ -110,7 +110,7 @@ fun ManualLogScreen(app: FoodSenseApplication, onClose: () -> Unit) {
                             modifier = Modifier
                                 .fillMaxWidth()
                                 .padding(horizontal = 12.dp),
-                            colors = CardDefaults.cardColors(containerColor = Color(0xFF141414)),
+                            colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant),
                         ) {
                             Column(modifier = Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
                                 if (isSearchingRemote) {
@@ -174,11 +174,11 @@ fun ManualLogScreen(app: FoodSenseApplication, onClose: () -> Unit) {
                                 .fillMaxWidth()
                                 .padding(horizontal = 12.dp)
                                 .clickable { selectedFood = food },
-                            colors = CardDefaults.cardColors(containerColor = Color(0xFF141414)),
+                            colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant),
                         ) {
                             Column(modifier = Modifier.padding(12.dp)) {
-                                Text(food.name, fontWeight = FontWeight.SemiBold)
-                                Text("${food.baseCaloriesPer100g.toInt()} kcal / 100g", color = Color.Gray, fontSize = 12.sp)
+                                Text(food.name, fontWeight = FontWeight.SemiBold, color = MaterialTheme.colorScheme.onSurface)
+                                Text("${food.baseCaloriesPer100g.toInt()} kcal / 100g", color = MaterialTheme.colorScheme.onSurfaceVariant, fontSize = 12.sp)
                             }
                         }
                     }

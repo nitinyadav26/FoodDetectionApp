@@ -57,7 +57,7 @@ struct ManualLogView: View {
                 // Search Bar
                 HStack {
                     Image(systemName: "magnifyingglass")
-                        .foregroundColor(.gray)
+                        .foregroundColor(.secondary)
                         .accessibilityHidden(true)
                     TextField("Search for food (e.g. 'Dal Fry')", text: $searchText)
                         .autocapitalization(.none)
@@ -67,7 +67,7 @@ struct ManualLogView: View {
                     if !searchText.isEmpty {
                         Button(action: { searchText = "" }) {
                             Image(systemName: "xmark.circle.fill")
-                                .foregroundColor(.gray)
+                                .foregroundColor(.secondary)
                         }
                         .accessibilityLabel("Clear search")
                         .accessibilityHint("Clears the current search text")
@@ -92,7 +92,7 @@ struct ManualLogView: View {
                     
                     if searchText.isEmpty {
                         Text("Type to search for Indian dishes...")
-                            .foregroundColor(.gray)
+                            .foregroundColor(.secondary)
                     } else if results.isEmpty {
                         // Section for Remote Search / Fallback
                         Section {
@@ -100,7 +100,7 @@ struct ManualLogView: View {
                                 HStack {
                                     ProgressView()
                                     Text("Searching online...")
-                                        .foregroundColor(.gray)
+                                        .foregroundColor(.secondary)
                                 }
                             } else if !remoteResults.isEmpty {
                                 ForEach(remoteResults) { food in
@@ -127,7 +127,7 @@ struct ManualLogView: View {
                                         Text("Search online for '\(searchText)'")
                                         Spacer()
                                         Image(systemName: "chevron.right")
-                                            .foregroundColor(.gray)
+                                            .foregroundColor(.secondary)
                                             .accessibilityHidden(true)
                                     }
                                 }
@@ -144,7 +144,7 @@ struct ManualLogView: View {
                                         .font(.headline)
                                     Text("\(Int(food.baseCaloriesPer100g)) kcal / 100g")
                                         .font(.caption)
-                                        .foregroundColor(.gray)
+                                        .foregroundColor(.secondary)
                                 }
                                 .padding(.vertical, 4)
                             }

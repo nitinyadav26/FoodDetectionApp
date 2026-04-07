@@ -38,7 +38,7 @@ struct MultiObjectResultView: View {
                 
                 Text("Select items to log")
                     .font(.caption)
-                    .foregroundColor(.gray)
+                    .foregroundColor(.secondary)
                 
                 List {
                     ForEach(results, id: \.label) { result in
@@ -98,19 +98,19 @@ struct MultiObjectResultView: View {
                                             .multilineTextAlignment(.trailing)
                                             .frame(width: 50)
                                             .padding(4)
-                                            .background(Color.gray.opacity(0.1))
+                                            .background(Color(UIColor.secondarySystemBackground))
                                             .cornerRadius(4)
                                         
                                         Text("g")
                                             .font(.caption)
-                                            .foregroundColor(.gray)
-                                        
+                                            .foregroundColor(.secondary)
+
                                         if bluetoothManager.isConnected {
                                             Button(action: {
                                                 activeWeighingLabel = result.label
                                             }) {
                                                 Image(systemName: "scalemass")
-                                                    .foregroundColor(.gray)
+                                                    .foregroundColor(.secondary)
                                             }
                                             .buttonStyle(PlainButtonStyle())
                                         }

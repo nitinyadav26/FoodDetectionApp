@@ -70,12 +70,12 @@ fun PairScaleScreen(app: FoodSenseApplication) {
         )
 
         Text(if (manager.isConnected) "Scale Connected" else "Searching for Scale...", style = MaterialTheme.typography.titleLarge)
-        Text(manager.statusMessage, color = Color.Gray, textAlign = TextAlign.Center)
+        Text(manager.statusMessage, color = MaterialTheme.colorScheme.onSurfaceVariant, textAlign = TextAlign.Center)
 
         if (manager.isConnected) {
-            Card(colors = CardDefaults.cardColors(containerColor = Color(0xFF161616))) {
+            Card(colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant)) {
                 Column(modifier = Modifier.padding(18.dp), horizontalAlignment = Alignment.CenterHorizontally) {
-                    Text("Current Weight", color = Color.Gray)
+                    Text("Current Weight", color = MaterialTheme.colorScheme.onSurfaceVariant)
                     Text("${"%.0f".format(manager.currentWeight)} g", fontSize = 40.sp, fontWeight = FontWeight.Bold)
                 }
             }
