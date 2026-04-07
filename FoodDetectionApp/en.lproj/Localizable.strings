@@ -77,6 +77,118 @@
 "all_set" = "You're all set!";
 "calculate_plan" = "Calculate My Plan";
 
+// Voice Logging
+"voice_log_title" = "Voice Log";
+"tap_to_speak" = "Tap to speak your meal";
+"listening" = "Listening...";
+"stop_recording" = "Stop recording";
+"start_recording" = "Start voice recording";
+"you_said" = "You said:";
+"searching_food" = "Searching food...";
+"log_it" = "Log It";
+"logged" = "Logged!";
+
+// Nutritionist Chat
+"nutritionist_chat_title" = "AI Nutritionist";
+"chat_subtitle" = "Chat with your personal nutrition expert";
+"new_chat" = "New Chat";
+"ask_nutrition" = "Ask about nutrition...";
+"thinking" = "Thinking...";
+"offline_chat" = "You're offline. Please connect to the internet to chat.";
+
+// Meal Plan
+"meal_plan_title" = "7-Day Meal Plan";
+"meal_plan_subtitle" = "AI-generated based on your goals";
+"generate" = "Generate";
+"generating" = "Generating...";
+"no_meal_plan" = "No meal plan yet";
+"tap_generate" = "Tap Generate to create a personalized 7-day plan";
+"breakfast" = "Breakfast";
+"lunch" = "Lunch";
+"dinner" = "Dinner";
+"snack" = "Snack";
+
+// Insights
+"insights_title" = "Nutrition Insights";
+"calorie_trend" = "Calorie Trend";
+"macro_breakdown" = "Macro Breakdown (Avg/Day)";
+"top_foods" = "Top Foods";
+"ai_tips" = "AI Tips";
+"get_tips" = "Get Tips";
+"loading_tips" = "Loading...";
+
+// Prediction
+"prediction_title" = "Weight Prediction";
+"prediction_subtitle" = "Based on your calorie intake";
+"current" = "Current";
+"projected" = "Projected";
+"on_track" = "On Track";
+"off_track" = "Off Track";
+"weight_projection" = "Weight Projection";
+"calculation_details" = "Calculation Details";
+
+// Food Quality
+"quality_title" = "Food Quality Score";
+"quality_subtitle" = "How healthy is your diet today?";
+"out_of_100" = "out of 100";
+"score_breakdown" = "Score Breakdown";
+"how_to_improve" = "How to Improve";
+"excellent" = "Excellent";
+"good" = "Good";
+"fair" = "Fair";
+"needs_work" = "Needs Work";
+
+// Portion Estimation
+"portion_title" = "Portion Estimation";
+"portion_subtitle" = "AI estimates your serving size";
+"take_photo" = "Take a Photo of Your Food";
+"retake_photo" = "Retake Photo";
+"analyzing_portion" = "Analyzing portion...";
+"portion_size" = "Portion Size";
+"log_this_meal" = "Log This Meal";
+
+// Before/After
+"before_after_title" = "Before & After";
+"before_after_subtitle" = "Compare meals and consumption";
+"before" = "Before";
+"after" = "After";
+"compare_analyze" = "Compare & Analyze";
+"analyzing" = "Analyzing...";
+"consumption_analysis" = "Consumption Analysis";
+"reset" = "Reset";
+
+// OCR Scan
+"ocr_title" = "Label Scanner";
+"ocr_subtitle" = "Scan nutrition labels with AI OCR";
+"scan_label" = "Scan Nutrition Label";
+"scan_hint" = "Point your camera at a nutrition facts label";
+"reading_label" = "Reading label...";
+"product_name" = "Product Name";
+"nutrition_facts" = "Nutrition Facts (per 100g)";
+"log_this_food" = "Log This Food";
+
+// Quiz
+"quiz_title" = "Nutrition Quiz";
+"quiz_subtitle" = "Test your nutrition knowledge";
+"quiz_complete" = "Quiz Complete!";
+"play_again" = "Play Again";
+"next_question" = "Next Question";
+"see_results" = "See Results";
+"explanation" = "Explanation";
+"xp_earned" = "+10 XP Earned!";
+
+// AI Features
+"ai_features" = "AI Features";
+"chat" = "Chat";
+"meal_plan" = "Meal Plan";
+"insights" = "Insights";
+"prediction" = "Prediction";
+"quality" = "Quality";
+"portions" = "Portions";
+"before_after" = "Before/After";
+"ocr_scan" = "OCR Scan";
+"quiz" = "Quiz";
+
 // Common
 "cancel" = "Cancel";
 "add_to_log" = "Add to Log";
@@ -84,3 +196,4 @@
 "ok" = "OK";
 "error" = "Error";
 "no_internet" = "No Internet Connection";
+"done" = "Done";

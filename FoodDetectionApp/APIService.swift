@@ -204,6 +204,238 @@ class APIService {
         }
     }
 
+    // MARK: - Meal Plan Generation
+    func generateMealPlan(userStats: UserStats?, calorieBudget: Int) async throws -> [PlannedMeal] {
+        try checkRateLimit()
+
+        var context = "Generate a 7-day meal plan. "
+        if let stats = userStats {
+            context += "User: \(stats.age)yo \(stats.gender), \(stats.weight)kg, goal: \(stats.goal). "
+        }
+        context += "Daily calorie budget: \(calorieBudget) kcal."
+
+        let prompt = """
+        \(context)
+        Return a JSON array of 7 objects, each with:
+        - "day": "Monday" through "Sunday"
+        - "breakfast": meal description
+        - "lunch": meal description
+        - "dinner": meal description
+        - "snack": snack description
+        - "totalCalories": estimated total calories (number)
+        Return ONLY the JSON array.
+        """
+
+        let (data, _) = try await sendGenericPrompt(prompt: prompt, useJSON: true)
+        return try parseMealPlanResponse(data: data)
+    }
+
+    // MARK: - Portion Estimation
+    func estimatePortion(image: UIImage) async throws -> (name: String, info: NutritionInfo, estimatedGrams: Double) {
+        try checkRateLimit()
+
+        guard let base64Image = image.jpegData(compressionQuality: 0.5)?.base64EncodedString() else {
+            throw NSError(domain: "ImageError", code: -1, userInfo: [NSLocalizedDescriptionKey: "Failed to encode image"])
+        }
+
+        let prompt = """
+        Analyze this food image and estimate the portion size in grams.
+        Return a JSON object with:
+        - "Dish": name of the food
+        - "estimatedGrams": estimated weight in grams (number)
+        - "Calories per 100g": calories per 100g (number as string)
+        - "Carbohydrate per 100g": carbs per 100g (number as string)
+        - "Protein per 100 gm": protein per 100g (number as string)
+        - "Fats per 100 gm": fats per 100g (number as string)
+        - "Healthier Recipe": brief healthier suggestion
+        - "Source": "AI Portion Estimate"
+        - "micros": dictionary of micronutrients
+        Return ONLY the JSON.
+        """
+
+        let (data, _) = try await sendImagePrompt(imageBase64: base64Image, prompt: prompt)
+        let parsed = try parseNutritionResponse(data: data, fallbackDish: "Detected Food")
+
+        // Extract estimated grams
+        var grams: Double = 100
+        if let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
+           let candidates = json["candidates"] as? [[String: Any]],
+           let content = candidates.first?["content"] as? [String: Any],
+           let parts = content["parts"] as? [[String: Any]],
+           let text = parts.first?["text"] as? String {
+            let clean = text.replacingOccurrences(of: "```json", with: "").replacingOccurrences(of: "```", with: "").trimmingCharacters(in: .whitespacesAndNewlines)
+            if let jsonData = clean.data(using: .utf8),
+               let dict = try? JSONSerialization.jsonObject(with: jsonData) as? [String: Any] {
+                if let g = dict["estimatedGrams"] as? Double {
+                    grams = g
+                } else if let g = dict["estimatedGrams"] as? Int {
+                    grams = Double(g)
+                }
+            }
+        }
+
+        return (parsed.name, parsed.info, grams)
+    }
+
+    // MARK: - Before/After Comparison
+    func compareBeforeAfter(before: UIImage, after: UIImage) async throws -> String {
+        try checkRateLimit()
+
+        guard let beforeBase64 = before.jpegData(compressionQuality: 0.5)?.base64EncodedString(),
+              let afterBase64 = after.jpegData(compressionQuality: 0.5)?.base64EncodedString() else {
+            throw NSError(domain: "ImageError", code: -1, userInfo: [NSLocalizedDescriptionKey: "Failed to encode images"])
+        }
+
+        let prompt = """
+        Compare these two food images (before and after eating).
+        Analyze:
+        1. What food was on the plate before
+        2. How much was consumed (percentage estimate)
+        3. Estimated calories consumed
+        4. Nutritional assessment
+        Be concise (max 150 words).
+        """
+
+        if let proxyURL = proxyBaseURL, !proxyURL.isEmpty {
+            let body: [String: Any] = ["before_image": beforeBase64, "after_image": afterBase64, "prompt": prompt]
+            let (data, _) = try await postJSON(url: "\(proxyURL)/api/v1/compare-food", body: body)
+            return parseCoachResponse(data: data)
+        } else if let apiKey = directApiKey, !apiKey.isEmpty {
+            let body: [String: Any] = [
+                "contents": [["parts": [
+                    ["text": prompt],
+                    ["inline_data": ["mime_type": "image/jpeg", "data": beforeBase64]],
+                    ["inline_data": ["mime_type": "image/jpeg", "data": afterBase64]]
+                ]]],
+                "generationConfig": ["maxOutputTokens": 1000, "temperature": 0.5]
+            ]
+            let (data, _) = try await postJSON(url: geminiURL(apiKey: apiKey), body: body)
+            return parseCoachResponse(data: data)
+        } else {
+            throw NSError(domain: "ConfigError", code: -1, userInfo: [NSLocalizedDescriptionKey: "No API configuration."])
+        }
+    }
+
+    // MARK: - OCR Nutrition Label
+    func ocrNutritionLabel(image: UIImage) async throws -> (name: String, info: NutritionInfo) {
+        try checkRateLimit()
+
+        guard let base64Image = image.jpegData(compressionQuality: 0.5)?.base64EncodedString() else {
+            throw NSError(domain: "ImageError", code: -1, userInfo: [NSLocalizedDescriptionKey: "Failed to encode image"])
+        }
+
+        let prompt = """
+        Read this nutrition facts label using OCR.
+        Return a JSON object with:
+        - "Dish": product name if visible, else "Scanned Product"
+        - "Calories per 100g": calories (number as string)
+        - "Carbohydrate per 100g": carbs (number as string)
+        - "Protein per 100 gm": protein (number as string)
+        - "Fats per 100 gm": fats (number as string)
+        - "Healthier Recipe": "Scanned from nutrition label"
+        - "Source": "OCR Scan"
+        - "micros": dictionary of any micronutrients found (e.g., vitamins, minerals)
+        Return ONLY the JSON.
+        """
+
+        let (data, _) = try await sendImagePrompt(imageBase64: base64Image, prompt: prompt)
+        return try parseNutritionResponse(data: data, fallbackDish: "Scanned Product")
+    }
+
+    // MARK: - Generate Insights
+    func generateInsights(foodHistory: String, calorieBudget: Int, userStats: UserStats?) async throws -> String {
+        try checkRateLimit()
+
+        var context = "Calorie budget: \(calorieBudget) kcal/day. "
+        if let stats = userStats {
+            context += "User: \(stats.age)yo \(stats.gender), \(stats.weight)kg, goal: \(stats.goal). "
+        }
+        context += "\nFood history:\n\(foodHistory)"
+
+        let prompt = """
+        Based on this nutrition data, provide 3-5 actionable insights and tips.
+        Be specific, concise, and encouraging. Max 200 words.
+        \(context)
+        """
+
+        let (data, _) = try await sendGenericPrompt(prompt: prompt, useJSON: false)
+        return parseCoachResponse(data: data)
+    }
+
+    // MARK: - Generic Prompt Helpers
+
+    private func sendGenericPrompt(prompt: String, useJSON: Bool) async throws -> (Data, URLResponse) {
+        if let proxyURL = proxyBaseURL, !proxyURL.isEmpty {
+            let body: [String: Any] = ["prompt": prompt]
+            return try await postJSON(url: "\(proxyURL)/api/v1/generate", body: body)
+        } else if let apiKey = directApiKey, !apiKey.isEmpty {
+            var config: [String: Any] = ["maxOutputTokens": 2000, "temperature": 0.7]
+            if useJSON {
+                config["responseMimeType"] = "application/json"
+            }
+            let body: [String: Any] = [
+                "contents": [["parts": [["text": prompt]]]],
+                "generationConfig": config
+            ]
+            return try await postJSON(url: geminiURL(apiKey: apiKey), body: body)
+        } else {
+            throw NSError(domain: "ConfigError", code: -1, userInfo: [NSLocalizedDescriptionKey: "No API configuration."])
+        }
+    }
+
+    private func sendImagePrompt(imageBase64: String, prompt: String) async throws -> (Data, URLResponse) {
+        if let proxyURL = proxyBaseURL, !proxyURL.isEmpty {
+            let body: [String: Any] = ["image_base64": imageBase64, "prompt": prompt]
+            return try await postJSON(url: "\(proxyURL)/api/v1/analyze-image", body: body)
+        } else if let apiKey = directApiKey, !apiKey.isEmpty {
+            let body: [String: Any] = [
+                "contents": [["parts": [
+                    ["text": prompt],
+                    ["inline_data": ["mime_type": "image/jpeg", "data": imageBase64]]
+                ]]],
+                "generationConfig": ["responseMimeType": "application/json"]
+            ]
+            return try await postJSON(url: geminiURL(apiKey: apiKey), body: body)
+        } else {
+            throw NSError(domain: "ConfigError", code: -1, userInfo: [NSLocalizedDescriptionKey: "No API configuration."])
+        }
+    }
+
+    private func parseMealPlanResponse(data: Data) throws -> [PlannedMeal] {
+        var text = ""
+        if let json = try JSONSerialization.jsonObject(with: data) as? [String: Any],
+           let candidates = json["candidates"] as? [[String: Any]],
+           let content = candidates.first?["content"] as? [String: Any],
+           let parts = content["parts"] as? [[String: Any]],
+           let t = parts.first?["text"] as? String {
+            text = t
+        }
+
+        let clean = text
+            .replacingOccurrences(of: "```json", with: "")
+            .replacingOccurrences(of: "```", with: "")
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+
+        guard let jsonData = clean.data(using: .utf8),
+              let arr = try JSONSerialization.jsonObject(with: jsonData) as? [[String: Any]] else {
+            throw NSError(domain: "ParseError", code: -1, userInfo: [NSLocalizedDescriptionKey: "Failed to parse meal plan."])
+        }
+
+        return arr.compactMap { dict in
+            guard let day = dict["day"] as? String,
+                  let breakfast = dict["breakfast"] as? String,
+                  let lunch = dict["lunch"] as? String,
+                  let dinner = dict["dinner"] as? String,
+                  let snack = dict["snack"] as? String else { return nil }
+
+            var totalCals = 0
+            if let c = dict["totalCalories"] as? Int { totalCals = c }
+            else if let c = dict["totalCalories"] as? Double { totalCals = Int(c) }
+
+            return PlannedMeal(day: day, breakfast: breakfast, lunch: lunch, dinner: dinner, snack: snack, totalCalories: totalCals)
+        }
+    }
+
     // MARK: - Helpers
 
     private func geminiURL(apiKey: String) -> String {
