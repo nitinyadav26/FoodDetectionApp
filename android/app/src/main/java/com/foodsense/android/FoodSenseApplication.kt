@@ -5,6 +5,7 @@ import androidx.room.Room
 import com.foodsense.android.data.FoodSenseDatabase
 import com.foodsense.android.services.APIService
 import com.foodsense.android.services.AuthManager
+import com.foodsense.android.services.BadgeManager
 import com.foodsense.android.services.BluetoothScaleManager
 import com.foodsense.android.services.FoodDatabase
 import com.foodsense.android.services.HealthDataManager
@@ -13,6 +14,7 @@ import com.foodsense.android.services.NetworkMonitor
 import com.foodsense.android.services.NutritionManager
 import com.foodsense.android.services.StreakManager
 import com.foodsense.android.services.VoiceLoggingManager
+import com.foodsense.android.services.XPManager
 import com.google.firebase.FirebaseApp
 
 class FoodSenseApplication : Application() {
@@ -33,6 +35,8 @@ class FoodSenseApplication : Application() {
     val localModelDetector: LocalModelDetector by lazy { LocalModelDetector(this) }
     val networkMonitor: NetworkMonitor by lazy { NetworkMonitor(this) }
     val streakManager: StreakManager by lazy { StreakManager(this, nutritionManager) }
+    val xpManager: XPManager by lazy { XPManager(this) }
+    val badgeManager: BadgeManager by lazy { BadgeManager(this) }
 
     override fun onCreate() {
         super.onCreate()

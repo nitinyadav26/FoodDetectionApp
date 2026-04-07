@@ -144,6 +144,90 @@
     <string name="feature_quiz">प्रश्नोत्तरी</string>
     <string name="feature_voice_log">वॉइस लॉग</string>
     <string name="back">वापस</string>
+    <!-- XP & Badges -->
+    <string name="xp">XP</string>
+    <string name="level">स्तर</string>
+    <string name="badges">बैज</string>
+    <string name="badges_and_xp">बैज और XP</string>
+    <string name="achievements">उपलब्धियां</string>
+    <string name="view_all_badges">सभी बैज देखें</string>
+    <string name="unlocked">अनलॉक</string>
+    <string name="locked">लॉक</string>
+    <string name="xp_to_next_level">अगले स्तर तक XP</string>
+    <string name="total_xp">कुल XP</string>
+    <string name="current_streak">वर्तमान स्ट्रीक</string>
+    <string name="longest_streak">सबसे लंबी स्ट्रीक</string>
+    <string name="day_streak">दिन की स्ट्रीक</string>
+    <string name="badge_unlocked_xp">अनलॉक (+25 XP)</string>
+
+    <!-- Badge Categories -->
+    <string name="category_streaks">स्ट्रीक्स</string>
+    <string name="category_logging">लॉगिंग</string>
+    <string name="category_nutrition">पोषण</string>
+    <string name="category_health">स्वास्थ्य</string>
+    <string name="category_social">सामाजिक</string>
+    <string name="category_milestones">मील के पत्थर</string>
+
+    <!-- XP Titles -->
+    <string name="title_beginner">शुरुआती</string>
+    <string name="title_apprentice">प्रशिक्षु</string>
+    <string name="title_tracker">ट्रैकर</string>
+    <string name="title_expert">विशेषज्ञ</string>
+    <string name="title_master">मास्टर</string>
+    <string name="title_champion">चैंपियन</string>
+    <string name="title_legend">लेजेंड</string>
+
+    <!-- Badge Names -->
+    <string name="badge_streak_3">3 दिन की चिंगारी</string>
+    <string name="badge_streak_7">सप्ताह योद्धा</string>
+    <string name="badge_streak_14">पखवाड़ा लड़ाकू</string>
+    <string name="badge_streak_21">3-सप्ताह चमत्कार</string>
+    <string name="badge_streak_30">मासिक मास्टर</string>
+    <string name="badge_streak_60">दो-महीने टाइटन</string>
+    <string name="badge_streak_90">तिमाही राजा</string>
+    <string name="badge_streak_180">छह-महीने हीरो</string>
+    <string name="badge_streak_365">साल का लेजेंड</string>
+    <string name="badge_streak_comeback">वापसी बच्चा</string>
+    <string name="badge_log_1">पहला कौर</string>
+    <string name="badge_log_10">दस का दम</string>
+    <string name="badge_log_25">पच्चीस</string>
+    <string name="badge_log_50">अर्धशतक</string>
+    <string name="badge_log_100">शतक लॉगर</string>
+    <string name="badge_log_250">प्रचुर ट्रैकर</string>
+    <string name="badge_log_500">फूड इतिहासकार</string>
+    <string name="badge_log_1000">हजार क्लब</string>
+    <string name="badge_log_3meals">तीन भोजन</string>
+    <string name="badge_log_5meals">पांच-ए-डे</string>
+    <string name="badge_cal_under">बजट बॉस</string>
+    <string name="badge_cal_week">सप्ताह वॉचर</string>
+    <string name="badge_protein_100">प्रोटीन पावर</string>
+    <string name="badge_protein_150">प्रोटीन प्रो</string>
+    <string name="badge_balanced">संतुलित प्लेट</string>
+    <string name="badge_low_fat">कम वसा दिन</string>
+    <string name="badge_fiber">फाइबर प्रशंसक</string>
+    <string name="badge_variety_5">विविधता पैक</string>
+    <string name="badge_variety_10">फूड एक्सप्लोरर</string>
+    <string name="badge_clean">स्वच्छ खाने वाला</string>
+    <string name="badge_water_2l">हाइड्रेशन हीरो</string>
+    <string name="badge_water_3l">वॉटर चैंपियन</string>
+    <string name="badge_steps_5k">स्टेप स्टार्टर</string>
+    <string name="badge_steps_10k">10K वॉकर</string>
+    <string name="badge_steps_15k">स्टेप मास्टर</string>
+    <string name="badge_sleep_7h">अच्छी नींद</string>
+    <string name="badge_sleep_8h">नींद चैंपियन</string>
+    <string name="badge_burn_300">कैलोरी बर्नर</string>
+    <string name="badge_burn_500">इन्फर्नो</string>
+    <string name="badge_all_health">वेलनेस वॉरियर</string>
+    <string name="badge_social_share">सोशल बटरफ्लाई</string>
+    <string name="badge_social_invite">एंबेसडर</string>
+    <string name="badge_social_review">रिव्यूअर</string>
+    <string name="badge_social_feedback">फीडबैक देने वाला</string>
+    <string name="badge_social_community">कम्युनिटी मेंबर</string>
+    <string name="badge_level_10">राइजिंग स्टार</string>
+    <string name="badge_level_25">क्वार्टर मास्टर</string>
+    <string name="badge_level_50">मैक्स लेवल</string>
+    <string name="badge_badges_10">कलेक्टर</string>
+    <string name="badge_badges_25">कम्प्लीशनिस्ट</string>
 
     <!-- Common -->
     <string name="cancel">रद्द करें</string>

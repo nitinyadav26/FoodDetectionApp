@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Delete
@@ -24,6 +25,7 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Divider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
@@ -35,24 +37,27 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.foodsense.android.FoodSenseApplication
+import com.foodsense.android.data.AllBadges
 import com.foodsense.android.data.FoodLog
 import com.foodsense.android.services.AnalyticsService
-import com.foodsense.android.services.Badge
 import java.time.Instant
 import java.time.LocalDate
 import java.time.ZoneId
 import java.time.format.DateTimeFormatter
 
 @Composable
-fun DashboardScreen(app: FoodSenseApplication) {
+fun DashboardScreen(app: FoodSenseApplication, onViewBadges: () -> Unit = {}) {
     val nutritionManager = app.nutritionManager
     val healthManager = app.healthDataManager
     val streakManager = app.streakManager
+    val xpManager = app.xpManager
+    val badgeManager = app.badgeManager
     var selectedDate by rememberSaveable { mutableStateOf(LocalDate.now()) }
     var showManualLog by rememberSaveable { mutableStateOf(false) }
     var selectedLog by remember { mutableStateOf<FoodLog?>(null) }
@@ -60,6 +65,12 @@ fun DashboardScreen(app: FoodSenseApplication) {
     val summary = nutritionManager.summaryFor(selectedDate)
     val healthData = healthManager.getData(selectedDate)
     val logs = nutritionManager.logsFor(selectedDate)
+
+    // Evaluate badges when dashboard loads
+    remember {
+        badgeManager.evaluate()
+        true
+    }
 
     Column(modifier = Modifier.fillMaxSize()) {
         Row(
@@ -138,12 +149,56 @@ fun DashboardScreen(app: FoodSenseApplication) {
                 }
             }
 
+            // XP & Level card
+            item {
+                Card(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 12.dp),
+                    colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant),
+                ) {
+                    Column(modifier = Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            Text(
+                                "Lv ${xpManager.level}",
+                                fontWeight = FontWeight.Bold,
+                                fontSize = 16.sp,
+                                color = Color(0xFFFFD700),
+                            )
+                            Spacer(modifier = Modifier.width(8.dp))
+                            Text(
+                                xpManager.title,
+                                fontWeight = FontWeight.SemiBold,
+                                color = MaterialTheme.colorScheme.onSurface,
+                            )
+                            Spacer(modifier = Modifier.weight(1f))
+                            Text(
+                                "${xpManager.totalXP} XP",
+                                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                fontSize = 13.sp,
+                            )
+                        }
+                        LinearProgressIndicator(
+                            progress = xpManager.progress,
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .height(6.dp)
+                                .clip(RoundedCornerShape(3.dp)),
+                            color = Color(0xFFFFD700),
+                            trackColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f),
+                        )
+                    }
+                }
+            }
+
+            // Streak card (updated without old badges)
             item {
                 streakManager.updateStreak()
                 StreakCard(
                     currentStreak = streakManager.currentStreak,
                     longestStreak = streakManager.longestStreak,
-                    badges = streakManager.badges,
+                    recentBadgeKeys = badgeManager.unlockedKeys,
+                    onViewBadges = onViewBadges,
                 )
             }
 
@@ -214,7 +269,12 @@ fun DashboardScreen(app: FoodSenseApplication) {
 }
 
 @Composable
-fun StreakCard(currentStreak: Int, longestStreak: Int, badges: List<Badge>) {
+fun StreakCard(
+    currentStreak: Int,
+    longestStreak: Int,
+    recentBadgeKeys: Set<String>,
+    onViewBadges: () -> Unit = {},
+) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -240,10 +300,11 @@ fun StreakCard(currentStreak: Int, longestStreak: Int, badges: List<Badge>) {
                 }
             }
 
-            val earnedBadges = badges.filter { it.earned }
-            if (earnedBadges.isNotEmpty()) {
+            // Show up to 5 recently unlocked badges
+            val recentBadges = AllBadges.list.filter { it.key in recentBadgeKeys }.take(5)
+            if (recentBadges.isNotEmpty()) {
                 Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-                    earnedBadges.forEach { badge ->
+                    recentBadges.forEach { badge ->
                         Row(verticalAlignment = Alignment.CenterVertically) {
                             Icon(
                                 Icons.Default.Star,
@@ -256,6 +317,10 @@ fun StreakCard(currentStreak: Int, longestStreak: Int, badges: List<Badge>) {
                         }
                     }
                 }
+            }
+
+            TextButton(onClick = onViewBadges) {
+                Text("View All Badges (${recentBadgeKeys.size}/${AllBadges.list.size})")
             }
         }
     }
