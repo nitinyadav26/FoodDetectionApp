@@ -81,6 +81,70 @@
     <string name="all_set">You\'re all set!</string>
     <string name="calculate_plan">Calculate My Plan</string>
 
+    <!-- Voice Log -->
+    <string name="voice_log_title">Voice Food Log</string>
+    <string name="voice_log_hint">Tap the microphone and say what you ate</string>
+    <string name="voice_listening">Listening\u2026</string>
+    <string name="voice_you_said">You said:</string>
+    <string name="voice_search_food">Search Food</string>
+    <string name="voice_analyzing">Analyzing food\u2026</string>
+    <string name="voice_log_it">Log It</string>
+    <string name="voice_logged">Logged successfully!</string>
+    <string name="voice_not_available">Speech recognition not available on this device.</string>
+    <string name="voice_no_match">No speech detected. Try again.</string>
+    <string name="voice_network_error">Network error. Check connection.</string>
+    <string name="voice_start">Start listening</string>
+    <string name="voice_stop">Stop</string>
+
+    <!-- Nutritionist Chat -->
+    <string name="chat_title">AI Nutritionist Chat</string>
+    <string name="chat_placeholder">Ask about nutrition\u2026</string>
+    <string name="chat_welcome">Hello! I\'m your AI nutritionist. Ask me anything about diet, nutrition, or healthy eating habits.</string>
+    <string name="chat_thinking">Thinking\u2026</string>
+    <string name="chat_clear">Clear chat</string>
+    <string name="chat_send">Send</string>
+    <string name="chat_error">Sorry, I couldn\'t process your request.</string>
+
+    <!-- Meal Plan -->
+    <string name="meal_plan_title">7-Day Meal Plan</string>
+    <string name="meal_plan_empty">No meal plan yet</string>
+    <string name="meal_plan_generate">Generate My Meal Plan</string>
+    <string name="meal_plan_generating">Generating personalized meal plan\u2026</string>
+    <string name="meal_plan_regenerate">Regenerate</string>
+    <string name="meal_plan_breakfast">Breakfast</string>
+    <string name="meal_plan_lunch">Lunch</string>
+    <string name="meal_plan_dinner">Dinner</string>
+    <string name="meal_plan_snack">Snack</string>
+
+    <!-- Insights -->
+    <string name="insights_title">Weekly Insights</string>
+    <string name="insights_loading">Analyzing your week\u2026</string>
+    <string name="insights_calorie_trend">Calorie Trend</string>
+    <string name="insights_avg_macros">Average Daily Macros</string>
+    <string name="insights_top_foods">Top Foods This Week</string>
+    <string name="insights_ai_tips">AI Tips</string>
+    <string name="insights_weekly_trend">Weekly Trend</string>
+    <string name="insights_retry">Retry</string>
+
+    <!-- Quiz -->
+    <string name="quiz_title">Nutrition Quiz</string>
+    <string name="quiz_loading">Loading question\u2026</string>
+    <string name="quiz_submit">Submit Answer</string>
+    <string name="quiz_next">Next Question</string>
+    <string name="quiz_correct">Correct!</string>
+    <string name="quiz_incorrect">Incorrect</string>
+    <string name="quiz_try_again">Try Again</string>
+    <string name="quiz_score">Score: %1$d/%2$d</string>
+
+    <!-- AI Features -->
+    <string name="ai_features">AI Features</string>
+    <string name="feature_chat">Chat</string>
+    <string name="feature_meal_plans">Meal Plans</string>
+    <string name="feature_insights">Insights</string>
+    <string name="feature_quiz">Quiz</string>
+    <string name="feature_voice_log">Voice Log</string>
+    <string name="back">Back</string>
+
     <!-- Common -->
     <string name="cancel">Cancel</string>
     <string name="add_to_log">Add to Log</string>
