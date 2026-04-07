@@ -6,21 +6,11 @@ class StreakManager: ObservableObject {
 
     @Published var currentStreak: Int = 0
     @Published var longestStreak: Int = 0
-    @Published var badges: [Badge] = []
-
-    struct Badge: Identifiable {
-        let id = UUID()
-        let name: String
-        let icon: String  // SF Symbol
-        let requirement: Int  // days
-        var earned: Bool
-    }
 
     private let longestStreakKey = "longestStreak"
 
     init() {
         longestStreak = UserDefaults.standard.integer(forKey: longestStreakKey)
-        badges = Self.defaultBadges(longestStreak: longestStreak)
         updateStreak()
     }
 
@@ -34,7 +24,7 @@ class StreakManager: ObservableObject {
             UserDefaults.standard.set(longestStreak, forKey: longestStreakKey)
         }
 
-        badges = Self.defaultBadges(longestStreak: longestStreak)
+        BadgeManager.shared.checkBadges()
     }
 
     // MARK: - Streak Calculation
@@ -58,13 +48,4 @@ class StreakManager: ObservableObject {
         return streak
     }
 
-    // MARK: - Badges
-
-    static func defaultBadges(longestStreak: Int) -> [Badge] {
-        [
-            Badge(name: "Week Warrior", icon: "flame", requirement: 7, earned: longestStreak >= 7),
-            Badge(name: "Monthly Master", icon: "star.fill", requirement: 30, earned: longestStreak >= 30),
-            Badge(name: "Century Champion", icon: "trophy.fill", requirement: 100, earned: longestStreak >= 100),
-        ]
-    }
 }
