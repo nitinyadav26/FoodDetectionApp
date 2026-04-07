@@ -5,6 +5,7 @@ struct ContentView: View {
     @AppStorage("hasOnboarded") var hasOnboarded: Bool = false
     @StateObject private var networkMonitor = NetworkMonitor.shared
     @StateObject private var authManager = AuthManager.shared
+    @StateObject private var socialManager = SocialManager.shared
 
     var body: some View {
         if !hasOnboarded {
@@ -65,6 +66,13 @@ struct ContentView: View {
                             Image(systemName: "wave.3.right.circle")
                             Text("Pair Scale")
                         }
+
+                    SocialTabView()
+                        .tabItem {
+                            Image(systemName: "person.2.fill")
+                            Text("Social")
+                        }
+                        .badge(socialManager.pendingRequestCount)
 
                     ProfileView()
                         .tabItem {

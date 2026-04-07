@@ -3,6 +3,7 @@
 "tab_scan" = "Scan";
 "tab_coach" = "AI Coach";
 "tab_pair" = "Pair Scale";
+"tab_social" = "Social";
 "tab_profile" = "Profile";
 
 // Dashboard
@@ -84,3 +85,55 @@
 "ok" = "OK";
 "error" = "Error";
 "no_internet" = "No Internet Connection";
+
+// Social
+"social_title" = "Social";
+"social_section_friends" = "Friends";
+"social_section_feed" = "Feed";
+"social_section_challenges" = "Challenges";
+"social_section_leaderboard" = "Leaderboard";
+"social_search_friends" = "Search friends...";
+"social_pending_requests" = "Pending Requests";
+"social_friends_header" = "Friends";
+"social_no_friends" = "No friends yet. Add someone!";
+"social_wants_to_be_friend" = "Wants to be your friend";
+"social_add_friend" = "Add Friend";
+"social_friend_email_username" = "Email or username";
+"social_send_request" = "Send Request";
+"social_add_friend_message" = "Enter your friend's email or username to send a request.";
+"social_feed_empty" = "Your feed is empty";
+"social_feed_empty_subtitle" = "Add friends to see their activity here.";
+"social_active_challenges" = "Active Challenges";
+"social_available_challenges" = "Available Challenges";
+"social_no_challenges" = "No challenges yet";
+"social_create_first_challenge" = "Create your first challenge!";
+"social_join" = "Join";
+"social_participants" = "participants";
+"social_ended" = "Ended";
+"social_days_left %lld" = "%lld days left";
+"social_days" = "days";
+"social_challenge_details" = "Challenge Details";
+"social_challenge_title" = "Title";
+"social_challenge_description" = "Description";
+"social_challenge_goal" = "Goal";
+"social_target_value" = "Target value";
+"social_unit" = "Unit";
+"social_duration" = "Duration";
+"social_create_challenge" = "Create Challenge";
+"social_create" = "Create";
+"social_scope" = "Scope";
+"social_scope_friends" = "Friends";
+"social_scope_global" = "Global";
+"social_period" = "Period";
+"social_period_daily" = "Daily";
+"social_period_weekly" = "Weekly";
+"social_period_monthly" = "Monthly";
+"social_period_all_time" = "All Time";
+"social_leaderboard_empty" = "No leaderboard data yet";
+"social_badges" = "Badges";
+"social_day_streak" = "day streak";
+"social_scan_to_add" = "Scan to add me";
+"social_share_profile" = "Share Profile";
+"social_profile_share_subject" = "Add me on FoodSense";
+"social_profile_share_message" = "Let's track nutrition together on FoodSense!";
+"social_my_profile_card" = "My Profile Card";

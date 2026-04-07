@@ -3,6 +3,7 @@
 "tab_scan" = "स्कैन";
 "tab_coach" = "AI कोच";
 "tab_pair" = "स्केल जोड़ें";
+"tab_social" = "सोशल";
 "tab_profile" = "प्रोफ़ाइल";
 
 // Dashboard
@@ -84,3 +85,55 @@
 "ok" = "ठीक है";
 "error" = "त्रुटि";
 "no_internet" = "इंटरनेट कनेक्शन नहीं है";
+
+// Social
+"social_title" = "सोशल";
+"social_section_friends" = "दोस्त";
+"social_section_feed" = "फ़ीड";
+"social_section_challenges" = "चुनौतियां";
+"social_section_leaderboard" = "लीडरबोर्ड";
+"social_search_friends" = "दोस्त खोजें...";
+"social_pending_requests" = "लंबित अनुरोध";
+"social_friends_header" = "दोस्त";
+"social_no_friends" = "अभी तक कोई दोस्त नहीं। किसी को जोड़ें!";
+"social_wants_to_be_friend" = "आपका दोस्त बनना चाहता है";
+"social_add_friend" = "दोस्त जोड़ें";
+"social_friend_email_username" = "ईमेल या यूज़रनेम";
+"social_send_request" = "अनुरोध भेजें";
+"social_add_friend_message" = "अनुरोध भेजने के लिए अपने दोस्त का ईमेल या यूज़रनेम दर्ज करें।";
+"social_feed_empty" = "आपकी फ़ीड खाली है";
+"social_feed_empty_subtitle" = "उनकी गतिविधि यहां देखने के लिए दोस्त जोड़ें।";
+"social_active_challenges" = "सक्रिय चुनौतियां";
+"social_available_challenges" = "उपलब्ध चुनौतियां";
+"social_no_challenges" = "अभी तक कोई चुनौती नहीं";
+"social_create_first_challenge" = "अपनी पहली चुनौती बनाएं!";
+"social_join" = "शामिल हों";
+"social_participants" = "प्रतिभागी";
+"social_ended" = "समाप्त";
+"social_days_left %lld" = "%lld दिन शेष";
+"social_days" = "दिन";
+"social_challenge_details" = "चुनौती विवरण";
+"social_challenge_title" = "शीर्षक";
+"social_challenge_description" = "विवरण";
+"social_challenge_goal" = "लक्ष्य";
+"social_target_value" = "लक्ष्य मान";
+"social_unit" = "इकाई";
+"social_duration" = "अवधि";
+"social_create_challenge" = "चुनौती बनाएं";
+"social_create" = "बनाएं";
+"social_scope" = "दायरा";
+"social_scope_friends" = "दोस्त";
+"social_scope_global" = "वैश्विक";
+"social_period" = "अवधि";
+"social_period_daily" = "दैनिक";
+"social_period_weekly" = "साप्ताहिक";
+"social_period_monthly" = "मासिक";
+"social_period_all_time" = "सभी समय";
+"social_leaderboard_empty" = "अभी तक कोई लीडरबोर्ड डेटा नहीं";
+"social_badges" = "बैज";
+"social_day_streak" = "दिन की स्ट्रीक";
+"social_scan_to_add" = "मुझे जोड़ने के लिए स्कैन करें";
+"social_share_profile" = "प्रोफ़ाइल शेयर करें";
+"social_profile_share_subject" = "FoodSense पर मुझे जोड़ें";
+"social_profile_share_message" = "आइए FoodSense पर एक साथ पोषण ट्रैक करें!";
+"social_my_profile_card" = "मेरा प्रोफ़ाइल कार्ड";
