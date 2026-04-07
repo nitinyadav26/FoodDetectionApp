@@ -28,6 +28,10 @@ android {
         // Development only: set GEMINI_API_KEY in local.properties (git-ignored)
         val geminiKey = project.findProperty("GEMINI_API_KEY") as String? ?: ""
         buildConfigField("String", "GEMINI_API_KEY", "\"$geminiKey\"")
+
+        // Social features API base URL
+        val socialApiUrl = project.findProperty("SOCIAL_API_BASE_URL") as String? ?: ""
+        buildConfigField("String", "SOCIAL_API_BASE_URL", "\"$socialApiUrl\"")
     }
 
     signingConfigs {
