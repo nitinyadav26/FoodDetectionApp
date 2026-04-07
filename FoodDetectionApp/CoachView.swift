@@ -88,6 +88,45 @@ struct CoachView: View {
                     .cornerRadius(15)
                     .padding()
                     
+                    // AI Features Grid
+                    VStack(alignment: .leading, spacing: 12) {
+                        Text("AI Features")
+                            .font(.headline)
+                            .padding(.horizontal)
+
+                        LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())], spacing: 12) {
+                            NavigationLink(destination: NutritionistChatView()) {
+                                AIFeatureCard(icon: "message.fill", title: "Chat", color: .blue)
+                            }
+                            NavigationLink(destination: MealPlanView()) {
+                                AIFeatureCard(icon: "calendar", title: "Meal Plan", color: .green)
+                            }
+                            NavigationLink(destination: InsightsView()) {
+                                AIFeatureCard(icon: "chart.line.uptrend.xyaxis", title: "Insights", color: .purple)
+                            }
+                            NavigationLink(destination: PredictionView()) {
+                                AIFeatureCard(icon: "waveform.path.ecg", title: "Prediction", color: .orange)
+                            }
+                            NavigationLink(destination: FoodQualityView()) {
+                                AIFeatureCard(icon: "gauge.high", title: "Quality", color: .teal)
+                            }
+                            NavigationLink(destination: PortionEstimationView()) {
+                                AIFeatureCard(icon: "scalemass.fill", title: "Portions", color: .indigo)
+                            }
+                            NavigationLink(destination: BeforeAfterView()) {
+                                AIFeatureCard(icon: "arrow.left.arrow.right", title: "Before/After", color: .pink)
+                            }
+                            NavigationLink(destination: OCRScanView()) {
+                                AIFeatureCard(icon: "doc.text.viewfinder", title: "OCR Scan", color: .cyan)
+                            }
+                            NavigationLink(destination: QuizView()) {
+                                AIFeatureCard(icon: "questionmark.circle.fill", title: "Quiz", color: .yellow)
+                            }
+                        }
+                        .padding(.horizontal)
+                    }
+                    .padding(.vertical, 8)
+
                     // History Debug
                     DisclosureGroup("View Data Context") {
                         Text(historyString)
@@ -95,7 +134,7 @@ struct CoachView: View {
                             .padding()
                     }
                     .padding(.horizontal)
-                    
+
                     Spacer()
                 }
             }
@@ -191,5 +230,30 @@ struct CoachChip: View {
             .background(Color(UIColor.secondarySystemBackground))
             .cornerRadius(12)
         }
+    }
+}
+
+struct AIFeatureCard: View {
+    let icon: String
+    let title: String
+    let color: Color
+
+    var body: some View {
+        VStack(spacing: 8) {
+            Image(systemName: icon)
+                .font(.title2)
+                .foregroundColor(color)
+            Text(title)
+                .font(.caption2.bold())
+                .foregroundColor(.primary)
+                .multilineTextAlignment(.center)
+                .lineLimit(2)
+        }
+        .frame(maxWidth: .infinity)
+        .padding(.vertical, 14)
+        .background(color.opacity(0.1))
+        .cornerRadius(12)
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel(title)
     }
 }

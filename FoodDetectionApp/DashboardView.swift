@@ -9,6 +9,7 @@ struct DashboardView: View {
     @State private var selectedLog: NutritionManager.FoodLog?
     @State private var selectedDate = Date()
     @State private var showManualLog = false
+    @State private var showVoiceLog = false
     
     var body: some View {
         NavigationView {
@@ -20,6 +21,13 @@ struct DashboardView: View {
                             .font(.title)
                             .bold()
                         Spacer()
+                        Button(action: { showVoiceLog = true }) {
+                            Image(systemName: "mic.fill")
+                                .font(.title2)
+                                .foregroundColor(.purple)
+                        }
+                        .accessibilityLabel("Voice log")
+                        .accessibilityHint("Opens voice food logging")
                         Button(action: { showManualLog = true }) {
                             Image(systemName: "plus.circle.fill")
                                 .font(.title)
@@ -251,6 +259,9 @@ struct DashboardView: View {
             }
             .sheet(isPresented: $showManualLog) {
                 ManualLogView()
+            }
+            .sheet(isPresented: $showVoiceLog) {
+                VoiceLogView()
             }
             .onAppear {
                 healthManager.requestAuthorization()

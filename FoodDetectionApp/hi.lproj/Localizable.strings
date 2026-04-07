@@ -77,6 +77,118 @@
 "all_set" = "आप तैयार हैं!";
 "calculate_plan" = "मेरा प्लान बनाएं";
 
+// Voice Logging
+"voice_log_title" = "वॉइस लॉग";
+"tap_to_speak" = "अपना भोजन बोलने के लिए टैप करें";
+"listening" = "सुन रहा है...";
+"stop_recording" = "रिकॉर्डिंग बंद करें";
+"start_recording" = "वॉइस रिकॉर्डिंग शुरू करें";
+"you_said" = "आपने कहा:";
+"searching_food" = "भोजन खोज रहा है...";
+"log_it" = "लॉग करें";
+"logged" = "लॉग हो गया!";
+
+// Nutritionist Chat
+"nutritionist_chat_title" = "AI पोषण विशेषज्ञ";
+"chat_subtitle" = "अपने व्यक्तिगत पोषण विशेषज्ञ से चैट करें";
+"new_chat" = "नई चैट";
+"ask_nutrition" = "पोषण के बारे में पूछें...";
+"thinking" = "सोच रहा है...";
+"offline_chat" = "आप ऑफ़लाइन हैं। चैट करने के लिए इंटरनेट से कनेक्ट करें।";
+
+// Meal Plan
+"meal_plan_title" = "7-दिन का भोजन योजना";
+"meal_plan_subtitle" = "AI आपके लक्ष्यों के आधार पर बनाता है";
+"generate" = "बनाएं";
+"generating" = "बना रहा है...";
+"no_meal_plan" = "अभी कोई भोजन योजना नहीं";
+"tap_generate" = "व्यक्तिगत 7-दिन की योजना बनाने के लिए बनाएं टैप करें";
+"breakfast" = "नाश्ता";
+"lunch" = "दोपहर का खाना";
+"dinner" = "रात का खाना";
+"snack" = "स्नैक";
+
+// Insights
+"insights_title" = "पोषण अंतर्दृष्टि";
+"calorie_trend" = "कैलोरी प्रवृत्ति";
+"macro_breakdown" = "मैक्रो विश्लेषण (औसत/दिन)";
+"top_foods" = "शीर्ष खाद्य पदार्थ";
+"ai_tips" = "AI सुझाव";
+"get_tips" = "सुझाव पाएं";
+"loading_tips" = "लोड हो रहा है...";
+
+// Prediction
+"prediction_title" = "वज़न भविष्यवाणी";
+"prediction_subtitle" = "आपकी कैलोरी सेवन के आधार पर";
+"current" = "वर्तमान";
+"projected" = "अनुमानित";
+"on_track" = "सही राह पर";
+"off_track" = "राह से भटका";
+"weight_projection" = "वज़न अनुमान";
+"calculation_details" = "गणना विवरण";
+
+// Food Quality
+"quality_title" = "खाद्य गुणवत्ता स्कोर";
+"quality_subtitle" = "आज आपका आहार कितना स्वस्थ है?";
+"out_of_100" = "100 में से";
+"score_breakdown" = "स्कोर विवरण";
+"how_to_improve" = "कैसे सुधारें";
+"excellent" = "उत्कृष्ट";
+"good" = "अच्छा";
+"fair" = "ठीक";
+"needs_work" = "सुधार की ज़रूरत";
+
+// Portion Estimation
+"portion_title" = "पोर्शन अनुमान";
+"portion_subtitle" = "AI आपकी सर्विंग साइज़ का अनुमान लगाता है";
+"take_photo" = "अपने भोजन की फ़ोटो लें";
+"retake_photo" = "दोबारा फ़ोटो लें";
+"analyzing_portion" = "पोर्शन का विश्लेषण...";
+"portion_size" = "पोर्शन साइज़";
+"log_this_meal" = "यह भोजन लॉग करें";
+
+// Before/After
+"before_after_title" = "पहले और बाद";
+"before_after_subtitle" = "भोजन और खपत की तुलना करें";
+"before" = "पहले";
+"after" = "बाद में";
+"compare_analyze" = "तुलना और विश्लेषण";
+"analyzing" = "विश्लेषण हो रहा है...";
+"consumption_analysis" = "खपत विश्लेषण";
+"reset" = "रीसेट";
+
+// OCR Scan
+"ocr_title" = "लेबल स्कैनर";
+"ocr_subtitle" = "AI OCR से पोषण लेबल स्कैन करें";
+"scan_label" = "पोषण लेबल स्कैन करें";
+"scan_hint" = "अपना कैमरा पोषण तथ्य लेबल की ओर करें";
+"reading_label" = "लेबल पढ़ रहा है...";
+"product_name" = "उत्पाद का नाम";
+"nutrition_facts" = "पोषण तथ्य (प्रति 100g)";
+"log_this_food" = "यह खाना लॉग करें";
+
+// Quiz
+"quiz_title" = "पोषण क्विज़";
+"quiz_subtitle" = "अपने पोषण ज्ञान का परीक्षण करें";
+"quiz_complete" = "क्विज़ पूरी!";
+"play_again" = "फिर से खेलें";
+"next_question" = "अगला सवाल";
+"see_results" = "परिणाम देखें";
+"explanation" = "व्याख्या";
+"xp_earned" = "+10 XP अर्जित!";
+
+// AI Features
+"ai_features" = "AI सुविधाएं";
+"chat" = "चैट";
+"meal_plan" = "भोजन योजना";
+"insights" = "अंतर्दृष्टि";
+"prediction" = "भविष्यवाणी";
+"quality" = "गुणवत्ता";
+"portions" = "पोर्शन";
+"before_after" = "पहले/बाद";
+"ocr_scan" = "OCR स्कैन";
+"quiz" = "क्विज़";
+
 // Common
 "cancel" = "रद्द करें";
 "add_to_log" = "लॉग में जोड़ें";
@@ -84,6 +196,7 @@
 "ok" = "ठीक है";
 "error" = "त्रुटि";
 "no_internet" = "इंटरनेट कनेक्शन नहीं है";
+"done" = "हो गया";
 
 // XP & Levels
 "title_newbie" = "नौसिखिया";
