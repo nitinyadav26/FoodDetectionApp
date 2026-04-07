@@ -4,6 +4,8 @@ struct DashboardView: View {
     @ObservedObject var nutritionManager = NutritionManager.shared
     @ObservedObject var healthManager = HealthKitManager.shared
     @ObservedObject var streakManager = StreakManager.shared
+    @ObservedObject var xpManager = XPManager.shared
+    @ObservedObject var badgeManager = BadgeManager.shared
     @State private var selectedLog: NutritionManager.FoodLog?
     @State private var selectedDate = Date()
     @State private var showManualLog = false
@@ -134,9 +136,10 @@ struct DashboardView: View {
                     .listRowSeparator(.hidden)
                     .listRowBackground(Color.clear)
                     
-                    // Streak Card
+                    // Streak & XP Card
                     Section {
                         VStack(spacing: 12) {
+                            // Streak row
                             HStack {
                                 Image(systemName: "flame.fill")
                                     .font(.title2)
@@ -153,19 +156,53 @@ struct DashboardView: View {
                             }
                             .accessibilityElement(children: .combine)
 
-                            // Earned badges
-                            let earnedBadges = streakManager.badges.filter { $0.earned }
-                            if !earnedBadges.isEmpty {
+                            // XP Progress Bar
+                            VStack(alignment: .leading, spacing: 4) {
+                                HStack {
+                                    Text("Lv.\(xpManager.level) \(xpManager.title)")
+                                        .font(.caption)
+                                        .fontWeight(.semibold)
+                                    Spacer()
+                                    Text("\(xpManager.totalXP) XP")
+                                        .font(.caption2)
+                                        .foregroundColor(.secondary)
+                                }
+                                ProgressView(value: xpManager.progressToNext)
+                                    .tint(.blue)
+                                    .accessibilityLabel("XP progress: \(Int(xpManager.progressToNext * 100)) percent to next level")
+                            }
+                            .padding(.vertical, 4)
+
+                            // Top 3 earned badges + View All
+                            let topBadges = badgeManager.topEarnedBadges(count: 3)
+                            if !topBadges.isEmpty {
                                 HStack(spacing: 12) {
-                                    ForEach(earnedBadges) { badge in
+                                    ForEach(topBadges) { badge in
                                         HStack(spacing: 4) {
                                             Image(systemName: badge.icon)
-                                                .foregroundColor(.orange)
-                                            Text(badge.name)
+                                                .foregroundColor(.blue)
+                                            Text(NSLocalizedString(badge.name, comment: ""))
                                                 .font(.caption2)
                                         }
                                     }
                                     Spacer()
+                                }
+                            }
+
+                            NavigationLink(destination: BadgesView()) {
+                                HStack {
+                                    Image(systemName: "rosette")
+                                        .foregroundColor(.blue)
+                                    Text(NSLocalizedString("view_all_badges", comment: ""))
+                                        .font(.subheadline)
+                                        .foregroundColor(.blue)
+                                    Spacer()
+                                    Text("\(badgeManager.earnedCount)/\(badgeManager.totalCount)")
+                                        .font(.caption)
+                                        .foregroundColor(.secondary)
+                                    Image(systemName: "chevron.right")
+                                        .font(.caption)
+                                        .foregroundColor(.secondary)
                                 }
                             }
                         }

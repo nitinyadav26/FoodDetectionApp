@@ -2,7 +2,9 @@ import SwiftUI
 
 struct ProfileView: View {
     @ObservedObject var nutritionManager = NutritionManager.shared
-    
+    @ObservedObject var xpManager = XPManager.shared
+    @ObservedObject var badgeManager = BadgeManager.shared
+
     @State private var weight: String = ""
     @State private var height: String = ""
     @State private var age: String = ""
@@ -103,6 +105,57 @@ struct ProfileView: View {
                         Text("\(nutritionManager.calorieBudget) kcal")
                             .bold()
                             .foregroundColor(.green)
+                    }
+                }
+
+                // Achievements Section
+                Section(header: Text(NSLocalizedString("achievements_title", comment: ""))) {
+                    // Level & Title
+                    HStack {
+                        Image(systemName: "star.circle.fill")
+                            .foregroundColor(.blue)
+                            .font(.title2)
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text("Lv.\(xpManager.level) \(xpManager.title)")
+                                .font(.headline)
+                            Text("\(xpManager.totalXP) \(NSLocalizedString("xp_total", comment: ""))")
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                        }
+                        Spacer()
+                    }
+
+                    // XP Progress Bar
+                    VStack(alignment: .leading, spacing: 4) {
+                        HStack {
+                            Text(NSLocalizedString("xp_progress", comment: ""))
+                                .font(.caption)
+                            Spacer()
+                            Text("\(xpManager.xpInCurrentLevel)/\(xpManager.xpToNextLevel)")
+                                .font(.caption2)
+                                .foregroundColor(.secondary)
+                        }
+                        ProgressView(value: xpManager.progressToNext)
+                            .tint(.blue)
+                    }
+
+                    // Badge Count
+                    HStack {
+                        Image(systemName: "rosette")
+                            .foregroundColor(.orange)
+                        Text(NSLocalizedString("badges_earned_label", comment: ""))
+                        Spacer()
+                        Text("\(badgeManager.earnedCount)/\(badgeManager.totalCount)")
+                            .foregroundColor(.secondary)
+                    }
+
+                    // Navigate to BadgesView
+                    NavigationLink(destination: BadgesView()) {
+                        HStack {
+                            Image(systemName: "medal.fill")
+                                .foregroundColor(.blue)
+                            Text(NSLocalizedString("view_all_badges", comment: ""))
+                        }
                     }
                 }
             }
