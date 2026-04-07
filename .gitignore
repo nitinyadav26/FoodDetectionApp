@@ -56,6 +56,7 @@ build*.log
 __pycache__/
 *.pyc
 INDB_data/.venv/
+INDB_data/.git/
 
 # Interview prep (not app code)
 interview_prep/
