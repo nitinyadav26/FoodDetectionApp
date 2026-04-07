@@ -13,6 +13,7 @@ import com.foodsense.android.services.LocalModelDetector
 import com.foodsense.android.services.NetworkMonitor
 import com.foodsense.android.services.NutritionManager
 import com.foodsense.android.services.StreakManager
+import com.foodsense.android.services.VoiceLoggingManager
 import com.foodsense.android.services.XPManager
 import com.google.firebase.FirebaseApp
 
@@ -22,6 +23,8 @@ class FoodSenseApplication : Application() {
             .addMigrations(FoodSenseDatabase.MIGRATION_1_2)
             .build()
     }
+
+    val voiceLoggingManager: VoiceLoggingManager by lazy { VoiceLoggingManager(this) }
 
     val authManager: AuthManager by lazy { AuthManager() }
     val nutritionManager: NutritionManager by lazy { NutritionManager(this) }

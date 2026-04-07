@@ -4,8 +4,12 @@ import android.graphics.Bitmap
 import android.util.Base64
 import com.foodsense.android.BuildConfig
 import com.foodsense.android.data.FoodLog
+import com.foodsense.android.data.MealPlanDay
 import com.foodsense.android.data.NutritionInfo
+import com.foodsense.android.data.PlannedMeal
+import com.foodsense.android.data.QuizQuestion
 import com.foodsense.android.data.UserStats
+import com.foodsense.android.data.WeeklyInsight
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.json.Json
@@ -221,6 +225,163 @@ class APIService {
             postGemini(body)
         }
 
+        parseTextResponse(raw)
+    }
+
+    suspend fun generateMealPlan(
+        userStats: UserStats?,
+        calorieBudget: Int,
+    ): List<MealPlanDay> = withContext(Dispatchers.IO) {
+        checkRateLimit()
+
+        val context = buildString {
+            append("Calorie budget: $calorieBudget kcal/day. ")
+            if (userStats != null) {
+                append("User: Age ${userStats.age}, ${userStats.gender}, ${userStats.weight}kg, Goal: ${userStats.goal}.")
+            }
+        }
+
+        val promptText = """
+            $context
+            Generate a 7-day meal plan. Return a JSON array with 7 objects, each with:
+            - "day": day name (e.g. "Monday")
+            - "breakfast": {"name":"...", "calories":N, "protein":N, "carbs":N, "fats":N, "description":"..."}
+            - "lunch": same format
+            - "dinner": same format
+            - "snack": same format
+            Return ONLY the JSON array.
+        """.trimIndent()
+
+        val body = buildJsonObject {
+            put("contents", buildJsonArray {
+                add(buildJsonObject {
+                    put("parts", buildJsonArray {
+                        add(buildJsonObject { put("text", JsonPrimitive(promptText)) })
+                    })
+                })
+            })
+            put("generationConfig", buildJsonObject {
+                put("responseMimeType", JsonPrimitive("application/json"))
+                put("maxOutputTokens", JsonPrimitive(4000))
+            })
+        }
+        val raw = postGemini(body)
+        val text = extractCandidateText(raw)
+            .replace("```json", "").replace("```", "").trim()
+        json.decodeFromString<List<MealPlanDay>>(text)
+    }
+
+    suspend fun getWeeklyInsights(
+        userStats: UserStats?,
+        history: String,
+        healthData: String,
+    ): WeeklyInsight = withContext(Dispatchers.IO) {
+        checkRateLimit()
+
+        val context = buildString {
+            if (userStats != null) {
+                append("User: Age ${userStats.age}, ${userStats.gender}, ${userStats.weight}kg, Goal: ${userStats.goal}. ")
+            }
+            append("Health: $healthData. ")
+            append("Food history:\n$history")
+        }
+
+        val promptText = """
+            Analyze this user's weekly nutrition data and return a JSON object with:
+            - "averageCalories": int
+            - "averageProtein": int
+            - "averageCarbs": int
+            - "averageFats": int
+            - "topFoods": list of top 5 food names
+            - "tips": list of 3-4 short tips
+            - "trend": one sentence summary
+            - "dailyCalories": list of 7 ints (daily calorie totals, estimate if needed)
+
+            Data: $context
+            Return ONLY the JSON.
+        """.trimIndent()
+
+        val body = buildJsonObject {
+            put("contents", buildJsonArray {
+                add(buildJsonObject {
+                    put("parts", buildJsonArray {
+                        add(buildJsonObject { put("text", JsonPrimitive(promptText)) })
+                    })
+                })
+            })
+            put("generationConfig", buildJsonObject {
+                put("responseMimeType", JsonPrimitive("application/json"))
+            })
+        }
+        val raw = postGemini(body)
+        val text = extractCandidateText(raw)
+            .replace("```json", "").replace("```", "").trim()
+        json.decodeFromString<WeeklyInsight>(text)
+    }
+
+    suspend fun getQuizQuestion(): QuizQuestion = withContext(Dispatchers.IO) {
+        checkRateLimit()
+
+        val promptText = """
+            Generate a nutrition/health trivia question. Return a JSON object with:
+            - "question": the question text
+            - "options": array of exactly 4 answer strings
+            - "correctIndex": index (0-3) of the correct answer
+            - "explanation": short explanation of the correct answer
+            Return ONLY the JSON.
+        """.trimIndent()
+
+        val body = buildJsonObject {
+            put("contents", buildJsonArray {
+                add(buildJsonObject {
+                    put("parts", buildJsonArray {
+                        add(buildJsonObject { put("text", JsonPrimitive(promptText)) })
+                    })
+                })
+            })
+            put("generationConfig", buildJsonObject {
+                put("responseMimeType", JsonPrimitive("application/json"))
+                put("temperature", JsonPrimitive(0.9))
+            })
+        }
+        val raw = postGemini(body)
+        val text = extractCandidateText(raw)
+            .replace("```json", "").replace("```", "").trim()
+        json.decodeFromString<QuizQuestion>(text)
+    }
+
+    suspend fun predictWeight(
+        userStats: UserStats?,
+        history: String,
+    ): String = withContext(Dispatchers.IO) {
+        checkRateLimit()
+
+        val context = buildString {
+            if (userStats != null) {
+                append("User: ${userStats.weight}kg, Goal: ${userStats.goal}. ")
+            }
+            append("Recent food history:\n$history")
+        }
+
+        val promptText = """
+            Based on this user's data, predict their weight trend for the next 4 weeks.
+            Be concise (max 100 words). $context
+        """.trimIndent()
+
+        val body = buildJsonObject {
+            put("contents", buildJsonArray {
+                add(buildJsonObject {
+                    put("parts", buildJsonArray {
+                        add(buildJsonObject { put("text", JsonPrimitive(promptText)) })
+                    })
+                })
+            })
+            put("generationConfig", buildJsonObject {
+                put("maxOutputTokens", JsonPrimitive(500))
+                put("temperature", JsonPrimitive(0.7))
+            })
+        }
+        val raw = postGemini(body)
         parseTextResponse(raw)
     }
 
