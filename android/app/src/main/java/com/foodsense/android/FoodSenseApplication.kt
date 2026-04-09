@@ -44,11 +44,20 @@ class FoodSenseApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        // Initialize Firebase safely (won't crash with placeholder google-services.json)
-        try {
-            FirebaseApp.initializeApp(this)
-        } catch (e: Exception) {
-            android.util.Log.w("FoodSense", "Firebase init failed (placeholder config?): ${e.message}")
+        // Initialize Firebase safely — skip entirely with placeholder google-services.json
+        val apiKey = try {
+            val resId = resources.getIdentifier("google_api_key", "string", packageName)
+            if (resId != 0) getString(resId) else ""
+        } catch (_: Exception) { "" }
+
+        if (apiKey.isNotBlank() && !apiKey.contains("placeholder")) {
+            try {
+                FirebaseApp.initializeApp(this)
+            } catch (e: Exception) {
+                android.util.Log.w("FoodSense", "Firebase init failed: ${e.message}")
+            }
+        } else {
+            android.util.Log.w("FoodSense", "Skipping Firebase init — placeholder config detected")
         }
         nutritionManager
         foodDatabase

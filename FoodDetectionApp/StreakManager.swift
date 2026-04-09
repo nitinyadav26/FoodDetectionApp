@@ -9,9 +9,12 @@ class StreakManager: ObservableObject {
 
     private let longestStreakKey = "longestStreak"
 
+    private var isInitializing = true
+
     init() {
         longestStreak = UserDefaults.standard.integer(forKey: longestStreakKey)
         updateStreak()
+        isInitializing = false
     }
 
     /// Recalculate the current streak from NutritionManager logs.
@@ -24,7 +27,10 @@ class StreakManager: ObservableObject {
             UserDefaults.standard.set(longestStreak, forKey: longestStreakKey)
         }
 
-        BadgeManager.shared.checkBadges()
+        // Avoid circular dependency during singleton initialization
+        if !isInitializing {
+            BadgeManager.shared.checkBadges()
+        }
     }
 
     // MARK: - Streak Calculation

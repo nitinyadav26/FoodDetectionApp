@@ -1,5 +1,6 @@
 import SwiftUI
 import CoreImage.CIFilterBuiltins
+import FirebaseAuth
 
 struct ProfileCardView: View {
     @StateObject private var authManager = AuthManager.shared
@@ -92,19 +93,38 @@ struct ProfileCardView: View {
                 .padding(.horizontal)
 
                 // Share button
-                ShareLink(
-                    item: shareText,
-                    subject: Text("social_profile_share_subject"),
-                    message: Text("social_profile_share_message")
-                ) {
-                    Label(String(localized: "social_share_profile"), systemImage: "square.and.arrow.up")
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .background(Color.green)
-                        .cornerRadius(14)
-                        .padding(.horizontal)
+                if #available(iOS 16.0, *) {
+                    ShareLink(
+                        item: shareText,
+                        subject: Text("social_profile_share_subject"),
+                        message: Text("social_profile_share_message")
+                    ) {
+                        Label(String(localized: "social_share_profile"), systemImage: "square.and.arrow.up")
+                            .font(.headline)
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(Color.green)
+                            .cornerRadius(14)
+                            .padding(.horizontal)
+                    }
+                } else {
+                    Button {
+                        let av = UIActivityViewController(activityItems: [shareText], applicationActivities: nil)
+                        if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                           let root = scene.windows.first?.rootViewController {
+                            root.present(av, animated: true)
+                        }
+                    } label: {
+                        Label(String(localized: "social_share_profile"), systemImage: "square.and.arrow.up")
+                            .font(.headline)
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(Color.green)
+                            .cornerRadius(14)
+                            .padding(.horizontal)
+                    }
                 }
             }
             .padding(.vertical)
