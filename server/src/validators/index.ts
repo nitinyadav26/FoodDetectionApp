@@ -99,3 +99,8 @@ export const quizSubmitSchema = z.object({
 export const verifyTokenSchema = z.object({
   token: z.string().min(1, "token is required"),
 });
+
+export const registerPushTokenSchema = z.object({
+  token: z.string().min(1, "token is required"),
+  platform: z.enum(["ios", "android", "web"]),
+});
