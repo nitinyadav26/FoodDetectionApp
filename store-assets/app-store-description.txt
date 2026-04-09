@@ -1,42 +1,85 @@
 FoodSense - AI-Powered Nutrition Tracker
 
-SUBTITLE: Scan Food, Track Nutrition, Get Healthier
+SUBTITLE: Scan Food, Track Nutrition, Compete with Friends
 
 DESCRIPTION:
-FoodSense is your intelligent nutrition companion that makes healthy eating effortless. Simply point your camera at any meal and let AI instantly identify the food and provide detailed nutritional information.
+FoodSense is your intelligent nutrition companion that makes healthy eating effortless and social. Point your camera at any meal and let AI instantly identify the food and provide detailed nutritional information. Log meals by voice, chat with an AI nutritionist, compete in challenges with friends, and earn badges as you build healthier habits.
 
 KEY FEATURES:
 
-- AI Food Scanner: Take a photo of any meal and get instant nutritional analysis powered by Google Gemini AI. Identifies Indian and international dishes with calorie, protein, carb, and fat breakdowns.
+AI Food Scanner
+Take a photo of any meal and get instant nutritional analysis powered by Google Gemini AI. Identifies Indian and international dishes with calorie, protein, carb, and fat breakdowns. Includes food quality scoring (0-100), portion estimation, and before/after plate analysis.
 
-- Offline Food Detection: Built-in YOLOv8 machine learning model detects 95+ Indian food items without an internet connection. Works anywhere, anytime.
+Voice Food Logging
+Say what you ate and FoodSense logs it automatically. Hands-free meal tracking powered by on-device speech recognition.
 
-- Barcode Scanner: Scan packaged food barcodes to instantly look up nutrition facts from the Open Food Facts database.
+Offline Food Detection
+Built-in YOLOv8 machine learning model detects 95+ Indian food items without an internet connection. Works anywhere, anytime.
 
-- Smart Nutrition Tracking: Log meals with automatic portion scaling. Track daily calories, protein, carbs, and fats against personalized goals calculated using the Mifflin-St Jeor equation.
+Barcode & Label Scanner
+Scan packaged food barcodes to instantly look up nutrition facts from the Open Food Facts database. Nutrition label OCR reads and logs packaged food info directly from photos.
 
-- AI Health Coach: Get personalized nutrition advice, recipe suggestions, and motivation from your AI-powered health coach that understands your eating patterns and goals.
+Smart Nutrition Tracking
+Log meals with automatic portion scaling. Track daily calories, protein, carbs, and fats against personalized goals calculated using the Mifflin-St Jeor equation.
 
-- Health Integration: Syncs with Apple Health (iOS) and Health Connect (Android) for steps, active calories, sleep, and hydration data.
+AI Nutritionist Chat
+Get personalized nutrition advice, recipe suggestions, and motivation from a persistent AI health coach that remembers your eating patterns, goals, and conversation history.
 
-- Smart Scale Pairing: Connect your Bluetooth smart scale for automatic weight-based portion calculations.
+7-Day Meal Plans
+AI-generated weekly meal plans tailored to your calorie targets, dietary preferences, and nutritional goals.
 
-- Daily Insights: View nutrition trends, streaks, and earn badges for consistent healthy eating habits.
+Weekly Insights & Predictions
+Visual charts showing your nutrition trends, weight predictions, and actionable recommendations to improve your diet.
 
-- Beautiful Dashboard: At-a-glance view of your daily nutrition, health metrics, and food log with date navigation.
+Daily Nutrition Quiz
+Test and grow your nutrition knowledge with AI-generated daily quizzes. Earn XP for correct answers.
 
-- Privacy First: Your data stays on your device. Optional cloud sync with Firebase. No ads, no selling data.
+Social & Friends
+Add friends, view their activity, and share your nutrition wins. Generate a QR profile card for easy connection.
 
-KEYWORDS: nutrition, food scanner, calorie counter, diet tracker, AI nutrition, food detection, health, Indian food, meal tracker, fitness
+Activity Feed
+See what your friends are logging, celebrate their milestones with emoji reactions, and stay inspired by the community.
+
+Challenges
+Create or join nutrition challenges with friends. Track progress on shared goals like calorie targets, protein streaks, or logging consistency.
+
+Leaderboards & Leagues
+Compete on friends, global, weekly, and monthly leaderboards. Climb through league tiers from Bronze to Diamond based on your XP.
+
+Gamification & XP System
+Earn XP for logging food (+10), maintaining streaks (+5/day), unlocking badges (+25), winning challenges (+50), and acing quizzes (+15). Progress through 50 levels and 7 titles from Newbie to Legend.
+
+50+ Badges
+Collect badges across 6 categories: Streak, Logging, Nutrition, Social, Challenges, and Special. Track your collection and showcase achievements on your profile.
+
+Health Integration
+Syncs with Apple Health for steps, active calories, sleep, and hydration data.
+
+Smart Scale Pairing
+Connect your Bluetooth smart scale for automatic weight-based portion calculations.
+
+Home Screen Widget
+Glanceable calorie and macro tracking right on your home screen.
+
+Privacy First
+Your data stays on your device. Optional cloud sync with Firebase. No ads, no selling data.
+
+KEYWORDS: nutrition, food scanner, calorie counter, diet tracker, AI nutrition, food detection, health, Indian food, meal tracker, fitness, social, challenges, badges, voice logging, meal plan, leaderboard, XP, gamification, AI coach, nutrition quiz
 
 CATEGORY: Health & Fitness
 
-WHAT'S NEW (v1.0):
-- Initial release
-- AI-powered food scanning with 95+ Indian food recognition
-- Personalized nutrition goals and AI coaching
-- Apple Health / Health Connect integration
-- Bluetooth smart scale support
-- Barcode scanning
-- Light and dark mode support
-- English and Hindi localization
+WHAT'S NEW (v1.1):
+- Social Tab: Add friends, activity feed with emoji reactions, QR profile cards
+- Challenges: Create and join nutrition challenges, track group progress
+- Leaderboards & Leagues: Friends, global, weekly, and monthly rankings with Bronze-to-Diamond tiers
+- XP & Levels: Earn XP for every action, progress through 50 levels and 7 titles
+- 50+ Badges: Collect achievements across 6 categories
+- Voice Food Logging: Say what you ate for hands-free meal tracking
+- AI Nutritionist Chat: Persistent conversation with your personal AI health coach
+- 7-Day Meal Plans: AI-generated weekly plans matching your goals
+- Weekly Insights: Nutrition trend charts and weight predictions
+- Daily Quiz: Test your nutrition knowledge and earn XP
+- Nutrition Label OCR: Scan and log nutrition info from food packaging
+- Food Quality Scoring: Get a 0-100 quality score for every meal
+- Cloud Sync: Cross-device data synchronization via server backend
+- Performance improvements and bug fixes

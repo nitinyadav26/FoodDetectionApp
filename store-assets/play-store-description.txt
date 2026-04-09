@@ -1,26 +1,46 @@
 SHORT DESCRIPTION (80 chars):
-AI-powered food scanner & nutrition tracker. Scan meals, track calories, get fit.
+AI food scanner with social challenges, badges, voice logging & meal plans.
 
 FULL DESCRIPTION:
-FoodSense uses artificial intelligence to make nutrition tracking effortless. Point your camera at any meal for instant nutritional analysis, or scan barcodes on packaged foods.
+FoodSense uses artificial intelligence to make nutrition tracking effortless and social. Point your camera at any meal for instant nutritional analysis, log food by voice, chat with an AI nutritionist, compete in challenges with friends, and earn badges as you level up.
 
 FEATURES:
-- AI Food Scanner: Instant nutrition analysis powered by Google Gemini AI
+- AI Food Scanner: Instant nutrition analysis powered by Google Gemini AI with food quality scoring and portion estimation
+- Voice Logging: Say what you ate and FoodSense logs it automatically
 - Offline Detection: 95+ Indian foods recognized without internet using on-device ML
-- Barcode Scanner: Look up packaged food nutrition via Open Food Facts
+- Barcode & Label Scanner: Look up packaged food nutrition via Open Food Facts, plus OCR for nutrition labels
 - Smart Tracking: Log meals with automatic portion scaling and personalized calorie goals
-- AI Health Coach: Personalized advice based on your eating history and health goals
+- AI Nutritionist Chat: Persistent AI health coach that remembers your history and goals
+- 7-Day Meal Plans: AI-generated weekly plans tailored to your calorie targets and preferences
+- Weekly Insights: Nutrition trend charts, weight predictions, and actionable recommendations
+- Daily Quiz: Test your nutrition knowledge and earn XP with AI-generated questions
+- Social & Friends: Add friends, share progress, and generate QR profile cards
+- Activity Feed: See friends' meals and milestones, react with emojis
+- Challenges: Create or join group nutrition challenges and track progress together
+- Leaderboards & Leagues: Compete on friends, global, weekly, and monthly rankings with Bronze-to-Diamond tiers
+- XP & Levels: Earn XP for logging, streaks, badges, challenges, and quizzes. Progress through 50 levels and 7 titles from Newbie to Legend
+- 50+ Badges: Collect achievements across 6 categories (Streak, Logging, Nutrition, Social, Challenges, Special)
 - Health Connect: Sync steps, calories, sleep, and hydration data
 - Bluetooth Scale: Connect smart scales for portion-based logging
-- Streaks & Badges: Stay motivated with daily logging streaks
+- Home Screen Widget: Glanceable calorie and macro tracking
 - Light & Dark Mode: Beautiful Material You dynamic theming on Android 12+
 - Multilingual: English and Hindi support
-- Privacy First: Data stays on device, optional cloud sync
+- Privacy First: Data stays on device, optional cloud sync, no ads
 
 CATEGORY: Health & Fitness
 CONTENT RATING: Everyone
 CONTACT EMAIL: support@foodsense-app.com
 PRIVACY POLICY: https://foodsense-app.web.app/privacy-policy
 
-WHAT'S NEW (v1.0):
-Initial release with AI food scanning, nutrition tracking, and AI coaching.
+WHAT'S NEW (v1.1):
+- Social tab with friends, activity feed, emoji reactions, and QR profile cards
+- Create and join nutrition challenges with group progress tracking
+- Leaderboards and leagues with Bronze-to-Diamond tier rankings
+- XP system with 50 levels, 7 titles, and 50+ collectible badges
+- Voice food logging for hands-free meal tracking
+- AI nutritionist chat with persistent conversation history
+- AI-generated 7-day meal plans and weekly nutrition insights
+- Daily nutrition quiz with XP rewards
+- Nutrition label OCR and food quality scoring
+- Cloud sync for cross-device data
+- Performance improvements and bug fixes
