@@ -9,5 +9,6 @@ export const config = {
   geminiApiKey: process.env.GEMINI_API_KEY || "",
   firebaseServiceAccountPath: process.env.FIREBASE_SERVICE_ACCOUNT_PATH || "",
   jwtSecret: process.env.JWT_SECRET || "dev-secret",
+  storageBucket: process.env.FIREBASE_STORAGE_BUCKET || "",
   isDev: process.env.NODE_ENV !== "production",
 };

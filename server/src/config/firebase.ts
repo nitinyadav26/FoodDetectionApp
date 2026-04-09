@@ -12,9 +12,12 @@ export function initFirebase(): void {
       const serviceAccount = require(config.firebaseServiceAccountPath);
       admin.initializeApp({
         credential: admin.credential.cert(serviceAccount),
+        storageBucket: config.storageBucket || undefined,
       });
     } else {
-      admin.initializeApp();
+      admin.initializeApp({
+        storageBucket: config.storageBucket || undefined,
+      });
     }
     initialized = true;
     logger.info("Firebase Admin initialized");

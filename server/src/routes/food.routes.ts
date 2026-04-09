@@ -3,6 +3,7 @@ import * as ctrl from "../controllers/food.controller";
 import { authMiddleware } from "../middleware/auth";
 import { validate } from "../middleware/validate";
 import { analyzeFoodSchema, searchFoodSchema, logFoodSchema } from "../validators";
+import { upload } from "../middleware/upload";
 
 const router = Router();
 
@@ -10,5 +11,6 @@ router.post("/analyze", authMiddleware, validate(analyzeFoodSchema), ctrl.analyz
 router.post("/search", authMiddleware, validate(searchFoodSchema), ctrl.searchFood);
 router.post("/log", authMiddleware, validate(logFoodSchema), ctrl.logFood);
 router.get("/logs", authMiddleware, ctrl.getFoodLogs);
+router.post("/upload-image", authMiddleware, upload.single("image"), ctrl.uploadFoodImage);
 
 export default router;
