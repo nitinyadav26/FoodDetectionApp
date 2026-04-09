@@ -102,8 +102,18 @@ class BadgeManager: ObservableObject {
             unlock("sp_level_50")
         }
 
-        // ── Social badges ── (stub: always false for now)
-        // These require social features to be implemented.
+        // ── Social badges ──
+        let social = SocialManager.shared
+        let feedPostCount = social.myFeedPostCount
+        let friendCount = social.friends.count
+        if feedPostCount >= 1 { unlock("soc_share_1") }
+        if feedPostCount >= 10 { unlock("soc_share_10") }
+        if friendCount >= 1 { unlock("soc_invite_1") }
+        if friendCount >= 5 { unlock("soc_invite_5") }
+        if UserDefaults.standard.bool(forKey: "has_left_review") { unlock("soc_review") }
+        if social.activeChallenges.count >= 1 { unlock("soc_community") }
+        if social.completedChallengeCount >= 3 { unlock("soc_mentor") }
+        if friendCount >= 10 { unlock("soc_influencer") }
 
         // ── Challenge badges ── (basic checks)
         // First challenge badge is awarded on first log

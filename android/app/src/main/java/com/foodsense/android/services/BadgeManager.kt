@@ -14,7 +14,11 @@ import java.time.Instant
 import java.time.LocalDate
 import java.time.ZoneId
 
-class BadgeManager(private val context: Context) {
+class BadgeManager(
+    private val context: Context,
+    private val socialManager: SocialManager,
+    private val authManager: AuthManager,
+) {
     private val app by lazy { context.applicationContext as FoodSenseApplication }
     private val db by lazy { app.database }
     private val scope = CoroutineScope(Dispatchers.IO)
@@ -117,12 +121,14 @@ class BadgeManager(private val context: Context) {
         tryUnlock("burn_500", healthData.burn >= 500)
         tryUnlock("all_health", healthData.water >= 2.0 && healthData.steps >= 10000 && healthData.sleep >= 7.0)
 
-        // Social badges -- stubs, always false for now
-        // tryUnlock("social_share", false)
-        // tryUnlock("social_invite", false)
-        // tryUnlock("social_review", false)
-        // tryUnlock("social_feedback", false)
-        // tryUnlock("social_community", false)
+        // Social badges
+        val currentUserId = authManager.currentUser.value?.uid
+        tryUnlock("social_share", socialManager.feedPosts.value.any { it.userId == currentUserId })
+        tryUnlock("social_invite", socialManager.friends.value.isNotEmpty())
+        val prefs = context.getSharedPreferences("foodsense", Context.MODE_PRIVATE)
+        tryUnlock("social_review", prefs.getBoolean("has_left_review", false))
+        tryUnlock("social_feedback", prefs.getBoolean("has_given_feedback", false))
+        tryUnlock("social_community", socialManager.challenges.value.any { it.isJoined })
 
         // Milestone badges
         tryUnlock("level_10", xpManager.level >= 10)

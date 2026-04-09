@@ -1,4 +1,5 @@
 import SwiftUI
+import StoreKit
 
 struct SettingsView: View {
     @AppStorage("appTheme") private var appTheme: String = "system"
@@ -28,6 +29,16 @@ struct SettingsView: View {
             Section(header: Text("Legal")) {
                 Link("Privacy Policy", destination: URL(string: "https://foodsense-app.web.app/privacy-policy")!)
                 Link("Terms of Service", destination: URL(string: "https://foodsense-app.web.app/terms-of-service")!)
+            }
+
+            Section(header: Text("Feedback")) {
+                Button("Rate FoodSense") {
+                    UserDefaults.standard.set(true, forKey: "has_left_review")
+                    if let scene = UIApplication.shared.connectedScenes
+                        .first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
+                        SKStoreReviewController.requestReview(in: scene)
+                    }
+                }
             }
 
             Section(header: Text("Data")) {
