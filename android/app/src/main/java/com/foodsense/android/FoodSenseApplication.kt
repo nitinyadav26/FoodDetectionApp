@@ -15,6 +15,7 @@ import com.foodsense.android.services.NetworkService
 import com.foodsense.android.services.NutritionManager
 import com.foodsense.android.services.SocialManager
 import com.foodsense.android.services.StreakManager
+import com.foodsense.android.services.SyncManager
 import com.foodsense.android.services.VoiceLoggingManager
 import com.foodsense.android.services.XPManager
 import com.google.firebase.FirebaseApp
@@ -41,6 +42,7 @@ class FoodSenseApplication : Application() {
     val socialManager: SocialManager by lazy { SocialManager(networkService) }
     val xpManager: XPManager by lazy { XPManager(this) }
     val badgeManager: BadgeManager by lazy { BadgeManager(this) }
+    val syncManager: SyncManager by lazy { SyncManager(this, networkService, nutritionManager) }
 
     override fun onCreate() {
         super.onCreate()

@@ -99,3 +99,23 @@ export const quizSubmitSchema = z.object({
 export const verifyTokenSchema = z.object({
   token: z.string().min(1, "token is required"),
 });
+
+export const syncPushSchema = z.object({
+  logs: z.array(
+    z.object({
+      clientId: z.string().min(1),
+      dishName: z.string().min(1),
+      calories: z.number().optional(),
+      proteinG: z.number().optional(),
+      carbsG: z.number().optional(),
+      fatsG: z.number().optional(),
+      micronutrients: z.record(z.string()).optional(),
+      healthierRecipe: z.string().optional(),
+      loggedAt: z.string().min(1),
+    })
+  ),
+});
+
+export const syncPullSchema = z.object({
+  since: z.string().optional(),
+});
