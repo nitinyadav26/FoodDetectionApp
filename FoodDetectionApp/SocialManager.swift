@@ -83,6 +83,8 @@ final class SocialManager: ObservableObject {
     @Published var errorMessage: String?
 
     var pendingRequestCount: Int { pendingRequests.count }
+    var completedChallengeCount: Int { activeChallenges.filter { $0.isCompleted }.count }
+    var myFeedPostCount: Int { feedItems.filter { $0.userId == AuthManager.shared.currentUser?.uid }.count }
 
     private let network = NetworkService.shared
 
