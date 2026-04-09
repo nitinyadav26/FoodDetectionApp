@@ -198,6 +198,12 @@ class NutritionManager(private val context: Context) {
         saveLogs()
     }
 
+    /** Append logs received from the sync service and persist. */
+    fun addSyncedLogs(newLogs: List<FoodLog>) {
+        logs = logs + newLogs
+        saveLogs()
+    }
+
     private fun saveLogs() {
         prefs.edit().putString(
             "foodLogs",

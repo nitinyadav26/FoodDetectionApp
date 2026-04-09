@@ -20,6 +20,7 @@ import insightsRoutes from "./insights.routes";
 import healthReportRoutes from "./healthReport.routes";
 import quizRoutes from "./quiz.routes";
 import notificationRoutes from "./notification.routes";
+import syncRoutes from "./sync.routes";
 
 const router = Router();
 
@@ -70,5 +71,6 @@ router.use("/api/insights", insightsRoutes);
 router.use("/api/health-report", healthReportRoutes);
 router.use("/api/ai/quiz", quizRoutes);
 router.use("/api/notifications", notificationRoutes);
+router.use("/api/sync", syncRoutes);
 
 export default router;
