@@ -1,0 +1,42 @@
+FoodSense - AI-Powered Nutrition Tracker
+
+SUBTITLE: Scan Food, Track Nutrition, Get Healthier
+
+DESCRIPTION:
+FoodSense is your intelligent nutrition companion that makes healthy eating effortless. Simply point your camera at any meal and let AI instantly identify the food and provide detailed nutritional information.
+
+KEY FEATURES:
+
+- AI Food Scanner: Take a photo of any meal and get instant nutritional analysis powered by Google Gemini AI. Identifies Indian and international dishes with calorie, protein, carb, and fat breakdowns.
+
+- Offline Food Detection: Built-in YOLOv8 machine learning model detects 95+ Indian food items without an internet connection. Works anywhere, anytime.
+
+- Barcode Scanner: Scan packaged food barcodes to instantly look up nutrition facts from the Open Food Facts database.
+
+- Smart Nutrition Tracking: Log meals with automatic portion scaling. Track daily calories, protein, carbs, and fats against personalized goals calculated using the Mifflin-St Jeor equation.
+
+- AI Health Coach: Get personalized nutrition advice, recipe suggestions, and motivation from your AI-powered health coach that understands your eating patterns and goals.
+
+- Health Integration: Syncs with Apple Health (iOS) and Health Connect (Android) for steps, active calories, sleep, and hydration data.
+
+- Smart Scale Pairing: Connect your Bluetooth smart scale for automatic weight-based portion calculations.
+
+- Daily Insights: View nutrition trends, streaks, and earn badges for consistent healthy eating habits.
+
+- Beautiful Dashboard: At-a-glance view of your daily nutrition, health metrics, and food log with date navigation.
+
+- Privacy First: Your data stays on your device. Optional cloud sync with Firebase. No ads, no selling data.
+
+KEYWORDS: nutrition, food scanner, calorie counter, diet tracker, AI nutrition, food detection, health, Indian food, meal tracker, fitness
+
+CATEGORY: Health & Fitness
+
+WHAT'S NEW (v1.0):
+- Initial release
+- AI-powered food scanning with 95+ Indian food recognition
+- Personalized nutrition goals and AI coaching
+- Apple Health / Health Connect integration
+- Bluetooth smart scale support
+- Barcode scanning
+- Light and dark mode support
+- English and Hindi localization

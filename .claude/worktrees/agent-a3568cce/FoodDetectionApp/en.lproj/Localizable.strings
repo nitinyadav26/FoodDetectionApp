@@ -1,0 +1,86 @@
+// Tabs
+"tab_dashboard" = "Dashboard";
+"tab_scan" = "Scan";
+"tab_coach" = "AI Coach";
+"tab_pair" = "Pair Scale";
+"tab_profile" = "Profile";
+
+// Dashboard
+"dashboard_title" = "Dashboard";
+"calories" = "Calories";
+"protein" = "Protein";
+"carbs" = "Carbs";
+"fats" = "Fats";
+"todays_log" = "Today's Log";
+"no_food_logged" = "No food logged yet today.";
+"water" = "Water";
+"steps" = "Steps";
+"sleep" = "Sleep";
+"active_cal" = "Active Cal";
+
+// Scan
+"align_food" = "Align food & Tap Capture";
+"capture" = "Capture";
+"cloud_scan" = "Cloud Scan";
+"local_detect" = "Local Detect";
+"barcode_scan" = "Barcode";
+"ai_scan" = "AI Scan";
+"processing" = "Processing...";
+"no_food_detected" = "No food detected.";
+
+// Coach
+"coach_title" = "AI Health Coach";
+"ask_coach" = "Ask your health coach...";
+"send" = "Send";
+"recipe_ideas" = "Recipe Ideas";
+"what_to_eat" = "What to Eat";
+"health_check" = "Health Check";
+"motivation" = "Motivation";
+
+// Profile
+"profile_title" = "Your Profile";
+"weight_kg" = "Weight (kg)";
+"height_cm" = "Height (cm)";
+"age" = "Age";
+"gender" = "Gender";
+"activity_level" = "Activity Level";
+"goal" = "Goal";
+"daily_budget" = "Daily Calorie Budget";
+"edit" = "Edit";
+"save" = "Save";
+
+// Settings
+"settings_title" = "Settings";
+"appearance" = "Appearance";
+"theme_system" = "System";
+"theme_light" = "Light";
+"theme_dark" = "Dark";
+"units" = "Units";
+"metric" = "Metric (kg, cm)";
+"imperial" = "Imperial (lb, in)";
+"legal" = "Legal";
+"privacy_policy" = "Privacy Policy";
+"terms_of_service" = "Terms of Service";
+"data" = "Data";
+"export_data" = "Export My Data";
+"delete_all_data" = "Delete All Data";
+"about" = "About";
+"version" = "Version";
+
+// Onboarding
+"welcome_title" = "FoodSense";
+"welcome_subtitle" = "Your AI-powered nutrition companion";
+"get_started" = "Get Started";
+"skip" = "Skip";
+"continue_btn" = "Continue";
+"start_tracking" = "Start Tracking";
+"all_set" = "You're all set!";
+"calculate_plan" = "Calculate My Plan";
+
+// Common
+"cancel" = "Cancel";
+"add_to_log" = "Add to Log";
+"serving_size" = "Serving Size (g)";
+"ok" = "OK";
+"error" = "Error";
+"no_internet" = "No Internet Connection";

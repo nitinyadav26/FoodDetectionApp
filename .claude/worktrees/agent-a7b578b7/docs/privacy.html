@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - FoodSense</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: #111827;
+            background: #ffffff;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid #e5e7eb;
+            padding: 0 2rem;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: #111827;
+            text-decoration: none;
+        }
+
+        .nav-logo-icon {
+            width: 32px;
+            height: 32px;
+            background: #16A34A;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1rem;
+        }
+
+        .nav-link {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #16A34A;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .nav-link:hover {
+            opacity: 0.8;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+            padding: 4rem 2rem 3rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .page-header-inner {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .page-header h1 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 0.5rem;
+        }
+
+        .page-header .effective-date {
+            font-size: 0.95rem;
+            color: #6b7280;
+        }
+
+        /* Content */
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem 2rem 4rem;
+        }
+
+        .content p {
+            margin-bottom: 1rem;
+            color: #374151;
+            font-size: 0.95rem;
+        }
+
+        .content h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #111827;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #f0fdf4;
+        }
+
+        .content h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #111827;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .content ul, .content ol {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+        }
+
+        .content li {
+            margin-bottom: 0.5rem;
+            color: #374151;
+            font-size: 0.95rem;
+        }
+
+        .content a {
+            color: #16A34A;
+            text-decoration: none;
+        }
+
+        .content a:hover {
+            text-decoration: underline;
+        }
+
+        .highlight-box {
+            background: #f0fdf4;
+            border-left: 4px solid #16A34A;
+            padding: 1rem 1.25rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1.5rem 0;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+            font-size: 0.9rem;
+            color: #374151;
+        }
+
+        /* Table */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.9rem;
+        }
+
+        .data-table th,
+        .data-table td {
+            text-align: left;
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .data-table th {
+            background: #f9fafb;
+            font-weight: 600;
+            color: #111827;
+        }
+
+        .data-table td {
+            color: #374151;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid #e5e7eb;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .footer-inner {
+            max-width: 800px;
+            margin: 0 auto;
+            color: #9ca3af;
+            font-size: 0.85rem;
+        }
+
+        .footer-inner a {
+            color: #16A34A;
+            text-decoration: none;
+        }
+
+        .footer-inner a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 640px) {
+            .page-header h1 {
+                font-size: 1.75rem;
+            }
+
+            .content {
+                padding: 2rem 1.25rem 3rem;
+            }
+
+            .data-table {
+                font-size: 0.8rem;
+            }
+
+            .data-table th,
+            .data-table td {
+                padding: 0.5rem 0.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <div class="nav-logo-icon">FS</div>
+                FoodSense
+            </a>
+            <a href="index.html" class="nav-link">Back to Home</a>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="page-header-inner">
+            <h1>Privacy Policy</h1>
+            <p class="effective-date">Effective Date: April 1, 2026</p>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+
+        <p>
+            FoodSense ("we", "our", or "the App") is committed to protecting your privacy. This Privacy Policy explains what information we collect, how we use it, and the choices you have regarding your data when you use the FoodSense mobile application.
+        </p>
+
+        <div class="highlight-box">
+            <p><strong>Key takeaway:</strong> FoodSense follows a local-first architecture. Your nutrition data, health data, and food logs stay on your device. We do not sell your personal data to third parties.</p>
+        </div>
+
+        <!-- 1 -->
+        <h2>1. Information We Collect</h2>
+
+        <h3>1.1 Food Photos</h3>
+        <p>
+            When you use the camera to detect food, your photos are sent to the Google Gemini API for cloud-based AI analysis. The photos are processed in real time to identify food items and estimate nutritional information. We do not store your food photos on our servers. Google may process images in accordance with their own privacy policy.
+        </p>
+
+        <h3>1.2 Nutrition Logs</h3>
+        <p>
+            All nutrition logs and meal history are stored locally on your device using CoreData (iOS) or Room (Android). This data does not leave your device unless you explicitly opt into a cloud sync feature (planned for a future release).
+        </p>
+
+        <h3>1.3 Health Data</h3>
+        <p>
+            With your permission, FoodSense can read health data from Apple HealthKit (iOS) or Health Connect (Android), such as calorie intake, weight, and activity data. This access is read-only. Health data remains on your device and is never transmitted to our servers or any third party.
+        </p>
+
+        <h3>1.4 Analytics Data</h3>
+        <p>
+            We collect anonymous usage analytics through Firebase Analytics to understand how users interact with the App, improve features, and diagnose technical issues. This data is aggregated and does not include personally identifiable information such as your name, email address, or food photos.
+        </p>
+
+        <h3>1.5 Account Information</h3>
+        <p>
+            If you create an account (via Firebase Authentication), we collect your email address and display name for authentication purposes only.
+        </p>
+
+        <h2>2. Summary of Data Collected</h2>
+
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Data Type</th>
+                    <th>Storage Location</th>
+                    <th>Shared Externally?</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Food photos</td>
+                    <td>Processed via Google Gemini API (not stored)</td>
+                    <td>Sent to Google for analysis only</td>
+                </tr>
+                <tr>
+                    <td>Nutrition logs</td>
+                    <td>On-device (CoreData / Room)</td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <td>Health data (HealthKit / Health Connect)</td>
+                    <td>On-device only</td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <td>Usage analytics</td>
+                    <td>Firebase Analytics (anonymized)</td>
+                    <td>Aggregated, anonymized</td>
+                </tr>
+                <tr>
+                    <td>Account info (email, name)</td>
+                    <td>Firebase Authentication</td>
+                    <td>No</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- 3 -->
+        <h2>3. Camera Permission</h2>
+        <p>
+            FoodSense requests camera access solely for the purpose of food detection and barcode scanning. We do not use the camera for any other purpose, including facial recognition, background capture, or surveillance. You may revoke camera permission at any time through your device settings.
+        </p>
+
+        <!-- 4 -->
+        <h2>4. Third-Party Services</h2>
+        <p>We integrate with the following third-party services:</p>
+        <ul>
+            <li><strong>Google Gemini API</strong> &mdash; Used for AI-powered food recognition and nutritional analysis. Food photos are transmitted to Google's servers for processing. Refer to <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a> for details.</li>
+            <li><strong>Open Food Facts</strong> &mdash; Used for barcode-based product lookups. Only the scanned barcode number is sent to their public API. Open Food Facts is an open-source, community-driven database.</li>
+            <li><strong>Firebase (Google)</strong> &mdash; Used for anonymous analytics, crash reporting (Crashlytics), and user authentication. Refer to <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Privacy and Security documentation</a>.</li>
+        </ul>
+
+        <!-- 5 -->
+        <h2>5. Data Storage and Security</h2>
+        <p>
+            FoodSense follows a <strong>local-first architecture</strong>. Your nutrition data, meal logs, and health data are stored on your device and are not uploaded to our servers. We do not operate backend servers that store user content.
+        </p>
+        <p>
+            If cloud sync is introduced in a future release, it will be an opt-in feature with end-to-end encryption. You will be clearly notified and asked for consent before any data leaves your device for sync purposes.
+        </p>
+
+        <!-- 6 -->
+        <h2>6. Data Sharing and Sales</h2>
+        <p>
+            <strong>We do not sell, rent, or trade your personal data to any third party.</strong> Data is shared only with the third-party services listed in Section 4, strictly for the functionality described, and only to the extent necessary to provide the App's features.
+        </p>
+
+        <!-- 7 -->
+        <h2>7. Data Retention</h2>
+        <p>
+            Since data is stored locally on your device, you have full control over retention. You can delete your nutrition logs, meal history, and account at any time from within the App or by uninstalling the App. Anonymous analytics data retained by Firebase follows Google's standard data retention policies.
+        </p>
+
+        <!-- 8 -->
+        <h2>8. Your Rights</h2>
+        <p>You have the right to:</p>
+        <ul>
+            <li>Access all data the App stores about you (available directly on your device).</li>
+            <li>Delete your data by clearing app data or uninstalling the App.</li>
+            <li>Revoke permissions (camera, health data) at any time through your device settings.</li>
+            <li>Opt out of analytics by disabling analytics in the App settings.</li>
+            <li>Request deletion of your Firebase account by contacting us.</li>
+        </ul>
+
+        <!-- 9 -->
+        <h2>9. Children's Privacy</h2>
+        <p>
+            FoodSense is not directed at children under the age of 13. We do not knowingly collect personal information from children under 13. If you believe a child has provided us with personal data, please contact us and we will take steps to delete such information.
+        </p>
+
+        <!-- 10 -->
+        <h2>10. Compliance with Indian Law</h2>
+        <p>
+            For users located in India, FoodSense complies with the Information Technology Act, 2000 (IT Act) and the Digital Personal Data Protection Act, 2023 (DPDPA). In particular:
+        </p>
+        <ul>
+            <li>We collect and process personal data only with your informed consent and for legitimate purposes as described in this policy.</li>
+            <li>You have the right to access, correct, and erase your personal data.</li>
+            <li>We implement reasonable security practices and procedures to protect your data, as prescribed under the IT Act and its associated rules.</li>
+            <li>In the event of a data breach affecting your personal data, we will notify the relevant authorities and affected users as required by applicable law.</li>
+            <li>You may appoint a nominee for your data in accordance with the DPDPA.</li>
+        </ul>
+
+        <!-- 11 -->
+        <h2>11. Changes to This Policy</h2>
+        <p>
+            We may update this Privacy Policy from time to time. When we make significant changes, we will notify you through the App or via the email associated with your account. Your continued use of the App after changes are posted constitutes your acceptance of the revised policy.
+        </p>
+
+        <!-- 12 -->
+        <h2>12. Contact Us</h2>
+        <p>
+            If you have any questions, concerns, or requests regarding this Privacy Policy or your data, please contact us at:
+        </p>
+        <p>
+            <strong>Email:</strong> <a href="mailto:support@foodsense.app">support@foodsense.app</a>
+        </p>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-inner">
+            <p>&copy; 2026 FoodSense. All rights reserved.</p>
+            <p style="margin-top: 0.5rem;">
+                <a href="privacy.html">Privacy Policy</a> &middot; <a href="terms.html">Terms of Service</a>
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>

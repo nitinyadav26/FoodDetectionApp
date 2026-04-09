@@ -1,0 +1,392 @@
+// Tabs
+"tab_dashboard" = "डैशबोर्ड";
+"tab_scan" = "स्कैन";
+"tab_coach" = "AI कोच";
+"tab_pair" = "स्केल जोड़ें";
+"tab_social" = "सोशल";
+"tab_profile" = "प्रोफ़ाइल";
+
+// Dashboard
+"dashboard_title" = "डैशबोर्ड";
+"calories" = "कैलोरी";
+"protein" = "प्रोटीन";
+"carbs" = "कार्ब्स";
+"fats" = "वसा";
+"todays_log" = "आज का लॉग";
+"no_food_logged" = "आज अभी तक कोई भोजन लॉग नहीं किया गया।";
+"water" = "पानी";
+"steps" = "कदम";
+"sleep" = "नींद";
+"active_cal" = "सक्रिय कैलोरी";
+
+// Scan
+"align_food" = "भोजन को संरेखित करें और कैप्चर करें";
+"capture" = "कैप्चर";
+"cloud_scan" = "क्लाउड स्कैन";
+"local_detect" = "लोकल डिटेक्ट";
+"barcode_scan" = "बारकोड";
+"ai_scan" = "AI स्कैन";
+"processing" = "प्रोसेसिंग...";
+"no_food_detected" = "कोई भोजन नहीं मिला।";
+
+// Coach
+"coach_title" = "AI स्वास्थ्य कोच";
+"ask_coach" = "अपने स्वास्थ्य कोच से पूछें...";
+"send" = "भेजें";
+"recipe_ideas" = "रेसिपी आइडिया";
+"what_to_eat" = "क्या खाएं";
+"health_check" = "स्वास्थ्य जांच";
+"motivation" = "प्रेरणा";
+
+// Profile
+"profile_title" = "आपकी प्रोफ़ाइल";
+"weight_kg" = "वज़न (kg)";
+"height_cm" = "ऊंचाई (cm)";
+"age" = "उम्र";
+"gender" = "लिंग";
+"activity_level" = "गतिविधि स्तर";
+"goal" = "लक्ष्य";
+"daily_budget" = "दैनिक कैलोरी बजट";
+"edit" = "संपादित करें";
+"save" = "सहेजें";
+
+// Settings
+"settings_title" = "सेटिंग्स";
+"appearance" = "दिखावट";
+"theme_system" = "सिस्टम";
+"theme_light" = "लाइट";
+"theme_dark" = "डार्क";
+"units" = "इकाइयां";
+"metric" = "मीट्रिक (kg, cm)";
+"imperial" = "इम्पीरियल (lb, in)";
+"legal" = "कानूनी";
+"privacy_policy" = "गोपनीयता नीति";
+"terms_of_service" = "सेवा की शर्तें";
+"data" = "डेटा";
+"export_data" = "मेरा डेटा निर्यात करें";
+"delete_all_data" = "सारा डेटा हटाएं";
+"about" = "के बारे में";
+"version" = "संस्करण";
+
+// Onboarding
+"welcome_title" = "FoodSense";
+"welcome_subtitle" = "आपका AI-संचालित पोषण साथी";
+"get_started" = "शुरू करें";
+"skip" = "छोड़ें";
+"continue_btn" = "जारी रखें";
+"start_tracking" = "ट्रैकिंग शुरू करें";
+"all_set" = "आप तैयार हैं!";
+"calculate_plan" = "मेरा प्लान बनाएं";
+
+// Voice Logging
+"voice_log_title" = "वॉइस लॉग";
+"tap_to_speak" = "अपना भोजन बोलने के लिए टैप करें";
+"listening" = "सुन रहा है...";
+"stop_recording" = "रिकॉर्डिंग बंद करें";
+"start_recording" = "वॉइस रिकॉर्डिंग शुरू करें";
+"you_said" = "आपने कहा:";
+"searching_food" = "भोजन खोज रहा है...";
+"log_it" = "लॉग करें";
+"logged" = "लॉग हो गया!";
+
+// Nutritionist Chat
+"nutritionist_chat_title" = "AI पोषण विशेषज्ञ";
+"chat_subtitle" = "अपने व्यक्तिगत पोषण विशेषज्ञ से चैट करें";
+"new_chat" = "नई चैट";
+"ask_nutrition" = "पोषण के बारे में पूछें...";
+"thinking" = "सोच रहा है...";
+"offline_chat" = "आप ऑफ़लाइन हैं। चैट करने के लिए इंटरनेट से कनेक्ट करें।";
+
+// Meal Plan
+"meal_plan_title" = "7-दिन का भोजन योजना";
+"meal_plan_subtitle" = "AI आपके लक्ष्यों के आधार पर बनाता है";
+"generate" = "बनाएं";
+"generating" = "बना रहा है...";
+"no_meal_plan" = "अभी कोई भोजन योजना नहीं";
+"tap_generate" = "व्यक्तिगत 7-दिन की योजना बनाने के लिए बनाएं टैप करें";
+"breakfast" = "नाश्ता";
+"lunch" = "दोपहर का खाना";
+"dinner" = "रात का खाना";
+"snack" = "स्नैक";
+
+// Insights
+"insights_title" = "पोषण अंतर्दृष्टि";
+"calorie_trend" = "कैलोरी प्रवृत्ति";
+"macro_breakdown" = "मैक्रो विश्लेषण (औसत/दिन)";
+"top_foods" = "शीर्ष खाद्य पदार्थ";
+"ai_tips" = "AI सुझाव";
+"get_tips" = "सुझाव पाएं";
+"loading_tips" = "लोड हो रहा है...";
+
+// Prediction
+"prediction_title" = "वज़न भविष्यवाणी";
+"prediction_subtitle" = "आपकी कैलोरी सेवन के आधार पर";
+"current" = "वर्तमान";
+"projected" = "अनुमानित";
+"on_track" = "सही राह पर";
+"off_track" = "राह से भटका";
+"weight_projection" = "वज़न अनुमान";
+"calculation_details" = "गणना विवरण";
+
+// Food Quality
+"quality_title" = "खाद्य गुणवत्ता स्कोर";
+"quality_subtitle" = "आज आपका आहार कितना स्वस्थ है?";
+"out_of_100" = "100 में से";
+"score_breakdown" = "स्कोर विवरण";
+"how_to_improve" = "कैसे सुधारें";
+"excellent" = "उत्कृष्ट";
+"good" = "अच्छा";
+"fair" = "ठीक";
+"needs_work" = "सुधार की ज़रूरत";
+
+// Portion Estimation
+"portion_title" = "पोर्शन अनुमान";
+"portion_subtitle" = "AI आपकी सर्विंग साइज़ का अनुमान लगाता है";
+"take_photo" = "अपने भोजन की फ़ोटो लें";
+"retake_photo" = "दोबारा फ़ोटो लें";
+"analyzing_portion" = "पोर्शन का विश्लेषण...";
+"portion_size" = "पोर्शन साइज़";
+"log_this_meal" = "यह भोजन लॉग करें";
+
+// Before/After
+"before_after_title" = "पहले और बाद";
+"before_after_subtitle" = "भोजन और खपत की तुलना करें";
+"before" = "पहले";
+"after" = "बाद में";
+"compare_analyze" = "तुलना और विश्लेषण";
+"analyzing" = "विश्लेषण हो रहा है...";
+"consumption_analysis" = "खपत विश्लेषण";
+"reset" = "रीसेट";
+
+// OCR Scan
+"ocr_title" = "लेबल स्कैनर";
+"ocr_subtitle" = "AI OCR से पोषण लेबल स्कैन करें";
+"scan_label" = "पोषण लेबल स्कैन करें";
+"scan_hint" = "अपना कैमरा पोषण तथ्य लेबल की ओर करें";
+"reading_label" = "लेबल पढ़ रहा है...";
+"product_name" = "उत्पाद का नाम";
+"nutrition_facts" = "पोषण तथ्य (प्रति 100g)";
+"log_this_food" = "यह खाना लॉग करें";
+
+// Quiz
+"quiz_title" = "पोषण क्विज़";
+"quiz_subtitle" = "अपने पोषण ज्ञान का परीक्षण करें";
+"quiz_complete" = "क्विज़ पूरी!";
+"play_again" = "फिर से खेलें";
+"next_question" = "अगला सवाल";
+"see_results" = "परिणाम देखें";
+"explanation" = "व्याख्या";
+"xp_earned" = "+10 XP अर्जित!";
+
+// AI Features
+"ai_features" = "AI सुविधाएं";
+"chat" = "चैट";
+"meal_plan" = "भोजन योजना";
+"insights" = "अंतर्दृष्टि";
+"prediction" = "भविष्यवाणी";
+"quality" = "गुणवत्ता";
+"portions" = "पोर्शन";
+"before_after" = "पहले/बाद";
+"ocr_scan" = "OCR स्कैन";
+"quiz" = "क्विज़";
+
+// Common
+"cancel" = "रद्द करें";
+"add_to_log" = "लॉग में जोड़ें";
+"serving_size" = "सर्विंग साइज़ (g)";
+"ok" = "ठीक है";
+"error" = "त्रुटि";
+"no_internet" = "इंटरनेट कनेक्शन नहीं है";
+
+// Social
+"social_title" = "सोशल";
+"social_section_friends" = "दोस्त";
+"social_section_feed" = "फ़ीड";
+"social_section_challenges" = "चुनौतियां";
+"social_section_leaderboard" = "लीडरबोर्ड";
+"social_search_friends" = "दोस्त खोजें...";
+"social_pending_requests" = "लंबित अनुरोध";
+"social_friends_header" = "दोस्त";
+"social_no_friends" = "अभी तक कोई दोस्त नहीं। किसी को जोड़ें!";
+"social_wants_to_be_friend" = "आपका दोस्त बनना चाहता है";
+"social_add_friend" = "दोस्त जोड़ें";
+"social_friend_email_username" = "ईमेल या यूज़रनेम";
+"social_send_request" = "अनुरोध भेजें";
+"social_add_friend_message" = "अनुरोध भेजने के लिए अपने दोस्त का ईमेल या यूज़रनेम दर्ज करें।";
+"social_feed_empty" = "आपकी फ़ीड खाली है";
+"social_feed_empty_subtitle" = "उनकी गतिविधि यहां देखने के लिए दोस्त जोड़ें।";
+"social_active_challenges" = "सक्रिय चुनौतियां";
+"social_available_challenges" = "उपलब्ध चुनौतियां";
+"social_no_challenges" = "अभी तक कोई चुनौती नहीं";
+"social_create_first_challenge" = "अपनी पहली चुनौती बनाएं!";
+"social_join" = "शामिल हों";
+"social_participants" = "प्रतिभागी";
+"social_ended" = "समाप्त";
+"social_days_left %lld" = "%lld दिन शेष";
+"social_days" = "दिन";
+"social_challenge_details" = "चुनौती विवरण";
+"social_challenge_title" = "शीर्षक";
+"social_challenge_description" = "विवरण";
+"social_challenge_goal" = "लक्ष्य";
+"social_target_value" = "लक्ष्य मान";
+"social_unit" = "इकाई";
+"social_duration" = "अवधि";
+"social_create_challenge" = "चुनौती बनाएं";
+"social_create" = "बनाएं";
+"social_scope" = "दायरा";
+"social_scope_friends" = "दोस्त";
+"social_scope_global" = "वैश्विक";
+"social_period" = "अवधि";
+"social_period_daily" = "दैनिक";
+"social_period_weekly" = "साप्ताहिक";
+"social_period_monthly" = "मासिक";
+"social_period_all_time" = "सभी समय";
+"social_leaderboard_empty" = "अभी तक कोई लीडरबोर्ड डेटा नहीं";
+"social_badges" = "बैज";
+"social_day_streak" = "दिन की स्ट्रीक";
+"social_scan_to_add" = "मुझे जोड़ने के लिए स्कैन करें";
+"social_share_profile" = "प्रोफ़ाइल शेयर करें";
+"social_profile_share_subject" = "FoodSense पर मुझे जोड़ें";
+"social_profile_share_message" = "आइए FoodSense पर एक साथ पोषण ट्रैक करें!";
+"social_my_profile_card" = "मेरा प्रोफ़ाइल कार्ड";
+"done" = "हो गया";
+
+// XP & Levels
+"title_newbie" = "नौसिखिया";
+"title_beginner" = "शुरुआती";
+"title_intermediate" = "मध्यम";
+"title_advanced" = "उन्नत";
+"title_expert" = "विशेषज्ञ";
+"title_master" = "मास्टर";
+"title_legend" = "लीजेंड";
+"xp_total" = "कुल XP";
+"xp_progress" = "XP प्रगति";
+
+// Achievements
+"achievements_title" = "उपलब्धियां";
+"badges_title" = "बैज";
+"badges_earned_label" = "अर्जित बैज";
+"view_all_badges" = "सभी बैज देखें";
+"badge_earned" = "अर्जित";
+"badge_locked" = "लॉक";
+
+// Badge Categories
+"badge_cat_all" = "सभी";
+"badge_cat_streak" = "स्ट्रीक";
+"badge_cat_logging" = "लॉगिंग";
+"badge_cat_nutrition" = "पोषण";
+"badge_cat_social" = "सोशल";
+"badge_cat_challenges" = "चुनौतियां";
+"badge_cat_special" = "विशेष";
+
+// Streak Badges
+"badge_streak_3" = "3-दिन की चिंगारी";
+"badge_streak_3_desc" = "3 दिन की लॉगिंग स्ट्रीक बनाए रखें।";
+"badge_streak_7" = "सप्ताह योद्धा";
+"badge_streak_7_desc" = "7 दिन की लॉगिंग स्ट्रीक बनाए रखें।";
+"badge_streak_14" = "पखवाड़ा फाइटर";
+"badge_streak_14_desc" = "14 दिन की लॉगिंग स्ट्रीक बनाए रखें।";
+"badge_streak_21" = "21-दिन की आदत";
+"badge_streak_21_desc" = "21 दिन की लॉगिंग स्ट्रीक बनाए रखें।";
+"badge_streak_30" = "मासिक मास्टर";
+"badge_streak_30_desc" = "30 दिन की लॉगिंग स्ट्रीक बनाए रखें।";
+"badge_streak_60" = "दो-महीने का टाइटन";
+"badge_streak_60_desc" = "60 दिन की लॉगिंग स्ट्रीक बनाए रखें।";
+"badge_streak_90" = "तिमाही विजेता";
+"badge_streak_90_desc" = "90 दिन की लॉगिंग स्ट्रीक बनाए रखें।";
+"badge_streak_120" = "दृढ़ तारा";
+"badge_streak_120_desc" = "120 दिन की लॉगिंग स्ट्रीक बनाए रखें।";
+"badge_streak_180" = "आधे साल का हीरो";
+"badge_streak_180_desc" = "180 दिन की लॉगिंग स्ट्रीक बनाए रखें।";
+"badge_streak_365" = "साल भर का लीजेंड";
+"badge_streak_365_desc" = "365 दिन की लॉगिंग स्ट्रीक बनाए रखें।";
+
+// Logging Badges
+"badge_log_1" = "पहला निवाला";
+"badge_log_1_desc" = "अपना पहला भोजन लॉग करें।";
+"badge_log_10" = "शुरुआत";
+"badge_log_10_desc" = "कुल 10 भोजन लॉग करें।";
+"badge_log_25" = "पच्चीस";
+"badge_log_25_desc" = "कुल 25 भोजन लॉग करें।";
+"badge_log_50" = "पचास और फिट";
+"badge_log_50_desc" = "कुल 50 भोजन लॉग करें।";
+"badge_log_100" = "सदी लॉगर";
+"badge_log_100_desc" = "कुल 100 भोजन लॉग करें।";
+"badge_log_250" = "समर्पित ट्रैकर";
+"badge_log_250_desc" = "कुल 250 भोजन लॉग करें।";
+"badge_log_500" = "लॉगिंग मशीन";
+"badge_log_500_desc" = "कुल 500 भोजन लॉग करें।";
+"badge_log_750" = "डेटा भक्त";
+"badge_log_750_desc" = "कुल 750 भोजन लॉग करें।";
+"badge_log_1000" = "हज़ार भोजन";
+"badge_log_1000_desc" = "कुल 1000 भोजन लॉग करें।";
+"badge_log_2000" = "लॉगिंग लीजेंड";
+"badge_log_2000_desc" = "कुल 2000 भोजन लॉग करें।";
+
+// Nutrition Badges
+"badge_nut_cal_target" = "लक्ष्य पर";
+"badge_nut_cal_target_desc" = "कैलोरी लक्ष्य को 10% के भीतर पूरा करें।";
+"badge_nut_cal_target_7" = "सप्ताह लक्ष्य";
+"badge_nut_cal_target_7_desc" = "लगातार 7 दिन कैलोरी लक्ष्य पूरा करें।";
+"badge_nut_protein_100" = "प्रोटीन पावर";
+"badge_nut_protein_100_desc" = "एक दिन में 100g+ प्रोटीन खाएं।";
+"badge_nut_protein_7" = "प्रोटीन स्ट्रीक";
+"badge_nut_protein_7_desc" = "लगातार 7 दिन 100g+ प्रोटीन खाएं।";
+"badge_nut_under_budget" = "बजट में";
+"badge_nut_under_budget_desc" = "कैलोरी बजट से कम में दिन पूरा करें।";
+"badge_nut_balanced_meal" = "संतुलित थाली";
+"badge_nut_balanced_meal_desc" = "तीनों मैक्रोज़ वाला भोजन लॉग करें।";
+"badge_nut_water_8" = "हाइड्रेशन हीरो";
+"badge_nut_water_8_desc" = "एक दिन में 2L पानी पिएं।";
+"badge_nut_water_30" = "हाइड्रेशन आदत";
+"badge_nut_water_30_desc" = "30 दिन तक 2L पानी पिएं।";
+"badge_nut_variety_10" = "विविधता खोजी";
+"badge_nut_variety_10_desc" = "10 अलग-अलग खाद्य पदार्थ लॉग करें।";
+"badge_nut_variety_25" = "फूडी एक्सप्लोरर";
+"badge_nut_variety_25_desc" = "25 अलग-अलग खाद्य पदार्थ लॉग करें।";
+
+// Social Badges
+"badge_soc_share_1" = "पहला शेयर";
+"badge_soc_share_1_desc" = "सोशल मीडिया पर पहला भोजन शेयर करें।";
+"badge_soc_share_10" = "सोशल बटरफ्लाई";
+"badge_soc_share_10_desc" = "सोशल मीडिया पर 10 भोजन शेयर करें।";
+"badge_soc_invite_1" = "मित्र निमंत्रण";
+"badge_soc_invite_1_desc" = "अपने पहले मित्र को ऐप में आमंत्रित करें।";
+"badge_soc_invite_5" = "क्रू बिल्डर";
+"badge_soc_invite_5_desc" = "5 मित्रों को ऐप में आमंत्रित करें।";
+"badge_soc_review" = "ऐप समीक्षक";
+"badge_soc_review_desc" = "ऐप स्टोर पर समीक्षा दें।";
+"badge_soc_community" = "समुदाय सदस्य";
+"badge_soc_community_desc" = "FoodSense समुदाय में शामिल हों।";
+"badge_soc_mentor" = "मेंटर";
+"badge_soc_mentor_desc" = "किसी अन्य उपयोगकर्ता को लक्ष्य तक पहुंचने में मदद करें।";
+"badge_soc_influencer" = "इन्फ्लुएंसर";
+"badge_soc_influencer_desc" = "10+ मित्र ऐप का उपयोग करें।";
+
+// Challenge Badges
+"badge_ch_first" = "चुनौती स्वीकार";
+"badge_ch_first_desc" = "अपनी पहली चुनौती पूरी करें।";
+"badge_ch_weekend" = "वीकेंड वॉरियर";
+"badge_ch_weekend_desc" = "एक महीने तक हर वीकेंड भोजन लॉग करें।";
+"badge_ch_no_junk_7" = "स्वच्छ आहार";
+"badge_ch_no_junk_7_desc" = "7 दिन जंक फूड से बचें।";
+"badge_ch_steps_10k" = "स्टेप मास्टर";
+"badge_ch_steps_10k_desc" = "एक दिन में 10,000 कदम चलें।";
+"badge_ch_early_bird" = "अर्ली बर्ड";
+"badge_ch_early_bird_desc" = "सुबह 8 बजे से पहले भोजन लॉग करें।";
+"badge_ch_night_owl" = "नाइट आउल";
+"badge_ch_night_owl_desc" = "रात 10 बजे के बाद भोजन लॉग करें।";
+"badge_ch_perfect_week" = "परफेक्ट वीक";
+"badge_ch_perfect_week_desc" = "लगातार 7 दिन हर भोजन लॉग करें।";
+
+// Special Badges
+"badge_sp_first_scan" = "पहला स्कैन";
+"badge_sp_first_scan_desc" = "अपना पहला खाद्य पदार्थ स्कैन करें।";
+"badge_sp_barcode" = "बारकोड प्रो";
+"badge_sp_barcode_desc" = "बारकोड से खाद्य पदार्थ स्कैन करें।";
+"badge_sp_coach_chat" = "कोच चैट";
+"badge_sp_coach_chat_desc" = "AI कोच से पहली बातचीत करें।";
+"badge_sp_profile_done" = "प्रोफ़ाइल पूर्ण";
+"badge_sp_profile_done_desc" = "अपनी सभी प्रोफ़ाइल जानकारी भरें।";
+"badge_sp_level_50" = "अधिकतम स्तर";
+"badge_sp_level_50_desc" = "अधिकतम स्तर 50 तक पहुंचें।";

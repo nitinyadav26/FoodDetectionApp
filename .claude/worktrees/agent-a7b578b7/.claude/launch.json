@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "landing-page",
+      "runtimeExecutable": "/opt/homebrew/bin/node",
+      "runtimeArgs": ["-e", "require('http').createServer((q,r)=>{const fs=require('fs'),p=require('path'),f=p.join('docs',q.url==='/'?'index.html':q.url),e=p.extname(f),t={'.html':'text/html','.css':'text/css','.js':'text/javascript'}[e]||'text/plain';fs.readFile(f,(err,d)=>{if(err){r.writeHead(404);r.end('Not found')}else{r.writeHead(200,{'Content-Type':t});r.end(d)}})}).listen(8090,()=>console.log('Listening on 8090'))"],
+      "port": 8090
+    }
+  ]
+}

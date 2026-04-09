@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FoodSense</string>
+
+    <!-- Tabs -->
+    <string name="tab_dashboard">डैशबोर्ड</string>
+    <string name="tab_scan">स्कैन</string>
+    <string name="tab_coach">AI कोच</string>
+    <string name="tab_pair">स्केल जोड़ें</string>
+    <string name="tab_profile">प्रोफ़ाइल</string>
+
+    <!-- Dashboard -->
+    <string name="dashboard_title">डैशबोर्ड</string>
+    <string name="calories">कैलोरी</string>
+    <string name="protein">प्रोटीन</string>
+    <string name="carbs">कार्ब्स</string>
+    <string name="fats">वसा</string>
+    <string name="todays_log">आज का लॉग</string>
+    <string name="no_food_logged">आज अभी तक कोई भोजन लॉग नहीं किया गया।</string>
+    <string name="water">पानी</string>
+    <string name="steps">कदम</string>
+    <string name="sleep">नींद</string>
+    <string name="active_cal">सक्रिय कैलोरी</string>
+
+    <!-- Scan -->
+    <string name="align_food">भोजन को संरेखित करें और कैप्चर करें</string>
+    <string name="capture">कैप्चर</string>
+    <string name="cloud_scan">क्लाउड स्कैन</string>
+    <string name="local_detect">लोकल डिटेक्ट</string>
+    <string name="barcode_scan">बारकोड</string>
+    <string name="ai_scan">AI स्कैन</string>
+    <string name="processing">प्रोसेसिंग\u2026</string>
+    <string name="no_food_detected">कोई भोजन नहीं मिला।</string>
+
+    <!-- Coach -->
+    <string name="coach_title">AI स्वास्थ्य कोच</string>
+    <string name="ask_coach">अपने स्वास्थ्य कोच से पूछें\u2026</string>
+    <string name="send">भेजें</string>
+    <string name="recipe_ideas">रेसिपी आइडिया</string>
+    <string name="what_to_eat">क्या खाएं</string>
+    <string name="health_check">स्वास्थ्य जांच</string>
+    <string name="motivation">प्रेरणा</string>
+
+    <!-- Profile -->
+    <string name="profile_title">आपकी प्रोफ़ाइल</string>
+    <string name="weight_kg">वज़न (kg)</string>
+    <string name="height_cm">ऊंचाई (cm)</string>
+    <string name="age">उम्र</string>
+    <string name="gender">लिंग</string>
+    <string name="activity_level">गतिविधि स्तर</string>
+    <string name="goal">लक्ष्य</string>
+    <string name="daily_budget">दैनिक कैलोरी बजट</string>
+    <string name="edit">संपादित करें</string>
+    <string name="save">सहेजें</string>
+
+    <!-- Settings -->
+    <string name="settings_title">सेटिंग्स</string>
+    <string name="appearance">दिखावट</string>
+    <string name="theme_system">सिस्टम</string>
+    <string name="theme_light">लाइट</string>
+    <string name="theme_dark">डार्क</string>
+    <string name="units">इकाइयां</string>
+    <string name="metric">मीट्रिक (kg, cm)</string>
+    <string name="imperial">इम्पीरियल (lb, in)</string>
+    <string name="legal">कानूनी</string>
+    <string name="privacy_policy">गोपनीयता नीति</string>
+    <string name="terms_of_service">सेवा की शर्तें</string>
+    <string name="data">डेटा</string>
+    <string name="export_data">मेरा डेटा निर्यात करें</string>
+    <string name="delete_all_data">सारा डेटा हटाएं</string>
+    <string name="about">के बारे में</string>
+    <string name="version">संस्करण</string>
+
+    <!-- Onboarding -->
+    <string name="welcome_title">FoodSense</string>
+    <string name="welcome_subtitle">आपका AI-संचालित पोषण साथी</string>
+    <string name="get_started">शुरू करें</string>
+    <string name="skip">छोड़ें</string>
+    <string name="continue_btn">जारी रखें</string>
+    <string name="start_tracking">ट्रैकिंग शुरू करें</string>
+    <string name="all_set">आप तैयार हैं!</string>
+    <string name="calculate_plan">मेरा प्लान बनाएं</string>
+
+    <!-- Voice Log -->
+    <string name="voice_log_title">वॉइस फूड लॉग</string>
+    <string name="voice_log_hint">माइक्रोफ़ोन पर टैप करें और बताएं कि आपने क्या खाया</string>
+    <string name="voice_listening">सुन रहा है\u2026</string>
+    <string name="voice_you_said">आपने कहा:</string>
+    <string name="voice_search_food">भोजन खोजें</string>
+    <string name="voice_analyzing">भोजन विश्लेषण\u2026</string>
+    <string name="voice_log_it">लॉग करें</string>
+    <string name="voice_logged">सफलतापूर्वक लॉग किया!</string>
+    <string name="voice_not_available">इस डिवाइस पर स्पीच रिकग्निशन उपलब्ध नहीं है।</string>
+    <string name="voice_no_match">कोई आवाज़ नहीं मिली। फिर से कोशिश करें।</string>
+    <string name="voice_network_error">नेटवर्क त्रुटि। कनेक्शन जांचें।</string>
+    <string name="voice_start">सुनना शुरू करें</string>
+    <string name="voice_stop">रुकें</string>
+
+    <!-- Nutritionist Chat -->
+    <string name="chat_title">AI पोषण विशेषज्ञ चैट</string>
+    <string name="chat_placeholder">पोषण के बारे में पूछें\u2026</string>
+    <string name="chat_welcome">नमस्ते! मैं आपका AI पोषण विशेषज्ञ हूं। आहार, पोषण या स्वस्थ खान-पान के बारे में कुछ भी पूछें।</string>
+    <string name="chat_thinking">सोच रहा है\u2026</string>
+    <string name="chat_clear">चैट साफ़ करें</string>
+    <string name="chat_send">भेजें</string>
+    <string name="chat_error">क्षमा करें, आपका अनुरोध संसाधित नहीं हो सका।</string>
+
+    <!-- Meal Plan -->
+    <string name="meal_plan_title">7-दिन का भोजन योजना</string>
+    <string name="meal_plan_empty">अभी कोई भोजन योजना नहीं</string>
+    <string name="meal_plan_generate">मेरी भोजन योजना बनाएं</string>
+    <string name="meal_plan_generating">व्यक्तिगत भोजन योजना बना रहे हैं\u2026</string>
+    <string name="meal_plan_regenerate">फिर से बनाएं</string>
+    <string name="meal_plan_breakfast">नाश्ता</string>
+    <string name="meal_plan_lunch">दोपहर का भोजन</string>
+    <string name="meal_plan_dinner">रात का भोजन</string>
+    <string name="meal_plan_snack">स्नैक</string>
+
+    <!-- Insights -->
+    <string name="insights_title">साप्ताहिक अंतर्दृष्टि</string>
+    <string name="insights_loading">आपके सप्ताह का विश्लेषण\u2026</string>
+    <string name="insights_calorie_trend">कैलोरी प्रवृत्ति</string>
+    <string name="insights_avg_macros">औसत दैनिक मैक्रोज़</string>
+    <string name="insights_top_foods">इस सप्ताह के शीर्ष खाद्य पदार्थ</string>
+    <string name="insights_ai_tips">AI सुझाव</string>
+    <string name="insights_weekly_trend">साप्ताहिक प्रवृत्ति</string>
+    <string name="insights_retry">पुनः प्रयास</string>
+
+    <!-- Quiz -->
+    <string name="quiz_title">पोषण प्रश्नोत्तरी</string>
+    <string name="quiz_loading">प्रश्न लोड हो रहा है\u2026</string>
+    <string name="quiz_submit">उत्तर जमा करें</string>
+    <string name="quiz_next">अगला प्रश्न</string>
+    <string name="quiz_correct">सही!</string>
+    <string name="quiz_incorrect">गलत</string>
+    <string name="quiz_try_again">फिर से कोशिश करें</string>
+    <string name="quiz_score">अंक: %1$d/%2$d</string>
+
+    <!-- AI Features -->
+    <string name="ai_features">AI सुविधाएं</string>
+    <string name="feature_chat">चैट</string>
+    <string name="feature_meal_plans">भोजन योजना</string>
+    <string name="feature_insights">अंतर्दृष्टि</string>
+    <string name="feature_quiz">प्रश्नोत्तरी</string>
+    <string name="feature_voice_log">वॉइस लॉग</string>
+    <string name="back">वापस</string>
+    <!-- XP & Badges -->
+    <string name="xp">XP</string>
+    <string name="level">स्तर</string>
+    <string name="badges">बैज</string>
+    <string name="badges_and_xp">बैज और XP</string>
+    <string name="achievements">उपलब्धियां</string>
+    <string name="view_all_badges">सभी बैज देखें</string>
+    <string name="unlocked">अनलॉक</string>
+    <string name="locked">लॉक</string>
+    <string name="xp_to_next_level">अगले स्तर तक XP</string>
+    <string name="total_xp">कुल XP</string>
+    <string name="current_streak">वर्तमान स्ट्रीक</string>
+    <string name="longest_streak">सबसे लंबी स्ट्रीक</string>
+    <string name="day_streak">दिन की स्ट्रीक</string>
+    <string name="badge_unlocked_xp">अनलॉक (+25 XP)</string>
+
+    <!-- Badge Categories -->
+    <string name="category_streaks">स्ट्रीक्स</string>
+    <string name="category_logging">लॉगिंग</string>
+    <string name="category_nutrition">पोषण</string>
+    <string name="category_health">स्वास्थ्य</string>
+    <string name="category_social">सामाजिक</string>
+    <string name="category_milestones">मील के पत्थर</string>
+
+    <!-- XP Titles -->
+    <string name="title_beginner">शुरुआती</string>
+    <string name="title_apprentice">प्रशिक्षु</string>
+    <string name="title_tracker">ट्रैकर</string>
+    <string name="title_expert">विशेषज्ञ</string>
+    <string name="title_master">मास्टर</string>
+    <string name="title_champion">चैंपियन</string>
+    <string name="title_legend">लेजेंड</string>
+
+    <!-- Badge Names -->
+    <string name="badge_streak_3">3 दिन की चिंगारी</string>
+    <string name="badge_streak_7">सप्ताह योद्धा</string>
+    <string name="badge_streak_14">पखवाड़ा लड़ाकू</string>
+    <string name="badge_streak_21">3-सप्ताह चमत्कार</string>
+    <string name="badge_streak_30">मासिक मास्टर</string>
+    <string name="badge_streak_60">दो-महीने टाइटन</string>
+    <string name="badge_streak_90">तिमाही राजा</string>
+    <string name="badge_streak_180">छह-महीने हीरो</string>
+    <string name="badge_streak_365">साल का लेजेंड</string>
+    <string name="badge_streak_comeback">वापसी बच्चा</string>
+    <string name="badge_log_1">पहला कौर</string>
+    <string name="badge_log_10">दस का दम</string>
+    <string name="badge_log_25">पच्चीस</string>
+    <string name="badge_log_50">अर्धशतक</string>
+    <string name="badge_log_100">शतक लॉगर</string>
+    <string name="badge_log_250">प्रचुर ट्रैकर</string>
+    <string name="badge_log_500">फूड इतिहासकार</string>
+    <string name="badge_log_1000">हजार क्लब</string>
+    <string name="badge_log_3meals">तीन भोजन</string>
+    <string name="badge_log_5meals">पांच-ए-डे</string>
+    <string name="badge_cal_under">बजट बॉस</string>
+    <string name="badge_cal_week">सप्ताह वॉचर</string>
+    <string name="badge_protein_100">प्रोटीन पावर</string>
+    <string name="badge_protein_150">प्रोटीन प्रो</string>
+    <string name="badge_balanced">संतुलित प्लेट</string>
+    <string name="badge_low_fat">कम वसा दिन</string>
+    <string name="badge_fiber">फाइबर प्रशंसक</string>
+    <string name="badge_variety_5">विविधता पैक</string>
+    <string name="badge_variety_10">फूड एक्सप्लोरर</string>
+    <string name="badge_clean">स्वच्छ खाने वाला</string>
+    <string name="badge_water_2l">हाइड्रेशन हीरो</string>
+    <string name="badge_water_3l">वॉटर चैंपियन</string>
+    <string name="badge_steps_5k">स्टेप स्टार्टर</string>
+    <string name="badge_steps_10k">10K वॉकर</string>
+    <string name="badge_steps_15k">स्टेप मास्टर</string>
+    <string name="badge_sleep_7h">अच्छी नींद</string>
+    <string name="badge_sleep_8h">नींद चैंपियन</string>
+    <string name="badge_burn_300">कैलोरी बर्नर</string>
+    <string name="badge_burn_500">इन्फर्नो</string>
+    <string name="badge_all_health">वेलनेस वॉरियर</string>
+    <string name="badge_social_share">सोशल बटरफ्लाई</string>
+    <string name="badge_social_invite">एंबेसडर</string>
+    <string name="badge_social_review">रिव्यूअर</string>
+    <string name="badge_social_feedback">फीडबैक देने वाला</string>
+    <string name="badge_social_community">कम्युनिटी मेंबर</string>
+    <string name="badge_level_10">राइजिंग स्टार</string>
+    <string name="badge_level_25">क्वार्टर मास्टर</string>
+    <string name="badge_level_50">मैक्स लेवल</string>
+    <string name="badge_badges_10">कलेक्टर</string>
+    <string name="badge_badges_25">कम्प्लीशनिस्ट</string>
+
+    <!-- Common -->
+    <string name="cancel">रद्द करें</string>
+    <string name="add_to_log">लॉग में जोड़ें</string>
+    <string name="serving_size">सर्विंग साइज़ (g)</string>
+    <string name="ok">ठीक है</string>
+    <string name="error">त्रुटि</string>
+    <string name="no_internet">इंटरनेट कनेक्शन नहीं है</string>
+</resources>

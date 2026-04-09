@@ -1,0 +1,86 @@
+// Tabs
+"tab_dashboard" = "डैशबोर्ड";
+"tab_scan" = "स्कैन";
+"tab_coach" = "AI कोच";
+"tab_pair" = "स्केल जोड़ें";
+"tab_profile" = "प्रोफ़ाइल";
+
+// Dashboard
+"dashboard_title" = "डैशबोर्ड";
+"calories" = "कैलोरी";
+"protein" = "प्रोटीन";
+"carbs" = "कार्ब्स";
+"fats" = "वसा";
+"todays_log" = "आज का लॉग";
+"no_food_logged" = "आज अभी तक कोई भोजन लॉग नहीं किया गया।";
+"water" = "पानी";
+"steps" = "कदम";
+"sleep" = "नींद";
+"active_cal" = "सक्रिय कैलोरी";
+
+// Scan
+"align_food" = "भोजन को संरेखित करें और कैप्चर करें";
+"capture" = "कैप्चर";
+"cloud_scan" = "क्लाउड स्कैन";
+"local_detect" = "लोकल डिटेक्ट";
+"barcode_scan" = "बारकोड";
+"ai_scan" = "AI स्कैन";
+"processing" = "प्रोसेसिंग...";
+"no_food_detected" = "कोई भोजन नहीं मिला।";
+
+// Coach
+"coach_title" = "AI स्वास्थ्य कोच";
+"ask_coach" = "अपने स्वास्थ्य कोच से पूछें...";
+"send" = "भेजें";
+"recipe_ideas" = "रेसिपी आइडिया";
+"what_to_eat" = "क्या खाएं";
+"health_check" = "स्वास्थ्य जांच";
+"motivation" = "प्रेरणा";
+
+// Profile
+"profile_title" = "आपकी प्रोफ़ाइल";
+"weight_kg" = "वज़न (kg)";
+"height_cm" = "ऊंचाई (cm)";
+"age" = "उम्र";
+"gender" = "लिंग";
+"activity_level" = "गतिविधि स्तर";
+"goal" = "लक्ष्य";
+"daily_budget" = "दैनिक कैलोरी बजट";
+"edit" = "संपादित करें";
+"save" = "सहेजें";
+
+// Settings
+"settings_title" = "सेटिंग्स";
+"appearance" = "दिखावट";
+"theme_system" = "सिस्टम";
+"theme_light" = "लाइट";
+"theme_dark" = "डार्क";
+"units" = "इकाइयां";
+"metric" = "मीट्रिक (kg, cm)";
+"imperial" = "इम्पीरियल (lb, in)";
+"legal" = "कानूनी";
+"privacy_policy" = "गोपनीयता नीति";
+"terms_of_service" = "सेवा की शर्तें";
+"data" = "डेटा";
+"export_data" = "मेरा डेटा निर्यात करें";
+"delete_all_data" = "सारा डेटा हटाएं";
+"about" = "के बारे में";
+"version" = "संस्करण";
+
+// Onboarding
+"welcome_title" = "FoodSense";
+"welcome_subtitle" = "आपका AI-संचालित पोषण साथी";
+"get_started" = "शुरू करें";
+"skip" = "छोड़ें";
+"continue_btn" = "जारी रखें";
+"start_tracking" = "ट्रैकिंग शुरू करें";
+"all_set" = "आप तैयार हैं!";
+"calculate_plan" = "मेरा प्लान बनाएं";
+
+// Common
+"cancel" = "रद्द करें";
+"add_to_log" = "लॉग में जोड़ें";
+"serving_size" = "सर्विंग साइज़ (g)";
+"ok" = "ठीक है";
+"error" = "त्रुटि";
+"no_internet" = "इंटरनेट कनेक्शन नहीं है";

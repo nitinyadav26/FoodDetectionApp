@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FoodSense</string>
+
+    <!-- Tabs -->
+    <string name="tab_dashboard">Dashboard</string>
+    <string name="tab_scan">Scan</string>
+    <string name="tab_coach">AI Coach</string>
+    <string name="tab_pair">Pair Scale</string>
+    <string name="tab_profile">Profile</string>
+
+    <!-- Dashboard -->
+    <string name="dashboard_title">Dashboard</string>
+    <string name="calories">Calories</string>
+    <string name="protein">Protein</string>
+    <string name="carbs">Carbs</string>
+    <string name="fats">Fats</string>
+    <string name="todays_log">Today\'s Log</string>
+    <string name="no_food_logged">No food logged yet today.</string>
+    <string name="water">Water</string>
+    <string name="steps">Steps</string>
+    <string name="sleep">Sleep</string>
+    <string name="active_cal">Active Cal</string>
+
+    <!-- Scan -->
+    <string name="align_food">Align food &amp; Tap Capture</string>
+    <string name="capture">Capture</string>
+    <string name="cloud_scan">Cloud Scan</string>
+    <string name="local_detect">Local Detect</string>
+    <string name="barcode_scan">Barcode</string>
+    <string name="ai_scan">AI Scan</string>
+    <string name="processing">Processing\u2026</string>
+    <string name="no_food_detected">No food detected.</string>
+
+    <!-- Coach -->
+    <string name="coach_title">AI Health Coach</string>
+    <string name="ask_coach">Ask your health coach\u2026</string>
+    <string name="send">Send</string>
+    <string name="recipe_ideas">Recipe Ideas</string>
+    <string name="what_to_eat">What to Eat</string>
+    <string name="health_check">Health Check</string>
+    <string name="motivation">Motivation</string>
+
+    <!-- Profile -->
+    <string name="profile_title">Your Profile</string>
+    <string name="weight_kg">Weight (kg)</string>
+    <string name="height_cm">Height (cm)</string>
+    <string name="age">Age</string>
+    <string name="gender">Gender</string>
+    <string name="activity_level">Activity Level</string>
+    <string name="goal">Goal</string>
+    <string name="daily_budget">Daily Calorie Budget</string>
+    <string name="edit">Edit</string>
+    <string name="save">Save</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
+    <string name="appearance">Appearance</string>
+    <string name="theme_system">System</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_dark">Dark</string>
+    <string name="units">Units</string>
+    <string name="metric">Metric (kg, cm)</string>
+    <string name="imperial">Imperial (lb, in)</string>
+    <string name="legal">Legal</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="terms_of_service">Terms of Service</string>
+    <string name="data">Data</string>
+    <string name="export_data">Export My Data</string>
+    <string name="delete_all_data">Delete All Data</string>
+    <string name="about">About</string>
+    <string name="version">Version</string>
+
+    <!-- Onboarding -->
+    <string name="welcome_title">FoodSense</string>
+    <string name="welcome_subtitle">Your AI-powered nutrition companion</string>
+    <string name="get_started">Get Started</string>
+    <string name="skip">Skip</string>
+    <string name="continue_btn">Continue</string>
+    <string name="start_tracking">Start Tracking</string>
+    <string name="all_set">You\'re all set!</string>
+    <string name="calculate_plan">Calculate My Plan</string>
+
+    <!-- Social -->
+    <string name="tab_social">Social</string>
+    <string name="social_friends">Friends</string>
+    <string name="social_feed">Feed</string>
+    <string name="social_challenges">Challenges</string>
+    <string name="social_leaderboard">Leaderboard</string>
+    <string name="social_pending_requests">Pending Requests</string>
+    <string name="social_wants_to_connect">wants to connect</string>
+    <string name="social_accept">Accept</string>
+    <string name="social_decline">Decline</string>
+    <string name="social_friends_count">Friends (%1$d)</string>
+    <string name="social_no_friends">No friends yet. Add some friends to get started!</string>
+    <string name="social_streak_days">%1$d day streak</string>
+    <string name="social_add_friend">Add Friend</string>
+    <string name="social_search_users">Search users\u2026</string>
+    <string name="social_no_posts">No posts yet. Add friends to see their activity!</string>
+    <string name="social_active">Active</string>
+    <string name="social_available">Available</string>
+    <string name="social_completed">Completed</string>
+    <string name="social_no_challenges">No challenges in this category.</string>
+    <string name="social_participants">%1$d participants</string>
+    <string name="social_join_challenge">Join Challenge</string>
+    <string name="social_create_challenge">Create Challenge</string>
+    <string name="social_challenge_title">Title</string>
+    <string name="social_challenge_description">Description</string>
+    <string name="social_challenge_type">Type</string>
+    <string name="social_target_value">Target Value</string>
+    <string name="social_duration_days">Duration (days)</string>
+    <string name="social_create">Create</string>
+    <string name="social_weekly">Weekly</string>
+    <string name="social_monthly">Monthly</string>
+    <string name="social_all_time">All Time</string>
+    <string name="social_no_leaderboard">No leaderboard data yet.</string>
+    <string name="social_remove_friend">Remove Friend</string>
+    <string name="social_send_request">Send Request</string>
+    <string name="social_request_sent">Request Sent</string>
+    <string name="social_react">React</string>
+    <string name="social_progress">Progress</string>
+    <string name="social_rank">Rank</string>
+    <string name="social_score">Score</string>
+    <string name="social_points">%1$d pts</string>
+    <!-- Voice Log -->
+    <string name="voice_log_title">Voice Food Log</string>
+    <string name="voice_log_hint">Tap the microphone and say what you ate</string>
+    <string name="voice_listening">Listening\u2026</string>
+    <string name="voice_you_said">You said:</string>
+    <string name="voice_search_food">Search Food</string>
+    <string name="voice_analyzing">Analyzing food\u2026</string>
+    <string name="voice_log_it">Log It</string>
+    <string name="voice_logged">Logged successfully!</string>
+    <string name="voice_not_available">Speech recognition not available on this device.</string>
+    <string name="voice_no_match">No speech detected. Try again.</string>
+    <string name="voice_network_error">Network error. Check connection.</string>
+    <string name="voice_start">Start listening</string>
+    <string name="voice_stop">Stop</string>
+
+    <!-- Nutritionist Chat -->
+    <string name="chat_title">AI Nutritionist Chat</string>
+    <string name="chat_placeholder">Ask about nutrition\u2026</string>
+    <string name="chat_welcome">Hello! I\'m your AI nutritionist. Ask me anything about diet, nutrition, or healthy eating habits.</string>
+    <string name="chat_thinking">Thinking\u2026</string>
+    <string name="chat_clear">Clear chat</string>
+    <string name="chat_send">Send</string>
+    <string name="chat_error">Sorry, I couldn\'t process your request.</string>
+
+    <!-- Meal Plan -->
+    <string name="meal_plan_title">7-Day Meal Plan</string>
+    <string name="meal_plan_empty">No meal plan yet</string>
+    <string name="meal_plan_generate">Generate My Meal Plan</string>
+    <string name="meal_plan_generating">Generating personalized meal plan\u2026</string>
+    <string name="meal_plan_regenerate">Regenerate</string>
+    <string name="meal_plan_breakfast">Breakfast</string>
+    <string name="meal_plan_lunch">Lunch</string>
+    <string name="meal_plan_dinner">Dinner</string>
+    <string name="meal_plan_snack">Snack</string>
+
+    <!-- Insights -->
+    <string name="insights_title">Weekly Insights</string>
+    <string name="insights_loading">Analyzing your week\u2026</string>
+    <string name="insights_calorie_trend">Calorie Trend</string>
+    <string name="insights_avg_macros">Average Daily Macros</string>
+    <string name="insights_top_foods">Top Foods This Week</string>
+    <string name="insights_ai_tips">AI Tips</string>
+    <string name="insights_weekly_trend">Weekly Trend</string>
+    <string name="insights_retry">Retry</string>
+
+    <!-- Quiz -->
+    <string name="quiz_title">Nutrition Quiz</string>
+    <string name="quiz_loading">Loading question\u2026</string>
+    <string name="quiz_submit">Submit Answer</string>
+    <string name="quiz_next">Next Question</string>
+    <string name="quiz_correct">Correct!</string>
+    <string name="quiz_incorrect">Incorrect</string>
+    <string name="quiz_try_again">Try Again</string>
+    <string name="quiz_score">Score: %1$d/%2$d</string>
+
+    <!-- AI Features -->
+    <string name="ai_features">AI Features</string>
+    <string name="feature_chat">Chat</string>
+    <string name="feature_meal_plans">Meal Plans</string>
+    <string name="feature_insights">Insights</string>
+    <string name="feature_quiz">Quiz</string>
+    <string name="feature_voice_log">Voice Log</string>
+    <string name="back">Back</string>
+    <!-- XP & Badges -->
+    <string name="xp">XP</string>
+    <string name="level">Level</string>
+    <string name="badges">Badges</string>
+    <string name="badges_and_xp">Badges &amp; XP</string>
+    <string name="achievements">Achievements</string>
+    <string name="view_all_badges">View All Badges</string>
+    <string name="unlocked">Unlocked</string>
+    <string name="locked">Locked</string>
+    <string name="xp_to_next_level">XP to next level</string>
+    <string name="total_xp">Total XP</string>
+    <string name="current_streak">Current Streak</string>
+    <string name="longest_streak">Longest Streak</string>
+    <string name="day_streak">Day Streak</string>
+    <string name="badge_unlocked_xp">Unlocked (+25 XP)</string>
+
+    <!-- Badge Categories -->
+    <string name="category_streaks">Streaks</string>
+    <string name="category_logging">Logging</string>
+    <string name="category_nutrition">Nutrition</string>
+    <string name="category_health">Health</string>
+    <string name="category_social">Social</string>
+    <string name="category_milestones">Milestones</string>
+
+    <!-- XP Titles -->
+    <string name="title_beginner">Beginner</string>
+    <string name="title_apprentice">Apprentice</string>
+    <string name="title_tracker">Tracker</string>
+    <string name="title_expert">Expert</string>
+    <string name="title_master">Master</string>
+    <string name="title_champion">Champion</string>
+    <string name="title_legend">Legend</string>
+
+    <!-- Badge Names -->
+    <string name="badge_streak_3">3-Day Spark</string>
+    <string name="badge_streak_7">Week Warrior</string>
+    <string name="badge_streak_14">Fortnight Fighter</string>
+    <string name="badge_streak_21">3-Week Wonder</string>
+    <string name="badge_streak_30">Monthly Master</string>
+    <string name="badge_streak_60">Two-Month Titan</string>
+    <string name="badge_streak_90">Quarter King</string>
+    <string name="badge_streak_180">Half-Year Hero</string>
+    <string name="badge_streak_365">Year Legend</string>
+    <string name="badge_streak_comeback">Comeback Kid</string>
+    <string name="badge_log_1">First Bite</string>
+    <string name="badge_log_10">Tenacious Ten</string>
+    <string name="badge_log_25">Quarter Century</string>
+    <string name="badge_log_50">Half Century</string>
+    <string name="badge_log_100">Century Logger</string>
+    <string name="badge_log_250">Prolific Tracker</string>
+    <string name="badge_log_500">Food Historian</string>
+    <string name="badge_log_1000">Thousand Club</string>
+    <string name="badge_log_3meals">Three Square</string>
+    <string name="badge_log_5meals">Five-a-Day</string>
+    <string name="badge_cal_under">Budget Boss</string>
+    <string name="badge_cal_week">Week Watcher</string>
+    <string name="badge_protein_100">Protein Power</string>
+    <string name="badge_protein_150">Protein Pro</string>
+    <string name="badge_balanced">Balanced Plate</string>
+    <string name="badge_low_fat">Low Fat Day</string>
+    <string name="badge_fiber">Fiber Fan</string>
+    <string name="badge_variety_5">Variety Pack</string>
+    <string name="badge_variety_10">Food Explorer</string>
+    <string name="badge_clean">Clean Eater</string>
+    <string name="badge_water_2l">Hydration Hero</string>
+    <string name="badge_water_3l">Water Champion</string>
+    <string name="badge_steps_5k">Step Starter</string>
+    <string name="badge_steps_10k">10K Walker</string>
+    <string name="badge_steps_15k">Step Master</string>
+    <string name="badge_sleep_7h">Good Sleep</string>
+    <string name="badge_sleep_8h">Sleep Champion</string>
+    <string name="badge_burn_300">Calorie Burner</string>
+    <string name="badge_burn_500">Inferno</string>
+    <string name="badge_all_health">Wellness Warrior</string>
+    <string name="badge_social_share">Social Butterfly</string>
+    <string name="badge_social_invite">Ambassador</string>
+    <string name="badge_social_review">Reviewer</string>
+    <string name="badge_social_feedback">Feedback Giver</string>
+    <string name="badge_social_community">Community Member</string>
+    <string name="badge_level_10">Rising Star</string>
+    <string name="badge_level_25">Quarter Master</string>
+    <string name="badge_level_50">Max Level</string>
+    <string name="badge_badges_10">Collector</string>
+    <string name="badge_badges_25">Completionist</string>
+
+    <!-- Common -->
+    <string name="cancel">Cancel</string>
+    <string name="add_to_log">Add to Log</string>
+    <string name="serving_size">Serving Size (g)</string>
+    <string name="ok">OK</string>
+    <string name="error">Error</string>
+    <string name="no_internet">No Internet Connection</string>
+</resources>

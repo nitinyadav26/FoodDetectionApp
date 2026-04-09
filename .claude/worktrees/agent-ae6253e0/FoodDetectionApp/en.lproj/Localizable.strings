@@ -1,0 +1,339 @@
+// Tabs
+"tab_dashboard" = "Dashboard";
+"tab_scan" = "Scan";
+"tab_coach" = "AI Coach";
+"tab_pair" = "Pair Scale";
+"tab_profile" = "Profile";
+
+// Dashboard
+"dashboard_title" = "Dashboard";
+"calories" = "Calories";
+"protein" = "Protein";
+"carbs" = "Carbs";
+"fats" = "Fats";
+"todays_log" = "Today's Log";
+"no_food_logged" = "No food logged yet today.";
+"water" = "Water";
+"steps" = "Steps";
+"sleep" = "Sleep";
+"active_cal" = "Active Cal";
+
+// Scan
+"align_food" = "Align food & Tap Capture";
+"capture" = "Capture";
+"cloud_scan" = "Cloud Scan";
+"local_detect" = "Local Detect";
+"barcode_scan" = "Barcode";
+"ai_scan" = "AI Scan";
+"processing" = "Processing...";
+"no_food_detected" = "No food detected.";
+
+// Coach
+"coach_title" = "AI Health Coach";
+"ask_coach" = "Ask your health coach...";
+"send" = "Send";
+"recipe_ideas" = "Recipe Ideas";
+"what_to_eat" = "What to Eat";
+"health_check" = "Health Check";
+"motivation" = "Motivation";
+
+// Profile
+"profile_title" = "Your Profile";
+"weight_kg" = "Weight (kg)";
+"height_cm" = "Height (cm)";
+"age" = "Age";
+"gender" = "Gender";
+"activity_level" = "Activity Level";
+"goal" = "Goal";
+"daily_budget" = "Daily Calorie Budget";
+"edit" = "Edit";
+"save" = "Save";
+
+// Settings
+"settings_title" = "Settings";
+"appearance" = "Appearance";
+"theme_system" = "System";
+"theme_light" = "Light";
+"theme_dark" = "Dark";
+"units" = "Units";
+"metric" = "Metric (kg, cm)";
+"imperial" = "Imperial (lb, in)";
+"legal" = "Legal";
+"privacy_policy" = "Privacy Policy";
+"terms_of_service" = "Terms of Service";
+"data" = "Data";
+"export_data" = "Export My Data";
+"delete_all_data" = "Delete All Data";
+"about" = "About";
+"version" = "Version";
+
+// Onboarding
+"welcome_title" = "FoodSense";
+"welcome_subtitle" = "Your AI-powered nutrition companion";
+"get_started" = "Get Started";
+"skip" = "Skip";
+"continue_btn" = "Continue";
+"start_tracking" = "Start Tracking";
+"all_set" = "You're all set!";
+"calculate_plan" = "Calculate My Plan";
+
+// Voice Logging
+"voice_log_title" = "Voice Log";
+"tap_to_speak" = "Tap to speak your meal";
+"listening" = "Listening...";
+"stop_recording" = "Stop recording";
+"start_recording" = "Start voice recording";
+"you_said" = "You said:";
+"searching_food" = "Searching food...";
+"log_it" = "Log It";
+"logged" = "Logged!";
+
+// Nutritionist Chat
+"nutritionist_chat_title" = "AI Nutritionist";
+"chat_subtitle" = "Chat with your personal nutrition expert";
+"new_chat" = "New Chat";
+"ask_nutrition" = "Ask about nutrition...";
+"thinking" = "Thinking...";
+"offline_chat" = "You're offline. Please connect to the internet to chat.";
+
+// Meal Plan
+"meal_plan_title" = "7-Day Meal Plan";
+"meal_plan_subtitle" = "AI-generated based on your goals";
+"generate" = "Generate";
+"generating" = "Generating...";
+"no_meal_plan" = "No meal plan yet";
+"tap_generate" = "Tap Generate to create a personalized 7-day plan";
+"breakfast" = "Breakfast";
+"lunch" = "Lunch";
+"dinner" = "Dinner";
+"snack" = "Snack";
+
+// Insights
+"insights_title" = "Nutrition Insights";
+"calorie_trend" = "Calorie Trend";
+"macro_breakdown" = "Macro Breakdown (Avg/Day)";
+"top_foods" = "Top Foods";
+"ai_tips" = "AI Tips";
+"get_tips" = "Get Tips";
+"loading_tips" = "Loading...";
+
+// Prediction
+"prediction_title" = "Weight Prediction";
+"prediction_subtitle" = "Based on your calorie intake";
+"current" = "Current";
+"projected" = "Projected";
+"on_track" = "On Track";
+"off_track" = "Off Track";
+"weight_projection" = "Weight Projection";
+"calculation_details" = "Calculation Details";
+
+// Food Quality
+"quality_title" = "Food Quality Score";
+"quality_subtitle" = "How healthy is your diet today?";
+"out_of_100" = "out of 100";
+"score_breakdown" = "Score Breakdown";
+"how_to_improve" = "How to Improve";
+"excellent" = "Excellent";
+"good" = "Good";
+"fair" = "Fair";
+"needs_work" = "Needs Work";
+
+// Portion Estimation
+"portion_title" = "Portion Estimation";
+"portion_subtitle" = "AI estimates your serving size";
+"take_photo" = "Take a Photo of Your Food";
+"retake_photo" = "Retake Photo";
+"analyzing_portion" = "Analyzing portion...";
+"portion_size" = "Portion Size";
+"log_this_meal" = "Log This Meal";
+
+// Before/After
+"before_after_title" = "Before & After";
+"before_after_subtitle" = "Compare meals and consumption";
+"before" = "Before";
+"after" = "After";
+"compare_analyze" = "Compare & Analyze";
+"analyzing" = "Analyzing...";
+"consumption_analysis" = "Consumption Analysis";
+"reset" = "Reset";
+
+// OCR Scan
+"ocr_title" = "Label Scanner";
+"ocr_subtitle" = "Scan nutrition labels with AI OCR";
+"scan_label" = "Scan Nutrition Label";
+"scan_hint" = "Point your camera at a nutrition facts label";
+"reading_label" = "Reading label...";
+"product_name" = "Product Name";
+"nutrition_facts" = "Nutrition Facts (per 100g)";
+"log_this_food" = "Log This Food";
+
+// Quiz
+"quiz_title" = "Nutrition Quiz";
+"quiz_subtitle" = "Test your nutrition knowledge";
+"quiz_complete" = "Quiz Complete!";
+"play_again" = "Play Again";
+"next_question" = "Next Question";
+"see_results" = "See Results";
+"explanation" = "Explanation";
+"xp_earned" = "+10 XP Earned!";
+
+// AI Features
+"ai_features" = "AI Features";
+"chat" = "Chat";
+"meal_plan" = "Meal Plan";
+"insights" = "Insights";
+"prediction" = "Prediction";
+"quality" = "Quality";
+"portions" = "Portions";
+"before_after" = "Before/After";
+"ocr_scan" = "OCR Scan";
+"quiz" = "Quiz";
+
+// Common
+"cancel" = "Cancel";
+"add_to_log" = "Add to Log";
+"serving_size" = "Serving Size (g)";
+"ok" = "OK";
+"error" = "Error";
+"no_internet" = "No Internet Connection";
+"done" = "Done";
+
+// XP & Levels
+"title_newbie" = "Newbie";
+"title_beginner" = "Beginner";
+"title_intermediate" = "Intermediate";
+"title_advanced" = "Advanced";
+"title_expert" = "Expert";
+"title_master" = "Master";
+"title_legend" = "Legend";
+"xp_total" = "XP Total";
+"xp_progress" = "XP Progress";
+
+// Achievements
+"achievements_title" = "Achievements";
+"badges_title" = "Badges";
+"badges_earned_label" = "Badges Earned";
+"view_all_badges" = "View All Badges";
+"badge_earned" = "Earned";
+"badge_locked" = "Locked";
+
+// Badge Categories
+"badge_cat_all" = "All";
+"badge_cat_streak" = "Streak";
+"badge_cat_logging" = "Logging";
+"badge_cat_nutrition" = "Nutrition";
+"badge_cat_social" = "Social";
+"badge_cat_challenges" = "Challenges";
+"badge_cat_special" = "Special";
+
+// Streak Badges
+"badge_streak_3" = "3-Day Spark";
+"badge_streak_3_desc" = "Maintain a 3-day logging streak.";
+"badge_streak_7" = "Week Warrior";
+"badge_streak_7_desc" = "Maintain a 7-day logging streak.";
+"badge_streak_14" = "Fortnight Fighter";
+"badge_streak_14_desc" = "Maintain a 14-day logging streak.";
+"badge_streak_21" = "21-Day Habit";
+"badge_streak_21_desc" = "Maintain a 21-day logging streak.";
+"badge_streak_30" = "Monthly Master";
+"badge_streak_30_desc" = "Maintain a 30-day logging streak.";
+"badge_streak_60" = "Two-Month Titan";
+"badge_streak_60_desc" = "Maintain a 60-day logging streak.";
+"badge_streak_90" = "Quarter Conqueror";
+"badge_streak_90_desc" = "Maintain a 90-day logging streak.";
+"badge_streak_120" = "Steadfast Star";
+"badge_streak_120_desc" = "Maintain a 120-day logging streak.";
+"badge_streak_180" = "Half-Year Hero";
+"badge_streak_180_desc" = "Maintain a 180-day logging streak.";
+"badge_streak_365" = "Year-Long Legend";
+"badge_streak_365_desc" = "Maintain a 365-day logging streak.";
+
+// Logging Badges
+"badge_log_1" = "First Bite";
+"badge_log_1_desc" = "Log your very first meal.";
+"badge_log_10" = "Getting Started";
+"badge_log_10_desc" = "Log 10 meals total.";
+"badge_log_25" = "Quarter Century";
+"badge_log_25_desc" = "Log 25 meals total.";
+"badge_log_50" = "Fifty & Fit";
+"badge_log_50_desc" = "Log 50 meals total.";
+"badge_log_100" = "Century Logger";
+"badge_log_100_desc" = "Log 100 meals total.";
+"badge_log_250" = "Dedicated Tracker";
+"badge_log_250_desc" = "Log 250 meals total.";
+"badge_log_500" = "Logging Machine";
+"badge_log_500_desc" = "Log 500 meals total.";
+"badge_log_750" = "Data Devotee";
+"badge_log_750_desc" = "Log 750 meals total.";
+"badge_log_1000" = "Thousand Meals";
+"badge_log_1000_desc" = "Log 1000 meals total.";
+"badge_log_2000" = "Logging Legend";
+"badge_log_2000_desc" = "Log 2000 meals total.";
+
+// Nutrition Badges
+"badge_nut_cal_target" = "On Target";
+"badge_nut_cal_target_desc" = "Hit your calorie target within 10%.";
+"badge_nut_cal_target_7" = "Week on Target";
+"badge_nut_cal_target_7_desc" = "Hit your calorie target 7 days in a row.";
+"badge_nut_protein_100" = "Protein Power";
+"badge_nut_protein_100_desc" = "Eat 100g+ protein in a day.";
+"badge_nut_protein_7" = "Protein Streak";
+"badge_nut_protein_7_desc" = "Hit 100g+ protein 7 days in a row.";
+"badge_nut_under_budget" = "Under Budget";
+"badge_nut_under_budget_desc" = "Finish a day under your calorie budget.";
+"badge_nut_balanced_meal" = "Balanced Plate";
+"badge_nut_balanced_meal_desc" = "Log a meal with all three macros.";
+"badge_nut_water_8" = "Hydration Hero";
+"badge_nut_water_8_desc" = "Drink 2L of water in a day.";
+"badge_nut_water_30" = "Hydration Habit";
+"badge_nut_water_30_desc" = "Drink 2L of water for 30 days.";
+"badge_nut_variety_10" = "Variety Seeker";
+"badge_nut_variety_10_desc" = "Log 10 different foods.";
+"badge_nut_variety_25" = "Foodie Explorer";
+"badge_nut_variety_25_desc" = "Log 25 different foods.";
+
+// Social Badges
+"badge_soc_share_1" = "First Share";
+"badge_soc_share_1_desc" = "Share your first meal on social media.";
+"badge_soc_share_10" = "Social Butterfly";
+"badge_soc_share_10_desc" = "Share 10 meals on social media.";
+"badge_soc_invite_1" = "Friend Invite";
+"badge_soc_invite_1_desc" = "Invite your first friend to the app.";
+"badge_soc_invite_5" = "Crew Builder";
+"badge_soc_invite_5_desc" = "Invite 5 friends to the app.";
+"badge_soc_review" = "App Reviewer";
+"badge_soc_review_desc" = "Leave a review on the App Store.";
+"badge_soc_community" = "Community Member";
+"badge_soc_community_desc" = "Join the FoodSense community.";
+"badge_soc_mentor" = "Mentor";
+"badge_soc_mentor_desc" = "Help another user reach their goals.";
+"badge_soc_influencer" = "Influencer";
+"badge_soc_influencer_desc" = "Have 10+ friends using the app.";
+
+// Challenge Badges
+"badge_ch_first" = "Challenge Accepted";
+"badge_ch_first_desc" = "Complete your first challenge.";
+"badge_ch_weekend" = "Weekend Warrior";
+"badge_ch_weekend_desc" = "Log meals every weekend for a month.";
+"badge_ch_no_junk_7" = "Clean Eater";
+"badge_ch_no_junk_7_desc" = "Avoid junk food for 7 days.";
+"badge_ch_steps_10k" = "Step Master";
+"badge_ch_steps_10k_desc" = "Walk 10,000 steps in a day.";
+"badge_ch_early_bird" = "Early Bird";
+"badge_ch_early_bird_desc" = "Log a meal before 8 AM.";
+"badge_ch_night_owl" = "Night Owl";
+"badge_ch_night_owl_desc" = "Log a meal after 10 PM.";
+"badge_ch_perfect_week" = "Perfect Week";
+"badge_ch_perfect_week_desc" = "Log every meal for 7 days straight.";
+
+// Special Badges
+"badge_sp_first_scan" = "First Scan";
+"badge_sp_first_scan_desc" = "Scan your first food item.";
+"badge_sp_barcode" = "Barcode Pro";
+"badge_sp_barcode_desc" = "Scan a food item using barcode.";
+"badge_sp_coach_chat" = "Coach Chat";
+"badge_sp_coach_chat_desc" = "Have your first conversation with AI Coach.";
+"badge_sp_profile_done" = "Profile Complete";
+"badge_sp_profile_done_desc" = "Fill in all your profile details.";
+"badge_sp_level_50" = "Max Level";
+"badge_sp_level_50_desc" = "Reach the maximum level of 50.";

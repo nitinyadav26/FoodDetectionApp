@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FoodSense</string>
+
+    <!-- Tabs -->
+    <string name="tab_dashboard">डैशबोर्ड</string>
+    <string name="tab_scan">स्कैन</string>
+    <string name="tab_coach">AI कोच</string>
+    <string name="tab_pair">स्केल जोड़ें</string>
+    <string name="tab_profile">प्रोफ़ाइल</string>
+
+    <!-- Dashboard -->
+    <string name="dashboard_title">डैशबोर्ड</string>
+    <string name="calories">कैलोरी</string>
+    <string name="protein">प्रोटीन</string>
+    <string name="carbs">कार्ब्स</string>
+    <string name="fats">वसा</string>
+    <string name="todays_log">आज का लॉग</string>
+    <string name="no_food_logged">आज अभी तक कोई भोजन लॉग नहीं किया गया।</string>
+    <string name="water">पानी</string>
+    <string name="steps">कदम</string>
+    <string name="sleep">नींद</string>
+    <string name="active_cal">सक्रिय कैलोरी</string>
+
+    <!-- Scan -->
+    <string name="align_food">भोजन को संरेखित करें और कैप्चर करें</string>
+    <string name="capture">कैप्चर</string>
+    <string name="cloud_scan">क्लाउड स्कैन</string>
+    <string name="local_detect">लोकल डिटेक्ट</string>
+    <string name="barcode_scan">बारकोड</string>
+    <string name="ai_scan">AI स्कैन</string>
+    <string name="processing">प्रोसेसिंग\u2026</string>
+    <string name="no_food_detected">कोई भोजन नहीं मिला।</string>
+
+    <!-- Coach -->
+    <string name="coach_title">AI स्वास्थ्य कोच</string>
+    <string name="ask_coach">अपने स्वास्थ्य कोच से पूछें\u2026</string>
+    <string name="send">भेजें</string>
+    <string name="recipe_ideas">रेसिपी आइडिया</string>
+    <string name="what_to_eat">क्या खाएं</string>
+    <string name="health_check">स्वास्थ्य जांच</string>
+    <string name="motivation">प्रेरणा</string>
+
+    <!-- Profile -->
+    <string name="profile_title">आपकी प्रोफ़ाइल</string>
+    <string name="weight_kg">वज़न (kg)</string>
+    <string name="height_cm">ऊंचाई (cm)</string>
+    <string name="age">उम्र</string>
+    <string name="gender">लिंग</string>
+    <string name="activity_level">गतिविधि स्तर</string>
+    <string name="goal">लक्ष्य</string>
+    <string name="daily_budget">दैनिक कैलोरी बजट</string>
+    <string name="edit">संपादित करें</string>
+    <string name="save">सहेजें</string>
+
+    <!-- Settings -->
+    <string name="settings_title">सेटिंग्स</string>
+    <string name="appearance">दिखावट</string>
+    <string name="theme_system">सिस्टम</string>
+    <string name="theme_light">लाइट</string>
+    <string name="theme_dark">डार्क</string>
+    <string name="units">इकाइयां</string>
+    <string name="metric">मीट्रिक (kg, cm)</string>
+    <string name="imperial">इम्पीरियल (lb, in)</string>
+    <string name="legal">कानूनी</string>
+    <string name="privacy_policy">गोपनीयता नीति</string>
+    <string name="terms_of_service">सेवा की शर्तें</string>
+    <string name="data">डेटा</string>
+    <string name="export_data">मेरा डेटा निर्यात करें</string>
+    <string name="delete_all_data">सारा डेटा हटाएं</string>
+    <string name="about">के बारे में</string>
+    <string name="version">संस्करण</string>
+
+    <!-- Onboarding -->
+    <string name="welcome_title">FoodSense</string>
+    <string name="welcome_subtitle">आपका AI-संचालित पोषण साथी</string>
+    <string name="get_started">शुरू करें</string>
+    <string name="skip">छोड़ें</string>
+    <string name="continue_btn">जारी रखें</string>
+    <string name="start_tracking">ट्रैकिंग शुरू करें</string>
+    <string name="all_set">आप तैयार हैं!</string>
+    <string name="calculate_plan">मेरा प्लान बनाएं</string>
+
+    <!-- Common -->
+    <string name="cancel">रद्द करें</string>
+    <string name="add_to_log">लॉग में जोड़ें</string>
+    <string name="serving_size">सर्विंग साइज़ (g)</string>
+    <string name="ok">ठीक है</string>
+    <string name="error">त्रुटि</string>
+    <string name="no_internet">इंटरनेट कनेक्शन नहीं है</string>
+</resources>
