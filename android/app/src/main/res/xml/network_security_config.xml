@@ -3,7 +3,7 @@
     <!-- Dev-only: allow cleartext HTTP to the FoodSense dev server.
          Remove this domain-config once the server is served over HTTPS. -->
     <domain-config cleartextTrafficPermitted="true">
-        <domain includeSubdomains="true">159.65.154.224</domain>
+        <domain includeSubdomains="true">129.212.246.162</domain>
         <!-- Also permit emulator loopback for local dev -->
         <domain includeSubdomains="true">10.0.2.2</domain>
         <domain includeSubdomains="true">localhost</domain>
