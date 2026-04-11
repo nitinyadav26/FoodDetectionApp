@@ -1,19 +1,24 @@
 services:
   postgres:
     image: postgres:15-alpine
+    env_file:
+      - .env
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
       POSTGRES_DB: foodsense
-    ports:
-      - "5432:5432"
+      # POSTGRES_PASSWORD is picked up from .env via env_file above.
+    # Ports intentionally NOT exposed publicly — only the app container
+    # reaches postgres via the internal docker network.
     volumes:
       - pgdata:/var/lib/postgresql/data
 
   redis:
     image: redis:7-alpine
-    ports:
-      - "6379:6379"
+    # Redis starts with a password baked in via command; loaded from .env
+    command: ["redis-server", "--requirepass", "${REDIS_PASSWORD}"]
+    env_file:
+      - .env
+    # Ports intentionally NOT exposed publicly.
     volumes:
       - redisdata:/data
 
@@ -24,8 +29,6 @@ services:
     env_file:
       - .env
     environment:
-      DATABASE_URL: postgresql://postgres:postgres@postgres:5432/foodsense?schema=public
-      REDIS_URL: redis://redis:6379
       FIREBASE_SERVICE_ACCOUNT_PATH: /app/firebase-service-account.json
       PORT: "3000"
     volumes:
