@@ -1,3 +1,5 @@
+import java.util.Properties
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -6,6 +8,16 @@ plugins {
     id("com.google.gms.google-services")
     id("com.google.firebase.crashlytics")
 }
+
+// Load local.properties explicitly so keys like GEMINI_API_KEY can be kept
+// out of the tracked gradle.properties. Gradle only auto-exposes `sdk.dir`
+// from local.properties — anything else has to be read manually.
+val localProps = Properties().apply {
+    val f = rootProject.file("local.properties")
+    if (f.exists()) f.inputStream().use(::load)
+}
+fun localOrProject(key: String): String? =
+    localProps.getProperty(key) ?: project.findProperty(key) as String?
 
 android {
     namespace = "com.foodsense.android"
@@ -22,15 +34,15 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
         // Production: set PROXY_BASE_URL in gradle.properties to your Firebase Functions URL
-        val proxyUrl = project.findProperty("PROXY_BASE_URL") as String? ?: ""
+        val proxyUrl = localOrProject("PROXY_BASE_URL") ?: ""
         buildConfigField("String", "PROXY_BASE_URL", "\"$proxyUrl\"")
 
         // Development only: set GEMINI_API_KEY in local.properties (git-ignored)
-        val geminiKey = project.findProperty("GEMINI_API_KEY") as String? ?: ""
+        val geminiKey = localOrProject("GEMINI_API_KEY") ?: ""
         buildConfigField("String", "GEMINI_API_KEY", "\"$geminiKey\"")
 
         // Social features API base URL
-        val socialApiUrl = project.findProperty("SOCIAL_API_BASE_URL") as String? ?: ""
+        val socialApiUrl = localOrProject("SOCIAL_API_BASE_URL") ?: ""
         buildConfigField("String", "SOCIAL_API_BASE_URL", "\"$socialApiUrl\"")
     }
 
