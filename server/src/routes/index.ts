@@ -21,6 +21,7 @@ import healthReportRoutes from "./healthReport.routes";
 import quizRoutes from "./quiz.routes";
 import notificationRoutes from "./notification.routes";
 import syncRoutes from "./sync.routes";
+import socialAliasesRoutes from "./social.aliases.routes";
 
 const router = Router();
 
@@ -72,5 +73,10 @@ router.use("/api/health-report", healthReportRoutes);
 router.use("/api/ai/quiz", quizRoutes);
 router.use("/api/notifications", notificationRoutes);
 router.use("/api/sync", syncRoutes);
+
+// Legacy client path aliases (iOS /social/*, Android /api/v1/social/*).
+// Mounted at root because the alias file uses absolute path prefixes.
+// Will be removed once both mobile clients call /api/* directly.
+router.use("/", socialAliasesRoutes);
 
 export default router;
