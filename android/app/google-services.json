@@ -1,22 +1,28 @@
 {
   "project_info": {
-    "project_number": "000000000000",
-    "project_id": "foodsense-placeholder",
-    "storage_bucket": "foodsense-placeholder.appspot.com"
+    "project_number": "874224626751",
+    "project_id": "foodscale-7dbce",
+    "storage_bucket": "foodscale-7dbce.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:000000000000:android:0000000000000000",
+        "mobilesdk_app_id": "1:874224626751:android:aaaceebbbbd60c0d8c1c8a",
         "android_client_info": {
           "package_name": "com.foodsense.android"
         }
       },
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "placeholder-replace-with-real-key"
+          "current_key": "AIzaSyAOKYfvn_1q3K_QdXhlLApxzw6ym0V-hSY"
         }
-      ]
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
     }
   ],
   "configuration_version": "1"
