@@ -78,4 +78,22 @@ class NetworkService {
         }
         responseBody
     }
+
+    suspend fun delete(path: String): String = withContext(Dispatchers.IO) {
+        val token = getAuthToken()
+        val requestBuilder = Request.Builder()
+            .url("$baseUrl$path")
+            .delete()
+
+        if (token != null) {
+            requestBuilder.addHeader("Authorization", "Bearer $token")
+        }
+
+        val response = client.newCall(requestBuilder.build()).execute()
+        val body = response.body?.string().orEmpty()
+        if (!response.isSuccessful) {
+            throw IllegalStateException("DELETE $path failed (${response.code}): ${body.take(200)}")
+        }
+        body
+    }
 }

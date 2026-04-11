@@ -17,9 +17,20 @@ final class NetworkService {
 
     private let maxRetries = 3
 
+    /// Whether Firebase is configured in this build (GoogleService-Info.plist present).
+    /// Mirrors the guard in `AuthManager` so we don't crash on `Auth.auth()` when Firebase is absent.
+    private static let firebaseAvailable: Bool = {
+        Bundle.main.path(forResource: "GoogleService-Info", ofType: "plist") != nil
+    }()
+
     private init() {
-        // Default base URL; configure via NetworkService.shared.baseURL = ...
-        self.baseURL = URL(string: "https://api.foodsense.app/v1")!
+        // Base URL resolution order:
+        // 1. `SOCIAL_API_BASE_URL` from Info.plist (set via Build Settings user-defined key)
+        // 2. Production default
+        // Override at runtime via `NetworkService.shared.baseURL = ...` if needed.
+        let infoPlistURL = (Bundle.main.object(forInfoDictionaryKey: "SOCIAL_API_BASE_URL") as? String)
+            .flatMap { URL(string: $0) }
+        self.baseURL = infoPlistURL ?? URL(string: "http://159.65.154.224:3000")!
 
         let config = URLSessionConfiguration.default
         config.timeoutIntervalForRequest = 30
@@ -71,8 +82,9 @@ final class NetworkService {
         request.httpMethod = method
         request.setValue("application/json", forHTTPHeaderField: "Accept")
 
-        // Attach Firebase Auth bearer token if available
-        if let user = Auth.auth().currentUser {
+        // Attach Firebase Auth bearer token if available.
+        // Guarded: touching `Auth.auth()` crashes when FirebaseApp.configure() never ran.
+        if Self.firebaseAvailable, let user = Auth.auth().currentUser {
             let token = try await user.getIDToken()
             request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         }
