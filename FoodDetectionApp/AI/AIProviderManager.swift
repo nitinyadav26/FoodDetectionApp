@@ -51,8 +51,8 @@ final class AIProviderManager: ObservableObject {
             return
         }
 
-        // Tier 2: On-device Gemma model
-        if modelDownloadManager.isModelAvailable {
+        // Tier 2: On-device Gemma model (only if inference engine is compiled in)
+        if GemmaLocalProvider.isInferenceAvailable && modelDownloadManager.isModelAvailable {
             activeProvider = GemmaLocalProvider(modelPath: modelDownloadManager.modelPath)
             state = .localReady
             return

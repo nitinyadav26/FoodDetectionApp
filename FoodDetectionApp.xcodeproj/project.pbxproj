@@ -7,12 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		553D9DFBDBB2A1E03A37659B /* Pods_FoodDetectionApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E11E55C135A85DA636BA622F /* Pods_FoodDetectionApp.framework */; };
+		94E83D662F8BC4C400542092 /* llama.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94E83D652F8BC4C400542092 /* llama.xcframework */; };
+		94E83D672F8BC4C400542092 /* llama.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 94E83D652F8BC4C400542092 /* llama.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		94E83D692F8BC4CC00542092 /* Pods_FoodDetectionApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E11E55C135A85DA636BA622F /* Pods_FoodDetectionApp.framework */; };
+		94E83D6A2F8BC4CC00542092 /* Pods_FoodDetectionApp.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E11E55C135A85DA636BA622F /* Pods_FoodDetectionApp.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		94E83D682F8BC4C400542092 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				94E83D6A2F8BC4CC00542092 /* Pods_FoodDetectionApp.framework in Embed Frameworks */,
+				94E83D672F8BC4C400542092 /* llama.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1E32B83C2EDD1D2100D7C8D2 /* FoodDetectionApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodDetectionApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		557238E42816915AA66659CE /* Pods-FoodDetectionApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodDetectionApp.debug.xcconfig"; path = "Target Support Files/Pods-FoodDetectionApp/Pods-FoodDetectionApp.debug.xcconfig"; sourceTree = "<group>"; };
+		94E83D652F8BC4C400542092 /* llama.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = llama.xcframework; sourceTree = "<group>"; };
 		E11E55C135A85DA636BA622F /* Pods_FoodDetectionApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodDetectionApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0C8B334936E0F1F4FDAEAF9 /* Pods-FoodDetectionApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodDetectionApp.release.xcconfig"; path = "Target Support Files/Pods-FoodDetectionApp/Pods-FoodDetectionApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -30,7 +49,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				553D9DFBDBB2A1E03A37659B /* Pods_FoodDetectionApp.framework in Frameworks */,
+				94E83D692F8BC4CC00542092 /* Pods_FoodDetectionApp.framework in Frameworks */,
+				94E83D662F8BC4C400542092 /* llama.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +87,7 @@
 		A95608933EFC523B3256542B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				94E83D652F8BC4C400542092 /* llama.xcframework */,
 				E11E55C135A85DA636BA622F /* Pods_FoodDetectionApp.framework */,
 			);
 			name = Frameworks;
@@ -85,6 +106,7 @@
 				1E32B83A2EDD1D2100D7C8D2 /* Resources */,
 				1918B39FAAA9F3979ACC76B8 /* [CP] Copy Pods Resources */,
 				EB1A5090F03F3E06D6688F32 /* [CP] Embed Pods Frameworks */,
+				94E83D682F8BC4C400542092 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -106,7 +128,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 2600;
-				LastUpgradeCheck = 2600;
+				LastUpgradeCheck = 2640;
 				TargetAttributes = {
 					1E32B83B2EDD1D2100D7C8D2 = {
 						CreatedOnToolsVersion = 26.0.1;
@@ -226,6 +248,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -256,6 +279,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = A3K5A7H8D7;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -279,6 +303,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -289,6 +314,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -319,6 +345,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = A3K5A7H8D7;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -335,6 +362,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -349,7 +377,6 @@
 				CODE_SIGN_ENTITLEMENTS = FoodDetectionApp/FoodDetectionApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = A3K5A7H8D7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Foodsense;
@@ -390,7 +417,6 @@
 				CODE_SIGN_ENTITLEMENTS = FoodDetectionApp/FoodDetectionApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = A3K5A7H8D7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Foodsense;

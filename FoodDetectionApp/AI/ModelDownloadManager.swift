@@ -24,8 +24,8 @@ final class ModelDownloadManager: NSObject, ObservableObject {
     // MARK: - Model Path
 
     private let modelDirectoryName = "GemmaModel"
-    private let modelFileName = "gemma-4-E4B-it.litertlm"
-    private let modelDownloadURL = "https://huggingface.co/litert-community/gemma-4-E4B-it-litert-lm/resolve/main/gemma-4-E4B-it.litertlm"
+    private let modelFileName = "google_gemma-4-E4B-it-Q4_K_S.gguf"
+    private let modelDownloadURL = "https://huggingface.co/bartowski/google_gemma-4-E4B-it-GGUF/resolve/main/google_gemma-4-E4B-it-Q4_K_S.gguf"
 
     var modelPath: String {
         modelDirectory.appendingPathComponent(modelFileName).path
@@ -56,15 +56,45 @@ final class ModelDownloadManager: NSObject, ObservableObject {
 
     override init() {
         super.init()
+        cleanupStaleFiles()
         checkModelAvailable()
+    }
+
+    /// Remove old model files from prior filename conventions
+    private func cleanupStaleFiles() {
+        let staleNames = [
+            "gemma-4-e4b.bin",
+            "gemma-4-E4B-it.litertlm",
+            "gemma-4-E4B-it-Q4_K_S.gguf"
+        ]
+        let dir = modelDirectory
+        for name in staleNames {
+            let path = dir.appendingPathComponent(name).path
+            if FileManager.default.fileExists(atPath: path) {
+                try? FileManager.default.removeItem(atPath: path)
+            }
+        }
     }
 
     // MARK: - Public Methods
 
     func checkModelAvailable() {
         let exists = FileManager.default.fileExists(atPath: modelPath)
-        isModelAvailable = exists
-        if exists {
+        // Validate GGUF magic bytes ("GGUF" = 0x47475546) to reject corrupt/HTML downloads
+        let valid: Bool
+        if exists, let handle = FileHandle(forReadingAtPath: modelPath) {
+            let magic = handle.readData(ofLength: 4)
+            handle.closeFile()
+            valid = magic == Data([0x47, 0x47, 0x55, 0x46]) // "GGUF"
+            if !valid {
+                // Delete corrupt file (e.g. HTML redirect page)
+                try? FileManager.default.removeItem(atPath: modelPath)
+            }
+        } else {
+            valid = false
+        }
+        isModelAvailable = valid
+        if valid {
             downloadState = .complete
         }
     }
@@ -108,6 +138,24 @@ extension ModelDownloadManager: URLSessionDownloadDelegate {
     nonisolated func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
         MainActor.assumeIsolated {
             downloadState = .verifying
+
+            // Check HTTP status — reject non-200 responses
+            if let httpResponse = downloadTask.response as? HTTPURLResponse,
+               httpResponse.statusCode != 200 {
+                downloadState = .failed("Download failed with HTTP \(httpResponse.statusCode)")
+                self.downloadTask = nil
+                return
+            }
+
+            // Validate GGUF magic bytes before moving the file
+            let ggufMagic = Data([0x47, 0x47, 0x55, 0x46]) // "GGUF"
+            guard let handle = try? FileHandle(forReadingFrom: location),
+                  handle.readData(ofLength: 4) == ggufMagic else {
+                downloadState = .failed("Downloaded file is not a valid GGUF model. The server may have returned an error page.")
+                self.downloadTask = nil
+                return
+            }
+            try? handle.close()
 
             let destination = modelDirectory.appendingPathComponent(modelFileName)
 

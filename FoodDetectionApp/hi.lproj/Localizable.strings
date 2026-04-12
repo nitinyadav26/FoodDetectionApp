@@ -402,7 +402,7 @@
 "ai_use_gemini" = "Gemini Cloud उपयोग करें";
 "ai_use_gemini_desc" = "सर्वोत्तम सटीकता के लिए अपनी Google AI API कुंजी दर्ज करें";
 "ai_use_ondevice" = "ऑन-डिवाइस AI उपयोग करें";
-"ai_use_ondevice_desc" = "ऑफ़लाइन उपयोग के लिए Gemma 4 (~3.7 GB) डाउनलोड करें";
+"ai_use_ondevice_desc" = "ऑफ़लाइन उपयोग के लिए Gemma 4 (~5.2 GB) डाउनलोड करें";
 "ai_later" = "बाद में";
 "ai_enter_key" = "Gemini API कुंजी दर्ज करें";
 "ai_validate_save" = "सत्यापित करें और सहेजें";
@@ -412,7 +412,7 @@
 "ai_clear_key" = "कुंजी हटाएं";
 "ai_get_key_link" = "Google AI Studio से कुंजी प्राप्त करें";
 "ai_model_name" = "Gemma 4 E4B";
-"ai_model_size" = "~3.7 GB";
+"ai_model_size" = "~5.2 GB";
 "ai_download" = "मॉडल डाउनलोड करें";
 "ai_downloading" = "डाउनलोड हो रहा है...";
 "ai_model_ready" = "मॉडल तैयार है";
