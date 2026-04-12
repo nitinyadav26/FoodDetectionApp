@@ -67,5 +67,30 @@ interview_prep/
 *.iml
 
 # Firebase config (contains project-specific keys — generate from console)
-# GoogleService-Info.plist
-# google-services.json
+GoogleService-Info.plist
+FoodDetectionApp/GoogleService-Info.plist
+android/app/google-services.json
+
+# Proprietary TFLite model (not open-sourced)
+FoodDetectionApp/model.tflite
+android/model_pack/src/main/assets/model.tflite
+*.tflite
+
+# Downloaded Gemma models (user downloads at runtime, 3+ GB)
+**/GemmaModel/
+*.gguf
+
+# llama.cpp XCFramework (users build from source — see docs/BUILDING.md)
+llama.xcframework/
+
+# Firebase service account (server secret)
+server/firebase-service-account.json
+server/*-firebase-adminsdk-*.json
+
+# Claude Code worktrees and internal files
+.claude/worktrees/
+.claude/plans/
+AGENTS.md
+
+# Server env
+server/.env

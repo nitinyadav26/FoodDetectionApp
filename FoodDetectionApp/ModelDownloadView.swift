@@ -1,6 +1,6 @@
 import SwiftUI
 
-/// View for downloading and managing the on-device Gemma 4 E4B model.
+/// View for downloading and managing the on-device Gemma 4 E2B model.
 struct ModelDownloadView: View {
     @ObservedObject private var downloadManager = ModelDownloadManager.shared
     @Environment(\.dismiss) private var dismiss
@@ -23,16 +23,16 @@ struct ModelDownloadView: View {
                 HStack {
                     Text("Model")
                     Spacer()
-                    Text("Gemma 4 E4B")
+                    Text("Gemma 4 E2B")
                         .foregroundColor(.secondary)
                 }
                 .accessibilityElement(children: .combine)
-                .accessibilityLabel("Model: Gemma 4 E4B")
+                .accessibilityLabel("Model: Gemma 4 E2B")
 
                 HStack {
                     Text("Size")
                     Spacer()
-                    Text("~5.2 GB")
+                    Text("~3.2 GB")
                         .foregroundColor(.secondary)
                 }
                 .accessibilityElement(children: .combine)
@@ -154,6 +154,84 @@ struct ModelDownloadView: View {
                     .accessibilityLabel("Retry download")
                 }
             }
+
+            // MARK: - Vision Projector Section
+
+            Section(header: Text("Vision (Image Analysis)")) {
+                HStack {
+                    Text("File")
+                    Spacer()
+                    Text("Vision Projector (mmproj)")
+                        .foregroundColor(.secondary)
+                }
+
+                HStack {
+                    Text("Size")
+                    Spacer()
+                    Text("~940 MB")
+                        .foregroundColor(.secondary)
+                }
+
+                switch downloadManager.mmprojDownloadState {
+                case .idle:
+                    if downloadManager.isModelAvailable {
+                        Button(action: startMmprojDownload) {
+                            HStack {
+                                Image(systemName: "eye.fill")
+                                    .foregroundColor(.blue)
+                                Text("Download Vision Support")
+                            }
+                        }
+                        .disabled(!isOSSupported)
+                    } else {
+                        Text("Download the main model first")
+                            .foregroundColor(.secondary)
+                            .font(.caption)
+                    }
+
+                case .downloading:
+                    VStack(alignment: .leading, spacing: 8) {
+                        HStack {
+                            Text("Downloading vision...")
+                            Spacer()
+                            Text("\(Int(downloadManager.mmprojDownloadProgress * 100))%")
+                                .foregroundColor(.secondary)
+                        }
+                        ProgressView(value: downloadManager.mmprojDownloadProgress)
+                    }
+                    Button("Cancel", role: .destructive) {
+                        downloadManager.cancelMmprojDownload()
+                    }
+
+                case .verifying:
+                    HStack {
+                        ProgressView().progressViewStyle(CircularProgressViewStyle())
+                        Text("Verifying...")
+                    }
+
+                case .complete:
+                    HStack {
+                        Image(systemName: "checkmark.circle.fill").foregroundColor(.green)
+                        Text("Vision Ready — can analyze food photos")
+                            .foregroundColor(.green)
+                    }
+                    Button("Delete Vision Model", role: .destructive) {
+                        downloadManager.deleteMmproj()
+                    }
+
+                case .failed(let message):
+                    HStack {
+                        Image(systemName: "xmark.circle.fill").foregroundColor(.red)
+                        Text(message).foregroundColor(.red).font(.caption)
+                    }
+                    Button(action: startMmprojDownload) {
+                        HStack {
+                            Image(systemName: "arrow.clockwise")
+                            Text("Retry")
+                        }
+                    }
+                }
+            }
         }
         .navigationTitle("On-Device AI")
     }
@@ -161,6 +239,12 @@ struct ModelDownloadView: View {
     private func startDownload() {
         Task {
             await AIProviderManager.shared.startModelDownload()
+        }
+    }
+
+    private func startMmprojDownload() {
+        Task {
+            await downloadManager.startMmprojDownload()
         }
     }
 }
