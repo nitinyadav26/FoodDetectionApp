@@ -72,7 +72,7 @@ struct AISetupPromptView: View {
                                 Text("Use On-Device AI")
                                     .font(.headline)
                                     .foregroundColor(.primary)
-                                Text("Download Gemma 4 (~2.5 GB) for offline use")
+                                Text("Download Gemma 4 (~3.7 GB) for offline use")
                                     .font(.caption)
                                     .foregroundColor(.secondary)
                             }

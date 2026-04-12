@@ -32,7 +32,7 @@ struct ModelDownloadView: View {
                 HStack {
                     Text("Size")
                     Spacer()
-                    Text("~2.5 GB")
+                    Text("~3.7 GB")
                         .foregroundColor(.secondary)
                 }
                 .accessibilityElement(children: .combine)

@@ -100,7 +100,7 @@ fun ModelDownloadScreen(app: FoodSenseApplication, onBack: () -> Unit) {
                 )
                 Spacer(modifier = Modifier.height(8.dp))
                 Text(
-                    "Model size: ~2.5 GB",
+                    "Model size: ~3.7 GB",
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant
                 )

@@ -130,9 +130,8 @@ class ModelDownloadManager(private val context: Context) {
 
     companion object {
         private const val MODEL_DIR = "gemma_model"
-        private const val MODEL_FILENAME = "gemma-4-e4b.bin"
-        // Placeholder URL -- replace with actual model hosting URL when available
+        private const val MODEL_FILENAME = "gemma-4-E4B-it.litertlm"
         private const val MODEL_URL =
-            "https://huggingface.co/litert-community/gemma-4-E4B-it-litert-lm/resolve/main/model.bin"
+            "https://huggingface.co/litert-community/gemma-4-E4B-it-litert-lm/resolve/main/gemma-4-E4B-it.litertlm"
     }
 }

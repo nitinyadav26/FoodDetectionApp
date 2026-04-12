@@ -24,8 +24,8 @@ final class ModelDownloadManager: NSObject, ObservableObject {
     // MARK: - Model Path
 
     private let modelDirectoryName = "GemmaModel"
-    private let modelFileName = "gemma-4-e4b.bin"
-    private let modelDownloadURL = "https://huggingface.co/litert-community/gemma-4-E4B-it-litert-lm/resolve/main/model.bin"
+    private let modelFileName = "gemma-4-E4B-it.litertlm"
+    private let modelDownloadURL = "https://huggingface.co/litert-community/gemma-4-E4B-it-litert-lm/resolve/main/gemma-4-E4B-it.litertlm"
 
     var modelPath: String {
         modelDirectory.appendingPathComponent(modelFileName).path

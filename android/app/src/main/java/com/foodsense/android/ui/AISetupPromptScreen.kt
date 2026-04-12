@@ -110,7 +110,7 @@ fun AISetupPromptDialog(
                                 fontWeight = FontWeight.SemiBold
                             )
                             Text(
-                                "Download Gemma 4 (~2.5 GB)",
+                                "Download Gemma 4 (~3.7 GB)",
                                 style = MaterialTheme.typography.bodySmall,
                                 color = MaterialTheme.colorScheme.onSurfaceVariant
                             )
