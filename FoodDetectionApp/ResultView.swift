@@ -139,11 +139,26 @@ struct ResultView: View {
                     .padding(.horizontal)
                 }
                 
+                // AI Provider Badge
+                if let provider = AIProviderManager.shared.activeProvider {
+                    HStack(spacing: 6) {
+                        Image(systemName: provider.providerName == "Gemini Cloud" ? "cloud.fill" : "cpu")
+                            .font(.caption2)
+                        Text("Powered by \(provider.providerName)")
+                            .font(.caption2)
+                    }
+                    .foregroundColor(.secondary)
+                    .padding(.horizontal, 12)
+                    .padding(.vertical, 4)
+                    .background(Color(UIColor.tertiarySystemBackground))
+                    .cornerRadius(8)
+                }
+
                 // Advice
                 VStack(alignment: .leading, spacing: 10) {
                     Text("Healthier Advice")
                         .font(.headline)
-                    
+
                     Text(nutrition.recipe)
                         .font(.body)
                         .foregroundColor(.secondary)
