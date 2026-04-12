@@ -6,6 +6,8 @@ struct ContentView: View {
     @StateObject private var networkMonitor = NetworkMonitor.shared
     @StateObject private var authManager = AuthManager.shared
     @StateObject private var socialManager = SocialManager.shared
+    @StateObject private var aiManager = AIProviderManager.shared
+    @State private var showAISetup = false
 
     var body: some View {
         if !hasOnboarded {
@@ -81,6 +83,14 @@ struct ContentView: View {
                         }
                 }
                 .accentColor(.green)
+            }
+            .sheet(isPresented: $showAISetup) {
+                AISetupPromptView()
+            }
+            .onAppear {
+                if aiManager.state == .noProvider {
+                    showAISetup = true
+                }
             }
         }
     }

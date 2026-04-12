@@ -44,7 +44,7 @@ class FoodSenseApplication : Application() {
     val xpManager: XPManager by lazy { XPManager(this) }
     val badgeManager: BadgeManager by lazy { BadgeManager(this, socialManager, authManager) }
     val syncManager: SyncManager by lazy { SyncManager(this, networkService, nutritionManager) }
-    val aiProviderManager: AIProviderManager by lazy { AIProviderManager() }
+    val aiProviderManager: AIProviderManager by lazy { AIProviderManager(this) }
 
     override fun onCreate() {
         super.onCreate()

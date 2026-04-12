@@ -26,6 +26,45 @@ struct SettingsView: View {
                 }
             }
 
+            Section(header: Text("AI Configuration")) {
+                NavigationLink(destination: APIKeyEntryView()) {
+                    HStack {
+                        Label("Gemini API Key", systemImage: "key.fill")
+                        Spacer()
+                        if AIProviderManager.shared.state == .cloudReady {
+                            Image(systemName: "checkmark.circle.fill")
+                                .foregroundColor(.green)
+                                .accessibilityLabel("Configured")
+                        }
+                    }
+                }
+                .accessibilityLabel("Gemini API Key")
+                .accessibilityHint("Configure your Gemini API key")
+
+                NavigationLink(destination: ModelDownloadView()) {
+                    HStack {
+                        Label("On-Device AI Model", systemImage: "cpu")
+                        Spacer()
+                        if AIProviderManager.shared.state == .localReady {
+                            Image(systemName: "checkmark.circle.fill")
+                                .foregroundColor(.green)
+                                .accessibilityLabel("Configured")
+                        }
+                    }
+                }
+                .accessibilityLabel("On-Device AI Model")
+                .accessibilityHint("Download or manage the on-device AI model")
+
+                HStack {
+                    Text("Active Provider")
+                    Spacer()
+                    Text(AIProviderManager.shared.activeProvider?.providerName ?? "Not configured")
+                        .foregroundColor(.secondary)
+                }
+                .accessibilityElement(children: .combine)
+                .accessibilityLabel("Active provider: \(AIProviderManager.shared.activeProvider?.providerName ?? "Not configured")")
+            }
+
             Section(header: Text("Legal")) {
                 Link("Privacy Policy", destination: URL(string: "https://foodsense-app.web.app/privacy-policy")!)
                 Link("Terms of Service", destination: URL(string: "https://foodsense-app.web.app/terms-of-service")!)

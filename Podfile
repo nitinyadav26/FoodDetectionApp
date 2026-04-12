@@ -9,6 +9,9 @@ target 'FoodDetectionApp' do
   pod 'TensorFlowLiteSwift'
   pod 'TensorFlowLiteC'
 
+  # On-device LLM inference for Gemma 4 E4B
+  # pod 'LiteRT-LM'  # Uncomment when pod is published to CocoaPods
+
   # Firebase
   pod 'FirebaseCore'
   pod 'FirebaseAuth'

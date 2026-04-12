@@ -1,36 +1,100 @@
 import Foundation
 import Combine
 
-class AIProviderManager: ObservableObject {
+/// Manages the active AI provider with 3-tier fallback:
+/// 1. User-provided Gemini API key (Keychain)
+/// 2. On-device Gemma 4 E4B model
+/// 3. Legacy Info.plist API key
+final class AIProviderManager: ObservableObject {
     static let shared = AIProviderManager()
 
+    // MARK: - State
+
     enum ProviderState: Equatable {
+        case initializing
         case cloudReady
         case localReady
-        case downloading(Double)
         case noProvider
     }
 
-    @Published var state: ProviderState = .noProvider
+    @Published var state: ProviderState = .initializing
     @Published private(set) var activeProvider: (any AIProvider)?
 
-    private init() {}
+    // MARK: - Dependencies
 
-    /// Called at app startup. For Phase 1, reads legacy Info.plist keys.
-    /// Later phases will check user-provided key and local model.
+    private let apiKeyManager = APIKeyManager()
+    let modelDownloadManager = ModelDownloadManager.shared
+
+    // MARK: - Legacy Keys
+
+    private let legacyProxyBaseURL: String? = {
+        Bundle.main.infoDictionary?["PROXY_BASE_URL"] as? String
+    }()
+
+    private let legacyDirectApiKey: String? = {
+        Bundle.main.infoDictionary?["GEMINI_API_KEY"] as? String
+    }()
+
+    // MARK: - Init
+
+    init() {
+        initialize()
+    }
+
+    // MARK: - Initialize / Re-initialize
+
     func initialize() {
-        // Phase 1: legacy behavior -- read from Info.plist
-        let legacyKey = Bundle.main.infoDictionary?["GEMINI_API_KEY"] as? String
-        let proxyURL = Bundle.main.infoDictionary?["PROXY_BASE_URL"] as? String
-
-        if let key = legacyKey, !key.isEmpty {
-            activeProvider = GeminiCloudProvider(apiKey: key, proxyBaseURL: nil)
+        // Tier 1: User-provided Gemini API key from Keychain
+        if let userKey = apiKeyManager.getAPIKey(), !userKey.isEmpty {
+            activeProvider = GeminiCloudProvider(apiKey: userKey, proxyBaseURL: nil)
             state = .cloudReady
-        } else if let proxy = proxyURL, !proxy.isEmpty {
+            return
+        }
+
+        // Tier 2: On-device Gemma model
+        if modelDownloadManager.isModelAvailable {
+            activeProvider = GemmaLocalProvider(modelPath: modelDownloadManager.modelPath)
+            state = .localReady
+            return
+        }
+
+        // Tier 3: Legacy Info.plist key or proxy
+        if let proxy = legacyProxyBaseURL, !proxy.isEmpty {
             activeProvider = GeminiCloudProvider(apiKey: nil, proxyBaseURL: proxy)
             state = .cloudReady
-        } else {
-            state = .noProvider
+            return
         }
+        if let key = legacyDirectApiKey, !key.isEmpty {
+            activeProvider = GeminiCloudProvider(apiKey: key, proxyBaseURL: nil)
+            state = .cloudReady
+            return
+        }
+
+        // No provider available
+        activeProvider = nil
+        state = .noProvider
+    }
+
+    // MARK: - API Key Management
+
+    func setAPIKey(_ key: String) {
+        try? apiKeyManager.saveAPIKey(key)
+        initialize()
+    }
+
+    func clearAPIKey() {
+        apiKeyManager.deleteAPIKey()
+        initialize()
+    }
+
+    // MARK: - Model Download
+
+    func startModelDownload() async {
+        await modelDownloadManager.startDownload()
+    }
+
+    func deleteLocalModel() {
+        modelDownloadManager.deleteModel()
+        initialize()
     }
 }

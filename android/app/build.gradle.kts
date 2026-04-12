@@ -37,7 +37,9 @@ android {
         val proxyUrl = localOrProject("PROXY_BASE_URL") ?: ""
         buildConfigField("String", "PROXY_BASE_URL", "\"$proxyUrl\"")
 
-        // Development only: set GEMINI_API_KEY in local.properties (git-ignored)
+        // Legacy fallback: GEMINI_API_KEY from local.properties is used only if the user
+        // has not configured a key via Settings > AI Configuration.  New installs should
+        // use the in-app API key entry (EncryptedSharedPreferences) instead.
         val geminiKey = localOrProject("GEMINI_API_KEY") ?: ""
         buildConfigField("String", "GEMINI_API_KEY", "\"$geminiKey\"")
 
@@ -138,6 +140,12 @@ dependencies {
 
     // Health Connect
     implementation("androidx.health.connect:connect-client:1.1.0-alpha07")
+
+    // Encrypted storage for user API keys
+    implementation("androidx.security:security-crypto:1.1.0-alpha06")
+
+    // On-device LiteRT-LM for Gemma inference (uncomment when dependency is published)
+    // implementation("com.google.ai.edge.litert:litert-lm:+")
 
     // Firebase
     implementation(platform("com.google.firebase:firebase-bom:32.7.0"))

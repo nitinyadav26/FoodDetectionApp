@@ -11,10 +11,15 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.filled.CheckCircle
+import androidx.compose.material.icons.filled.Memory
+import androidx.compose.material.icons.filled.VpnKey
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -37,6 +42,7 @@ import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.foodsense.android.FoodSenseApplication
+import com.foodsense.android.services.ai.AIProviderManager
 import java.io.File
 
 @Composable
@@ -44,6 +50,20 @@ fun SettingsScreen(app: FoodSenseApplication, onBack: () -> Unit) {
     val context = LocalContext.current
     val uriHandler = LocalUriHandler.current
     var showDeleteDialog by remember { mutableStateOf(false) }
+    var showApiKeyScreen by remember { mutableStateOf(false) }
+    var showModelDownloadScreen by remember { mutableStateOf(false) }
+
+    // Sub-screen navigation
+    if (showApiKeyScreen) {
+        APIKeyEntryScreen(app = app, onBack = { showApiKeyScreen = false })
+        return
+    }
+    if (showModelDownloadScreen) {
+        ModelDownloadScreen(app = app, onBack = { showModelDownloadScreen = false })
+        return
+    }
+
+    val providerState by app.aiProviderManager.state
 
     Column(
         modifier = Modifier
@@ -57,6 +77,82 @@ fun SettingsScreen(app: FoodSenseApplication, onBack: () -> Unit) {
                 Icon(Icons.Default.ArrowBack, contentDescription = "Back")
             }
             Text("Settings", style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.Bold)
+        }
+
+        Spacer(modifier = Modifier.height(8.dp))
+
+        // AI Configuration
+        SectionHeader("AI Configuration")
+        Card(
+            colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant),
+            modifier = Modifier
+                .fillMaxWidth()
+                .clickable { showApiKeyScreen = true },
+        ) {
+            Row(
+                modifier = Modifier.fillMaxWidth().padding(16.dp),
+                verticalAlignment = Alignment.CenterVertically,
+            ) {
+                Icon(
+                    Icons.Default.VpnKey,
+                    contentDescription = "API Key",
+                    modifier = Modifier.size(20.dp)
+                )
+                Spacer(modifier = Modifier.width(12.dp))
+                Text("Gemini API Key")
+                Spacer(modifier = Modifier.weight(1f))
+                if (providerState == AIProviderManager.ProviderState.CLOUD_READY) {
+                    Icon(
+                        Icons.Default.CheckCircle,
+                        contentDescription = "Configured",
+                        tint = MaterialTheme.colorScheme.primary,
+                        modifier = Modifier.size(20.dp)
+                    )
+                }
+            }
+        }
+        Card(
+            colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant),
+            modifier = Modifier
+                .fillMaxWidth()
+                .clickable { showModelDownloadScreen = true },
+        ) {
+            Row(
+                modifier = Modifier.fillMaxWidth().padding(16.dp),
+                verticalAlignment = Alignment.CenterVertically,
+            ) {
+                Icon(
+                    Icons.Default.Memory,
+                    contentDescription = "On-Device AI",
+                    modifier = Modifier.size(20.dp)
+                )
+                Spacer(modifier = Modifier.width(12.dp))
+                Text("On-Device AI Model")
+                Spacer(modifier = Modifier.weight(1f))
+                if (providerState == AIProviderManager.ProviderState.LOCAL_READY) {
+                    Icon(
+                        Icons.Default.CheckCircle,
+                        contentDescription = "Ready",
+                        tint = MaterialTheme.colorScheme.primary,
+                        modifier = Modifier.size(20.dp)
+                    )
+                }
+            }
+        }
+        Card(
+            colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant),
+        ) {
+            Row(
+                modifier = Modifier.fillMaxWidth().padding(16.dp),
+                verticalAlignment = Alignment.CenterVertically,
+            ) {
+                Text("Active Provider")
+                Spacer(modifier = Modifier.weight(1f))
+                Text(
+                    app.aiProviderManager.activeProvider?.providerName ?: "Not configured",
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
+            }
         }
 
         Spacer(modifier = Modifier.height(8.dp))
