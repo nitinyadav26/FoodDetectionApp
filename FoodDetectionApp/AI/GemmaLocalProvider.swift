@@ -34,7 +34,9 @@ final class GemmaLocalProvider: AIProvider {
         llama_backend_init()
 
         var mparams = llama_model_default_params()
-        mparams.n_gpu_layers = 99  // offload as many layers to GPU as possible
+        // iPhone 16 Pro has ~5.5 GB GPU budget. Q4_K_S model is ~5 GB.
+        // Offload 28 of 43 layers to GPU, rest on CPU to fit in memory.
+        mparams.n_gpu_layers = 28
 
         guard let m = llama_model_load_from_file(modelPath, mparams) else {
             throw GemmaError.modelLoadFailed
@@ -42,8 +44,8 @@ final class GemmaLocalProvider: AIProvider {
         model = m
 
         var cparams = llama_context_default_params()
-        cparams.n_ctx = 4096
-        cparams.n_batch = 512
+        cparams.n_ctx = 2048   // smaller context to save ~100 MB KV cache memory
+        cparams.n_batch = 2048 // match n_ctx so any prompt that fits in context can decode in one batch
 
         guard let c = llama_init_from_model(m, cparams) else {
             throw GemmaError.contextCreateFailed
@@ -70,12 +72,17 @@ final class GemmaLocalProvider: AIProvider {
             throw GemmaError.notInitialized
         }
 
+        // Get vocab (required by b8763+ API for tokenize/detokenize/eog)
+        let vocab = llama_model_get_vocab(model)!
+
         // Tokenize the prompt
-        let promptCStr = prompt.cString(using: .utf8)!
-        let maxInputTokens = Int32(promptCStr.count + 256)
+        let promptBytes = Array(prompt.utf8)
+        let maxInputTokens = Int32(promptBytes.count + 256)
         var tokens = [llama_token](repeating: 0, count: Int(maxInputTokens))
-        let nTokens = llama_tokenize(model, promptCStr, Int32(promptCStr.count - 1),
-                                     &tokens, maxInputTokens, true, true)
+        let nTokens = promptBytes.withUnsafeBufferPointer { buf in
+            llama_tokenize(vocab, buf.baseAddress, Int32(buf.count),
+                           &tokens, maxInputTokens, true, true)
+        }
         guard nTokens > 0 else {
             throw GemmaError.tokenizeFailed
         }
@@ -94,18 +101,18 @@ final class GemmaLocalProvider: AIProvider {
 
         // Generate token by token
         var result = ""
-        var nDecoded: Int32 = nTokens
 
         for _ in 0..<maxTokens {
             let newToken = llama_sampler_sample(sampler, context, -1)
 
             // Check end-of-generation
-            if llama_token_is_eog(model, newToken) { break }
+            if llama_vocab_is_eog(vocab, newToken) { break }
 
             // Convert token to text
             var buf = [CChar](repeating: 0, count: 256)
-            let len = llama_token_to_piece(model, newToken, &buf, 256, 0, false)
+            let len = llama_token_to_piece(vocab, newToken, &buf, 256, 0, false)
             if len > 0 {
+                buf[Int(len)] = 0  // null-terminate
                 let piece = String(cString: buf)
                 result += piece
             }
@@ -114,7 +121,6 @@ final class GemmaLocalProvider: AIProvider {
             var nextToken = newToken
             batch = llama_batch_get_one(&nextToken, 1)
             guard llama_decode(context, batch) == 0 else { break }
-            nDecoded += 1
         }
 
         return result.trimmingCharacters(in: .whitespacesAndNewlines)
