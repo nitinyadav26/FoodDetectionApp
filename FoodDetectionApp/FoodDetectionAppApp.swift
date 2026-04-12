@@ -19,6 +19,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
             print("[FoodSense] GoogleService-Info.plist not found — Firebase disabled. Download from Firebase Console.")
         }
         NotificationManager.shared.requestPermission()
+        AIProviderManager.shared.initialize()
         return true
     }
 }

@@ -18,6 +18,7 @@ import com.foodsense.android.services.StreakManager
 import com.foodsense.android.services.SyncManager
 import com.foodsense.android.services.VoiceLoggingManager
 import com.foodsense.android.services.XPManager
+import com.foodsense.android.services.ai.AIProviderManager
 import com.google.firebase.FirebaseApp
 
 class FoodSenseApplication : Application() {
@@ -43,6 +44,7 @@ class FoodSenseApplication : Application() {
     val xpManager: XPManager by lazy { XPManager(this) }
     val badgeManager: BadgeManager by lazy { BadgeManager(this, socialManager, authManager) }
     val syncManager: SyncManager by lazy { SyncManager(this, networkService, nutritionManager) }
+    val aiProviderManager: AIProviderManager by lazy { AIProviderManager() }
 
     override fun onCreate() {
         super.onCreate()
@@ -61,6 +63,7 @@ class FoodSenseApplication : Application() {
         } else {
             android.util.Log.w("FoodSense", "Skipping Firebase init — placeholder config detected")
         }
+        aiProviderManager.initialize()
         nutritionManager
         foodDatabase
         apiService
