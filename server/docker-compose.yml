@@ -11,6 +11,12 @@ services:
     # reaches postgres via the internal docker network.
     volumes:
       - pgdata:/var/lib/postgresql/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d foodsense"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
   redis:
     image: redis:7-alpine
@@ -21,11 +27,19 @@ services:
     # Ports intentionally NOT exposed publicly.
     volumes:
       - redisdata:/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "-a", "${REDIS_PASSWORD}", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
   app:
     build: .
+    # Bind to 127.0.0.1 only — nginx on the host reverse-proxies HTTPS traffic to this.
+    # Public access comes through nginx on ports 80/443, not directly to 3000.
     ports:
-      - "3000:3000"
+      - "127.0.0.1:3000:3000"
     env_file:
       - .env
     environment:
@@ -36,6 +50,7 @@ services:
     depends_on:
       - postgres
       - redis
+    restart: unless-stopped
 
 volumes:
   pgdata:

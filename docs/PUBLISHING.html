@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>FoodSense — Publishing Guide</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="/dev/fd/11" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">FoodSense — Publishing Guide</h1>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#foodsense-app-store-play-store-publishing-guide"
+id="toc-foodsense-app-store-play-store-publishing-guide">FoodSense — App
+Store &amp; Play Store Publishing Guide</a>
+<ul>
+<li><a href="#table-of-contents" id="toc-table-of-contents">Table of
+Contents</a></li>
+<li><a href="#prerequisites" id="toc-prerequisites">1. Prerequisites</a>
+<ul>
+<li><a href="#accounts-you-need-paid"
+id="toc-accounts-you-need-paid">Accounts You Need (Paid)</a></li>
+<li><a href="#tools-to-install" id="toc-tools-to-install">Tools to
+Install</a></li>
+</ul></li>
+<li><a href="#backend-deployment" id="toc-backend-deployment">2. Backend
+Deployment</a>
+<ul>
+<li><a href="#step-2.1-set-up-dns" id="toc-step-2.1-set-up-dns">Step 2.1
+— Set up DNS</a></li>
+<li><a href="#step-2.2-provision-digitalocean-droplet"
+id="toc-step-2.2-provision-digitalocean-droplet">Step 2.2 — Provision
+DigitalOcean Droplet</a></li>
+<li><a href="#step-2.3-clone-and-configure"
+id="toc-step-2.3-clone-and-configure">Step 2.3 — Clone and
+Configure</a></li>
+<li><a href="#step-2.4-launch-stack" id="toc-step-2.4-launch-stack">Step
+2.4 — Launch Stack</a></li>
+<li><a href="#step-2.5-nginx-reverse-proxy-https"
+id="toc-step-2.5-nginx-reverse-proxy-https">Step 2.5 — Nginx Reverse
+Proxy + HTTPS</a></li>
+<li><a href="#step-2.6-lockdown" id="toc-step-2.6-lockdown">Step 2.6 —
+Lockdown</a></li>
+<li><a href="#step-2.7-host-privacy-policy-terms"
+id="toc-step-2.7-host-privacy-policy-terms">Step 2.7 — Host Privacy
+Policy &amp; Terms</a></li>
+<li><a href="#step-2.8-database-backups"
+id="toc-step-2.8-database-backups">Step 2.8 — Database Backups</a></li>
+</ul></li>
+<li><a href="#ios-app-store-publishing"
+id="toc-ios-app-store-publishing">3. iOS — App Store Publishing</a>
+<ul>
+<li><a href="#step-3.1-apple-developer-account"
+id="toc-step-3.1-apple-developer-account">Step 3.1 — Apple Developer
+Account</a></li>
+<li><a href="#step-3.2-create-app-id"
+id="toc-step-3.2-create-app-id">Step 3.2 — Create App ID</a></li>
+<li><a href="#step-3.3-configure-xcode-project"
+id="toc-step-3.3-configure-xcode-project">Step 3.3 — Configure Xcode
+Project</a></li>
+<li><a href="#step-3.4-increment-version-build"
+id="toc-step-3.4-increment-version-build">Step 3.4 — Increment Version
+&amp; Build</a></li>
+<li><a
+href="#step-3.5-info.plist-keys-auto-generated-verify-in-build-settings"
+id="toc-step-3.5-info.plist-keys-auto-generated-verify-in-build-settings">Step
+3.5 — Info.plist Keys (auto-generated — verify in Build
+Settings)</a></li>
+<li><a href="#step-3.6-app-transport-security"
+id="toc-step-3.6-app-transport-security">Step 3.6 — App Transport
+Security</a></li>
+<li><a href="#step-3.7-create-app-in-app-store-connect"
+id="toc-step-3.7-create-app-in-app-store-connect">Step 3.7 — Create App
+in App Store Connect</a></li>
+<li><a href="#step-3.8-app-privacy-nutrition-labels"
+id="toc-step-3.8-app-privacy-nutrition-labels">Step 3.8 — App Privacy
+Nutrition Labels</a></li>
+<li><a href="#step-3.9-privacy-manifest-file-xcode-15"
+id="toc-step-3.9-privacy-manifest-file-xcode-15">Step 3.9 — Privacy
+Manifest File (Xcode 15+)</a></li>
+<li><a href="#step-3.10-age-rating" id="toc-step-3.10-age-rating">Step
+3.10 — Age Rating</a></li>
+<li><a href="#step-3.11-pricing-availability"
+id="toc-step-3.11-pricing-availability">Step 3.11 — Pricing &amp;
+Availability</a></li>
+<li><a href="#step-3.12-archive-upload"
+id="toc-step-3.12-archive-upload">Step 3.12 — Archive &amp;
+Upload</a></li>
+<li><a href="#step-3.13-testflight-internal-beta"
+id="toc-step-3.13-testflight-internal-beta">Step 3.13 — TestFlight
+(Internal Beta)</a></li>
+<li><a href="#step-3.14-submit-for-review"
+id="toc-step-3.14-submit-for-review">Step 3.14 — Submit for
+Review</a></li>
+</ul></li>
+<li><a href="#android-play-store-publishing"
+id="toc-android-play-store-publishing">4. Android — Play Store
+Publishing</a>
+<ul>
+<li><a href="#step-4.1-play-console-account"
+id="toc-step-4.1-play-console-account">Step 4.1 — Play Console
+Account</a></li>
+<li><a href="#step-4.2-generate-release-signing-keystore"
+id="toc-step-4.2-generate-release-signing-keystore">Step 4.2 — Generate
+Release Signing Keystore</a></li>
+<li><a href="#step-4.3-configure-signing-in-build.gradle.kts"
+id="toc-step-4.3-configure-signing-in-build.gradle.kts">Step 4.3 —
+Configure Signing in build.gradle.kts</a></li>
+<li><a href="#step-4.4-bundle-identifier"
+id="toc-step-4.4-bundle-identifier">Step 4.4 — Bundle
+Identifier</a></li>
+<li><a href="#step-4.5-configure-androidmanifest.xml"
+id="toc-step-4.5-configure-androidmanifest.xml">Step 4.5 — Configure
+AndroidManifest.xml</a></li>
+<li><a href="#step-4.6-build-release-aab-android-app-bundle"
+id="toc-step-4.6-build-release-aab-android-app-bundle">Step 4.6 — Build
+Release AAB (Android App Bundle)</a></li>
+<li><a href="#step-4.7-create-app-in-play-console"
+id="toc-step-4.7-create-app-in-play-console">Step 4.7 — Create App in
+Play Console</a></li>
+<li><a href="#step-4.8-data-safety-declaration-required"
+id="toc-step-4.8-data-safety-declaration-required">Step 4.8 — Data
+Safety Declaration (Required)</a></li>
+<li><a href="#step-4.9-content-rating"
+id="toc-step-4.9-content-rating">Step 4.9 — Content Rating</a></li>
+<li><a href="#step-4.10-target-audience"
+id="toc-step-4.10-target-audience">Step 4.10 — Target Audience</a></li>
+<li><a href="#step-4.11-store-listing"
+id="toc-step-4.11-store-listing">Step 4.11 — Store Listing</a></li>
+<li><a href="#step-4.12-app-bundle-explorer-release"
+id="toc-step-4.12-app-bundle-explorer-release">Step 4.12 — App Bundle
+Explorer &amp; Release</a></li>
+<li><a href="#step-4.13-internal-testing-track-recommended-first"
+id="toc-step-4.13-internal-testing-track-recommended-first">Step 4.13 —
+Internal Testing Track (Recommended First)</a></li>
+<li><a href="#step-4.14-play-store-review"
+id="toc-step-4.14-play-store-review">Step 4.14 — Play Store
+Review</a></li>
+</ul></li>
+<li><a href="#store-listing-assets" id="toc-store-listing-assets">5.
+Store Listing Assets</a>
+<ul>
+<li><a href="#icons" id="toc-icons">Icons</a></li>
+<li><a href="#screenshots-both-stores"
+id="toc-screenshots-both-stores">Screenshots (Both Stores)</a></li>
+<li><a href="#feature-graphic-play-store-only"
+id="toc-feature-graphic-play-store-only">Feature Graphic (Play Store
+only)</a></li>
+<li><a href="#app-store-description-ios"
+id="toc-app-store-description-ios">App Store Description (iOS)</a></li>
+<li><a href="#play-store-full-description-4000-chars"
+id="toc-play-store-full-description-4000-chars">Play Store Full
+Description (4000 chars)</a></li>
+</ul></li>
+<li><a href="#legal-privacy" id="toc-legal-privacy">6. Legal &amp;
+Privacy</a>
+<ul>
+<li><a href="#privacy-policy-host-at-foodsensescale.techprivacy"
+id="toc-privacy-policy-host-at-foodsensescale.techprivacy">Privacy
+Policy (Host at foodsensescale.tech/privacy)</a></li>
+<li><a href="#terms-of-service-host-at-foodsensescale.techterms"
+id="toc-terms-of-service-host-at-foodsensescale.techterms">Terms of
+Service (Host at foodsensescale.tech/terms)</a></li>
+</ul></li>
+<li><a href="#post-launch" id="toc-post-launch">7. Post-Launch</a>
+<ul>
+<li><a href="#monitoring" id="toc-monitoring">Monitoring</a></li>
+<li><a href="#respond-to-reviews" id="toc-respond-to-reviews">Respond to
+Reviews</a></li>
+<li><a href="#version-updates" id="toc-version-updates">Version
+Updates</a></li>
+<li><a href="#staged-rollout-android"
+id="toc-staged-rollout-android">Staged Rollout (Android)</a></li>
+</ul></li>
+<li><a href="#final-checklist-before-submission"
+id="toc-final-checklist-before-submission">Final Checklist Before
+Submission</a>
+<ul>
+<li><a href="#both-platforms" id="toc-both-platforms">Both
+Platforms</a></li>
+<li><a href="#ios-specific" id="toc-ios-specific">iOS-Specific</a></li>
+<li><a href="#android-specific"
+id="toc-android-specific">Android-Specific</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="foodsense-app-store-play-store-publishing-guide">FoodSense — App
+Store &amp; Play Store Publishing Guide</h1>
+<p>Complete step-by-step instructions to publish FoodSense on both
+stores. Backend domain: <strong>foodsensescale.tech/api</strong></p>
+<hr />
+<h2 id="table-of-contents">Table of Contents</h2>
+<ol type="1">
+<li><a href="#1-prerequisites">Prerequisites</a></li>
+<li><a href="#2-backend-deployment">Backend Deployment</a></li>
+<li><a href="#3-ios--app-store-publishing">iOS — App Store
+Publishing</a></li>
+<li><a href="#4-android--play-store-publishing">Android — Play Store
+Publishing</a></li>
+<li><a href="#5-store-listing-assets">Store Listing Assets</a></li>
+<li><a href="#6-legal--privacy">Legal &amp; Privacy</a></li>
+<li><a href="#7-post-launch">Post-Launch</a></li>
+</ol>
+<hr />
+<h2 id="prerequisites">1. Prerequisites</h2>
+<h3 id="accounts-you-need-paid">Accounts You Need (Paid)</h3>
+<table>
+<colgroup>
+<col style="width: 37%" />
+<col style="width: 25%" />
+<col style="width: 37%" />
+</colgroup>
+<thead>
+<tr>
+<th>Account</th>
+<th>Cost</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Apple Developer Program</td>
+<td>$99/year</td>
+<td>App Store publishing</td>
+</tr>
+<tr>
+<td>Google Play Console</td>
+<td>$25 one-time</td>
+<td>Play Store publishing</td>
+</tr>
+<tr>
+<td>Domain <code>foodsensescale.tech</code></td>
+<td>~$15/year</td>
+<td>Backend + privacy policy hosting</td>
+</tr>
+<tr>
+<td>DigitalOcean Droplet</td>
+<td>$6-12/month</td>
+<td>Server hosting</td>
+</tr>
+<tr>
+<td>Firebase (Spark plan)</td>
+<td>Free</td>
+<td>Auth + Analytics + Crashlytics</td>
+</tr>
+</tbody>
+</table>
+<h3 id="tools-to-install">Tools to Install</h3>
+<ul>
+<li><strong>Xcode 26.4+</strong> (for iOS builds, signing, App Store
+upload)</li>
+<li><strong>Android Studio Koala+</strong> (for Android builds, signing,
+Play upload)</li>
+<li><strong>Transporter.app</strong> (Mac App Store — for IPA
+uploads)</li>
+<li><strong>gcloud CLI</strong> (optional, for Firebase management)</li>
+<li><strong>Docker Desktop</strong> (for server deployment)</li>
+</ul>
+<hr />
+<h2 id="backend-deployment">2. Backend Deployment</h2>
+<p>All API calls from both apps hit
+<code>https://foodsensescale.tech/api/*</code>.</p>
+<h3 id="step-2.1-set-up-dns">Step 2.1 — Set up DNS</h3>
+<p>At your domain registrar for <code>foodsensescale.tech</code>:</p>
+<pre><code>Type    Name    Value                    TTL
+A       @       &lt;your-droplet-ip&gt;        300
+A       api     &lt;your-droplet-ip&gt;        300
+CNAME   www     foodsensescale.tech      300</code></pre>
+<p>Verify: <code>dig +short foodsensescale.tech</code> should return
+your droplet IP.</p>
+<h3 id="step-2.2-provision-digitalocean-droplet">Step 2.2 — Provision
+DigitalOcean Droplet</h3>
+<p>Minimum specs: <strong>2 GB RAM, 2 vCPU, 50 GB SSD</strong>
+($12/month)</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># SSH into the fresh droplet</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> root@<span class="op">&lt;</span>droplet-ip<span class="op">&gt;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Install Docker + Docker Compose</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-fsSL</span> https://get.docker.com <span class="kw">|</span> <span class="fu">sh</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="ex">apt</span> install <span class="at">-y</span> docker-compose-plugin git nginx certbot python3-certbot-nginx</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="ex">systemctl</span> enable docker</span></code></pre></div>
+<h3 id="step-2.3-clone-and-configure">Step 2.3 — Clone and
+Configure</h3>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /root</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/nitinyadav26/FoodDetectionApp.git</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> FoodDetectionApp/server</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Copy your secrets (upload these separately, NEVER commit them)</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># - firebase-service-account.json  (from Firebase Console)</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># - .env  (create from .env.example)</span></span></code></pre></div>
+<p>Create <code>/root/FoodDetectionApp/server/.env</code>:</p>
+<pre class="env"><code>DATABASE_URL=&quot;postgresql://postgres:CHANGE_ME_RANDOM_PASSWORD@postgres:5432/foodsense?schema=public&quot;
+POSTGRES_PASSWORD=&quot;CHANGE_ME_RANDOM_PASSWORD&quot;
+REDIS_URL=&quot;redis://:CHANGE_ME_REDIS_PASSWORD@redis:6379&quot;
+REDIS_PASSWORD=&quot;CHANGE_ME_REDIS_PASSWORD&quot;
+
+# Generate: openssl rand -hex 32
+JWT_SECRET=&quot;CHANGE_ME_64_CHAR_HEX_STRING&quot;
+
+# Optional: server-side Gemini proxy (only if you want to offer cloud AI without users bringing their own key)
+GEMINI_API_KEY=&quot;&quot;
+
+# Firebase
+FIREBASE_SERVICE_ACCOUNT_PATH=&quot;./firebase-service-account.json&quot;
+FIREBASE_STORAGE_BUCKET=&quot;your-project-id.firebasestorage.app&quot;
+
+# Environment
+PORT=3000
+NODE_ENV=production</code></pre>
+<p>Generate secrets:</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Postgres + Redis passwords</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">openssl</span> rand <span class="at">-base64</span> 24</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="ex">openssl</span> rand <span class="at">-base64</span> 24</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># JWT secret</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="ex">openssl</span> rand <span class="at">-hex</span> 32</span></code></pre></div>
+<h3 id="step-2.4-launch-stack">Step 2.4 — Launch Stack</h3>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /root/FoodDetectionApp/server</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> compose up <span class="at">-d</span> <span class="at">--build</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Run database migrations</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> compose exec app npx prisma migrate deploy</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> compose exec app npx prisma db seed  <span class="co"># if you have seed data</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Verify</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> compose logs <span class="at">-f</span> app</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> http://localhost:3000/health</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Should return: {&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:&quot;...&quot;}</span></span></code></pre></div>
+<h3 id="step-2.5-nginx-reverse-proxy-https">Step 2.5 — Nginx Reverse
+Proxy + HTTPS</h3>
+<p>Create
+<code>/etc/nginx/sites-available/foodsensescale.tech</code>:</p>
+<pre class="nginx"><code>server {
+    listen 80;
+    server_name foodsensescale.tech www.foodsensescale.tech;
+
+    # Let&#39;s Encrypt verification
+    location /.well-known/acme-challenge/ {
+        root /var/www/certbot;
+    }
+
+    location / {
+        return 301 https://$host$request_uri;
+    }
+}
+
+server {
+    listen 443 ssl http2;
+    server_name foodsensescale.tech www.foodsensescale.tech;
+
+    ssl_certificate /etc/letsencrypt/live/foodsensescale.tech/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/foodsensescale.tech/privkey.pem;
+
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_ciphers HIGH:!aNULL:!MD5;
+    ssl_prefer_server_ciphers on;
+
+    client_max_body_size 50M;  # Allow food image uploads
+
+    # Serve privacy policy + terms as static HTML
+    location = /privacy {
+        alias /var/www/foodsense/privacy.html;
+    }
+    location = /terms {
+        alias /var/www/foodsense/terms.html;
+    }
+
+    # API routes proxy to Node backend
+    location /api/ {
+        proxy_pass http://127.0.0.1:3000/api/;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_read_timeout 120s;
+        proxy_connect_timeout 10s;
+    }
+
+    # Auth verify endpoint (not under /api prefix)
+    location /auth/ {
+        proxy_pass http://127.0.0.1:3000/auth/;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    }
+
+    # Health check
+    location = /health {
+        proxy_pass http://127.0.0.1:3000/health;
+    }
+
+    # Social aliases (legacy)
+    location /social/ {
+        proxy_pass http://127.0.0.1:3000/social/;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+    }
+}</code></pre>
+<p>Enable and obtain certificate:</p>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ln</span> <span class="at">-s</span> /etc/nginx/sites-available/foodsensescale.tech /etc/nginx/sites-enabled/</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ex">nginx</span> <span class="at">-t</span>  <span class="co"># test config</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="ex">systemctl</span> reload nginx</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Get SSL certificate</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="ex">certbot</span> <span class="at">--nginx</span> <span class="at">-d</span> foodsensescale.tech <span class="at">-d</span> www.foodsensescale.tech <span class="at">--non-interactive</span> <span class="at">--agree-tos</span> <span class="at">-m</span> your-email@example.com</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Auto-renewal is installed via systemd timer</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="ex">systemctl</span> list-timers certbot<span class="pp">*</span></span></code></pre></div>
+<h3 id="step-2.6-lockdown">Step 2.6 — Lockdown</h3>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Only expose ports 80, 443, 22 (SSH)</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="ex">ufw</span> default deny incoming</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="ex">ufw</span> default allow outgoing</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="ex">ufw</span> allow 22/tcp</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="ex">ufw</span> allow 80/tcp</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="ex">ufw</span> allow 443/tcp</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="ex">ufw</span> enable</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove public port 3000 binding from docker-compose.yml</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Change &quot;3000:3000&quot; → &quot;127.0.0.1:3000:3000&quot; so only nginx can reach it</span></span></code></pre></div>
+<p>Edit <code>server/docker-compose.yml</code>:</p>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">app</span><span class="kw">:</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">build</span><span class="kw">:</span><span class="at"> .</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">ports</span><span class="kw">:</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="st">&quot;127.0.0.1:3000:3000&quot;</span><span class="co">  # Changed from &quot;3000:3000&quot;</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="at">  ...</span></span></code></pre></div>
+<p>Then: <code>docker compose up -d</code></p>
+<h3 id="step-2.7-host-privacy-policy-terms">Step 2.7 — Host Privacy
+Policy &amp; Terms</h3>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> /var/www/foodsense</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> /root/FoodDetectionApp/docs/privacy.html /var/www/foodsense/</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> /root/FoodDetectionApp/docs/terms.html /var/www/foodsense/</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="fu">chown</span> <span class="at">-R</span> www-data:www-data /var/www/foodsense</span></code></pre></div>
+<p>Verify: - https://foodsensescale.tech/privacy → Privacy Policy -
+https://foodsensescale.tech/terms → Terms of Service -
+https://foodsensescale.tech/health → <code>{"status":"ok"}</code> -
+https://foodsensescale.tech/api/friends → 401 (auth required —
+correct)</p>
+<h3 id="step-2.8-database-backups">Step 2.8 — Database Backups</h3>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Daily cron backup to S3/Backblaze/local</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">crontab</span> <span class="at">-e</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Add:</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="ex">0</span> 3 <span class="pp">*</span> <span class="pp">*</span> <span class="pp">*</span> docker compose <span class="at">-f</span> /root/FoodDetectionApp/server/docker-compose.yml exec <span class="at">-T</span> postgres pg_dump <span class="at">-U</span> postgres foodsense <span class="kw">|</span> <span class="fu">gzip</span> <span class="op">&gt;</span> /root/backups/foodsense-<span class="va">$(</span><span class="fu">date</span> +<span class="dt">\%</span>Y<span class="dt">\%</span>m<span class="dt">\%</span>d<span class="va">)</span>.sql.gz</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="ex">0</span> 4 <span class="pp">*</span> <span class="pp">*</span> <span class="pp">*</span> find /root/backups <span class="at">-name</span> <span class="st">&quot;*.sql.gz&quot;</span> <span class="at">-mtime</span> +30 <span class="at">-delete</span></span></code></pre></div>
+<hr />
+<h2 id="ios-app-store-publishing">3. iOS — App Store Publishing</h2>
+<h3 id="step-3.1-apple-developer-account">Step 3.1 — Apple Developer
+Account</h3>
+<ol type="1">
+<li>Enroll at https://developer.apple.com/programs/ ($99/year)</li>
+<li>Accept agreements in App Store Connect</li>
+<li>Add yourself to certificates, identifiers, and provisioning in
+Xcode:
+<ul>
+<li>Xcode → Settings → Accounts → + → sign in with Apple ID</li>
+<li>Select your team</li>
+</ul></li>
+</ol>
+<h3 id="step-3.2-create-app-id">Step 3.2 — Create App ID</h3>
+<p>At https://developer.apple.com/account/resources/identifiers:</p>
+<ol type="1">
+<li><strong>Identifiers</strong> → <code>+</code> → <strong>App
+IDs</strong> → <strong>App</strong></li>
+<li>Description: <code>FoodSense</code></li>
+<li>Bundle ID: Explicit → <code>com.foodsense.ios</code> (must match
+<code>PRODUCT_BUNDLE_IDENTIFIER</code> in Xcode)</li>
+<li>Capabilities (check all needed):
+<ul>
+<li>☑ HealthKit</li>
+<li>☑ Push Notifications</li>
+<li>☑ Associated Domains (for universal links, optional)</li>
+</ul></li>
+<li>Continue → Register</li>
+</ol>
+<h3 id="step-3.3-configure-xcode-project">Step 3.3 — Configure Xcode
+Project</h3>
+<p>Open <code>FoodDetectionApp.xcworkspace</code>:</p>
+<ol type="1">
+<li>Select target <strong>FoodDetectionApp</strong> → <strong>Signing
+&amp; Capabilities</strong></li>
+<li>Team: Your Apple Developer team</li>
+<li>Bundle Identifier: <code>com.foodsense.ios</code></li>
+<li>Signing Certificate: Apple Development (debug) / Apple Distribution
+(release)</li>
+<li>Verify these capabilities are added:
+<ul>
+<li>HealthKit</li>
+<li>Push Notifications</li>
+<li>Background Modes → Background fetch, Remote notifications</li>
+<li>Associated Domains (if using universal links)</li>
+</ul></li>
+</ol>
+<h3 id="step-3.4-increment-version-build">Step 3.4 — Increment Version
+&amp; Build</h3>
+<p>In project settings → <strong>General</strong> tab: -
+<strong>Version</strong>: <code>1.0.0</code> (your marketing version) -
+<strong>Build</strong>: <code>1</code> (increment this for every
+TestFlight upload)</p>
+<h3
+id="step-3.5-info.plist-keys-auto-generated-verify-in-build-settings">Step
+3.5 — Info.plist Keys (auto-generated — verify in Build Settings)</h3>
+<p>Required usage descriptions:</p>
+<pre><code>INFOPLIST_KEY_NSCameraUsageDescription = &quot;FoodSense uses your camera to scan food and analyze nutrition.&quot;
+INFOPLIST_KEY_NSPhotoLibraryUsageDescription = &quot;FoodSense needs photo access to analyze food images from your library.&quot;
+INFOPLIST_KEY_NSHealthShareUsageDescription = &quot;FoodSense reads your health data to personalize nutrition tracking.&quot;
+INFOPLIST_KEY_NSHealthUpdateUsageDescription = &quot;FoodSense saves your food logs to Apple Health.&quot;
+INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = &quot;FoodSense connects to smart scales for weight tracking.&quot;
+INFOPLIST_KEY_NSMicrophoneUsageDescription = &quot;FoodSense uses the microphone for voice food logging.&quot;
+INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = &quot;FoodSense transcribes your voice to log food hands-free.&quot;
+INFOPLIST_KEY_NSUserTrackingUsageDescription = &quot;This helps us improve FoodSense. We don&#39;t share your data with third parties.&quot;</code></pre>
+<h3 id="step-3.6-app-transport-security">Step 3.6 — App Transport
+Security</h3>
+<p>Your app uses <code>https://foodsensescale.tech</code> — no ATS
+exception needed. If you still have the cleartext exception from dev,
+remove it:</p>
+<p>In Info build settings, do NOT include
+<code>NSAppTransportSecurity → NSAllowsArbitraryLoads = YES</code>.</p>
+<h3 id="step-3.7-create-app-in-app-store-connect">Step 3.7 — Create App
+in App Store Connect</h3>
+<p>https://appstoreconnect.apple.com → <strong>My Apps</strong> →
+<code>+</code> → <strong>New App</strong></p>
+<ul>
+<li>Platform: iOS</li>
+<li>Name: <strong>FoodSense — AI Nutrition Tracker</strong> (30 char
+max)</li>
+<li>Primary Language: English (U.S.)</li>
+<li>Bundle ID: <code>com.foodsense.ios</code> (from step 3.2)</li>
+<li>SKU: <code>FOODSENSE001</code></li>
+<li>User Access: Full Access</li>
+</ul>
+<h3 id="step-3.8-app-privacy-nutrition-labels">Step 3.8 — App Privacy
+Nutrition Labels</h3>
+<p><strong>Required by Apple since 2020.</strong> In App Store Connect →
+your app → <strong>App Privacy</strong>:</p>
+<p>Declare data collected:</p>
+<table>
+<thead>
+<tr>
+<th>Data Type</th>
+<th>Linked to User</th>
+<th>Used for Tracking</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Email</td>
+<td>Yes</td>
+<td>No</td>
+<td>App functionality (auth)</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>Yes</td>
+<td>No</td>
+<td>App functionality</td>
+</tr>
+<tr>
+<td>Photos</td>
+<td>No (on-device)</td>
+<td>No</td>
+<td>App functionality (food detection)</td>
+</tr>
+<tr>
+<td>Health &amp; Fitness</td>
+<td>Yes</td>
+<td>No</td>
+<td>App functionality</td>
+</tr>
+<tr>
+<td>Usage Data</td>
+<td>Yes</td>
+<td>No</td>
+<td>Analytics</td>
+</tr>
+<tr>
+<td>Diagnostics</td>
+<td>Yes</td>
+<td>No</td>
+<td>Crash reports</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Critical:</strong> State clearly that food photos are
+processed <strong>on-device</strong> (when using Gemma) and
+<strong>never uploaded</strong> unless user provides their own Gemini
+API key.</p>
+<h3 id="step-3.9-privacy-manifest-file-xcode-15">Step 3.9 — Privacy
+Manifest File (Xcode 15+)</h3>
+<p>Create <code>FoodDetectionApp/PrivacyInfo.xcprivacy</code>:</p>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode xml"><code class="sourceCode xml"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">&lt;?xml</span> <span class="ot">version=</span><span class="st">&quot;1.0&quot;</span> <span class="ot">encoding=</span><span class="st">&quot;UTF-8&quot;</span><span class="fu">?&gt;</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE</span> <span class="dt">plist</span> PUBLIC &quot;-//Apple//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;<span class="dt">&gt;</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">plist</span> <span class="ot">version=</span><span class="st">&quot;1.0&quot;</span>&gt;</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">dict</span>&gt;</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">key</span>&gt;NSPrivacyTracking&lt;/<span class="kw">key</span>&gt;</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">false</span>/&gt;</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">key</span>&gt;NSPrivacyTrackingDomains&lt;/<span class="kw">key</span>&gt;</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">array</span>/&gt;</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">key</span>&gt;NSPrivacyCollectedDataTypes&lt;/<span class="kw">key</span>&gt;</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">array</span>&gt;</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">dict</span>&gt;</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">key</span>&gt;NSPrivacyCollectedDataType&lt;/<span class="kw">key</span>&gt;</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">string</span>&gt;NSPrivacyCollectedDataTypeEmailAddress&lt;/<span class="kw">string</span>&gt;</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">key</span>&gt;NSPrivacyCollectedDataTypeLinked&lt;/<span class="kw">key</span>&gt;</span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">true</span>/&gt;</span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">key</span>&gt;NSPrivacyCollectedDataTypeTracking&lt;/<span class="kw">key</span>&gt;</span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">false</span>/&gt;</span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">key</span>&gt;NSPrivacyCollectedDataTypePurposes&lt;/<span class="kw">key</span>&gt;</span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">array</span>&gt;</span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">string</span>&gt;NSPrivacyCollectedDataTypePurposeAppFunctionality&lt;/<span class="kw">string</span>&gt;</span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">array</span>&gt;</span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">dict</span>&gt;</span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">dict</span>&gt;</span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">key</span>&gt;NSPrivacyCollectedDataType&lt;/<span class="kw">key</span>&gt;</span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">string</span>&gt;NSPrivacyCollectedDataTypePhotos&lt;/<span class="kw">string</span>&gt;</span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">key</span>&gt;NSPrivacyCollectedDataTypeLinked&lt;/<span class="kw">key</span>&gt;</span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">false</span>/&gt;</span>
+<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">key</span>&gt;NSPrivacyCollectedDataTypeTracking&lt;/<span class="kw">key</span>&gt;</span>
+<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">false</span>/&gt;</span>
+<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">key</span>&gt;NSPrivacyCollectedDataTypePurposes&lt;/<span class="kw">key</span>&gt;</span>
+<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">array</span>&gt;</span>
+<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">string</span>&gt;NSPrivacyCollectedDataTypePurposeAppFunctionality&lt;/<span class="kw">string</span>&gt;</span>
+<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">array</span>&gt;</span>
+<span id="cb14-34"><a href="#cb14-34" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">dict</span>&gt;</span>
+<span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">dict</span>&gt;</span>
+<span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">key</span>&gt;NSPrivacyCollectedDataType&lt;/<span class="kw">key</span>&gt;</span>
+<span id="cb14-37"><a href="#cb14-37" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">string</span>&gt;NSPrivacyCollectedDataTypeHealthAndFitness&lt;/<span class="kw">string</span>&gt;</span>
+<span id="cb14-38"><a href="#cb14-38" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">key</span>&gt;NSPrivacyCollectedDataTypeLinked&lt;/<span class="kw">key</span>&gt;</span>
+<span id="cb14-39"><a href="#cb14-39" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">true</span>/&gt;</span>
+<span id="cb14-40"><a href="#cb14-40" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">key</span>&gt;NSPrivacyCollectedDataTypeTracking&lt;/<span class="kw">key</span>&gt;</span>
+<span id="cb14-41"><a href="#cb14-41" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">false</span>/&gt;</span>
+<span id="cb14-42"><a href="#cb14-42" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">key</span>&gt;NSPrivacyCollectedDataTypePurposes&lt;/<span class="kw">key</span>&gt;</span>
+<span id="cb14-43"><a href="#cb14-43" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">array</span>&gt;</span>
+<span id="cb14-44"><a href="#cb14-44" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">string</span>&gt;NSPrivacyCollectedDataTypePurposeAppFunctionality&lt;/<span class="kw">string</span>&gt;</span>
+<span id="cb14-45"><a href="#cb14-45" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">array</span>&gt;</span>
+<span id="cb14-46"><a href="#cb14-46" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">dict</span>&gt;</span>
+<span id="cb14-47"><a href="#cb14-47" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">array</span>&gt;</span>
+<span id="cb14-48"><a href="#cb14-48" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">key</span>&gt;NSPrivacyAccessedAPITypes&lt;/<span class="kw">key</span>&gt;</span>
+<span id="cb14-49"><a href="#cb14-49" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">array</span>&gt;</span>
+<span id="cb14-50"><a href="#cb14-50" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">dict</span>&gt;</span>
+<span id="cb14-51"><a href="#cb14-51" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">key</span>&gt;NSPrivacyAccessedAPIType&lt;/<span class="kw">key</span>&gt;</span>
+<span id="cb14-52"><a href="#cb14-52" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">string</span>&gt;NSPrivacyAccessedAPICategoryFileTimestamp&lt;/<span class="kw">string</span>&gt;</span>
+<span id="cb14-53"><a href="#cb14-53" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">key</span>&gt;NSPrivacyAccessedAPITypeReasons&lt;/<span class="kw">key</span>&gt;</span>
+<span id="cb14-54"><a href="#cb14-54" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">array</span>&gt;</span>
+<span id="cb14-55"><a href="#cb14-55" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">string</span>&gt;C617.1&lt;/<span class="kw">string</span>&gt;</span>
+<span id="cb14-56"><a href="#cb14-56" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">array</span>&gt;</span>
+<span id="cb14-57"><a href="#cb14-57" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">dict</span>&gt;</span>
+<span id="cb14-58"><a href="#cb14-58" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">dict</span>&gt;</span>
+<span id="cb14-59"><a href="#cb14-59" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">key</span>&gt;NSPrivacyAccessedAPIType&lt;/<span class="kw">key</span>&gt;</span>
+<span id="cb14-60"><a href="#cb14-60" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">string</span>&gt;NSPrivacyAccessedAPICategoryUserDefaults&lt;/<span class="kw">string</span>&gt;</span>
+<span id="cb14-61"><a href="#cb14-61" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">key</span>&gt;NSPrivacyAccessedAPITypeReasons&lt;/<span class="kw">key</span>&gt;</span>
+<span id="cb14-62"><a href="#cb14-62" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">array</span>&gt;</span>
+<span id="cb14-63"><a href="#cb14-63" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">string</span>&gt;CA92.1&lt;/<span class="kw">string</span>&gt;</span>
+<span id="cb14-64"><a href="#cb14-64" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">array</span>&gt;</span>
+<span id="cb14-65"><a href="#cb14-65" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">dict</span>&gt;</span>
+<span id="cb14-66"><a href="#cb14-66" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">array</span>&gt;</span>
+<span id="cb14-67"><a href="#cb14-67" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">dict</span>&gt;</span>
+<span id="cb14-68"><a href="#cb14-68" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">plist</span>&gt;</span></code></pre></div>
+<p>Drag this file into the Xcode project (check “Copy items if needed”
+and add to <code>FoodDetectionApp</code> target).</p>
+<h3 id="step-3.10-age-rating">Step 3.10 — Age Rating</h3>
+<p>In App Store Connect → your app → <strong>App Information</strong> →
+<strong>Age Rating</strong>:</p>
+<p>Answer the questionnaire. For a nutrition app: - Unrestricted Web
+Access: No - Violence: None - Mature themes: None - Gambling: None</p>
+<p><strong>Expected rating: 4+</strong> (all ages).</p>
+<h3 id="step-3.11-pricing-availability">Step 3.11 — Pricing &amp;
+Availability</h3>
+<ul>
+<li><strong>Price:</strong> Free</li>
+<li><strong>Availability:</strong> All territories</li>
+<li><strong>Pre-Order:</strong> No</li>
+</ul>
+<h3 id="step-3.12-archive-upload">Step 3.12 — Archive &amp; Upload</h3>
+<ol type="1">
+<li>Select device: <strong>Any iOS Device (arm64)</strong> (not a
+simulator)</li>
+<li>Product → Archive</li>
+<li>Wait for build to complete (~5 min)</li>
+<li>Window → Organizer → <strong>Distribute App</strong> → <strong>App
+Store Connect</strong> → <strong>Upload</strong> → Automatic signing →
+Upload</li>
+<li>Wait 15-30 min for Apple processing</li>
+<li>You’ll get an email when the build is ready</li>
+</ol>
+<h3 id="step-3.13-testflight-internal-beta">Step 3.13 — TestFlight
+(Internal Beta)</h3>
+<p>Before public release, test via TestFlight:</p>
+<ol type="1">
+<li>App Store Connect → your app → <strong>TestFlight</strong> tab</li>
+<li>Add yourself + team members as <strong>Internal
+Testers</strong></li>
+<li>Select your build → <strong>Provide Export Compliance</strong> (No,
+not using encryption beyond standard)</li>
+<li>Install TestFlight app on your iPhone → accept invite → test</li>
+</ol>
+<h3 id="step-3.14-submit-for-review">Step 3.14 — Submit for Review</h3>
+<ol type="1">
+<li><strong>App Information</strong> → fill all required fields</li>
+<li><strong>Pricing and Availability</strong> → set</li>
+<li>Go to version <strong>1.0.0</strong> page:
+<ul>
+<li><strong>Screenshots</strong> (see Section 5)</li>
+<li><strong>Promotional text</strong> (170 chars, updatable without
+re-submit)</li>
+<li><strong>Description</strong> (see Section 5)</li>
+<li><strong>Keywords</strong> (100 chars, comma-separated)</li>
+<li><strong>Support URL:</strong>
+<code>https://foodsensescale.tech</code></li>
+<li><strong>Marketing URL</strong> (optional):
+<code>https://foodsensescale.tech</code></li>
+<li><strong>Privacy Policy URL:</strong>
+<code>https://foodsensescale.tech/privacy</code></li>
+</ul></li>
+<li><strong>Build</strong> → select the TestFlight build</li>
+<li><strong>App Review Information:</strong>
+<ul>
+<li>Contact info + demo account credentials (create a test Firebase
+account)</li>
+<li>Notes: “This app runs Gemma 4 AI on-device via llama.cpp. No data
+leaves the device unless the user provides their own Gemini API key.
+Food photos are NEVER uploaded.”</li>
+</ul></li>
+<li><strong>Version Release:</strong> Manual release (so you control the
+launch moment)</li>
+<li>Click <strong>Save</strong> → <strong>Submit for
+Review</strong></li>
+</ol>
+<p>Review takes 24-48 hours typically. Be prepared for potential
+rejections about: - Missing demo credentials - Unclear “free” pricing
+(they think “free” with cloud AI is misleading — emphasize on-device) -
+Vague descriptions of AI features</p>
+<hr />
+<h2 id="android-play-store-publishing">4. Android — Play Store
+Publishing</h2>
+<h3 id="step-4.1-play-console-account">Step 4.1 — Play Console
+Account</h3>
+<ol type="1">
+<li>Pay $25 one-time at https://play.google.com/console/signup</li>
+<li>Verify identity (24-48 hours)</li>
+<li>Accept developer distribution agreement</li>
+</ol>
+<h3 id="step-4.2-generate-release-signing-keystore">Step 4.2 — Generate
+Release Signing Keystore</h3>
+<p>On your dev machine (one-time, NEVER lose this file):</p>
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/Documents  <span class="co"># or wherever you want to store it</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="ex">keytool</span> <span class="at">-genkey</span> <span class="at">-v</span> <span class="at">-keystore</span> foodsense-release.keystore <span class="dt">\</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">-alias</span> foodsense <span class="at">-keyalg</span> RSA <span class="at">-keysize</span> 2048 <span class="at">-validity</span> 10000</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Answer prompts:</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Password: choose a strong password</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="co"># First/last name: Nitin Yadav</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Org: FoodSense</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="co"># City, State, Country: your info</span></span></code></pre></div>
+<p><strong>Back up <code>foodsense-release.keystore</code> in 2
+places.</strong> If you lose it, you can never update the app.</p>
+<h3 id="step-4.3-configure-signing-in-build.gradle.kts">Step 4.3 —
+Configure Signing in build.gradle.kts</h3>
+<p>Add to <code>android/gradle.properties</code> (NOT committed —
+already gitignored):</p>
+<pre class="properties"><code>RELEASE_STORE_FILE=/Users/YOU/Documents/foodsense-release.keystore
+RELEASE_STORE_PASSWORD=your-keystore-password
+RELEASE_KEY_ALIAS=foodsense
+RELEASE_KEY_PASSWORD=your-key-password</code></pre>
+<p>The <code>android/app/build.gradle.kts</code> already reads these
+props (lines 44-52).</p>
+<h3 id="step-4.4-bundle-identifier">Step 4.4 — Bundle Identifier</h3>
+<p>Verify <code>android/app/build.gradle.kts</code>:</p>
+<div class="sourceCode" id="cb17"><pre
+class="sourceCode kotlin"><code class="sourceCode kotlin"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>applicationId <span class="op">=</span> <span class="st">&quot;com.foodsense.android&quot;</span>  <span class="co">// Must be unique on Play Store</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>versionCode <span class="op">=</span> <span class="dv">1</span>     <span class="co">// Integer, increment every release</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>versionName <span class="op">=</span> <span class="st">&quot;1.0.0&quot;</span>  <span class="co">// User-facing</span></span></code></pre></div>
+<h3 id="step-4.5-configure-androidmanifest.xml">Step 4.5 — Configure
+AndroidManifest.xml</h3>
+<p>Ensure these permissions are declared (they should already be):</p>
+<div class="sourceCode" id="cb18"><pre
+class="sourceCode xml"><code class="sourceCode xml"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">uses-permission</span> <span class="ot">android:name=</span><span class="st">&quot;android.permission.INTERNET&quot;</span> /&gt;</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">uses-permission</span> <span class="ot">android:name=</span><span class="st">&quot;android.permission.CAMERA&quot;</span> /&gt;</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">uses-permission</span> <span class="ot">android:name=</span><span class="st">&quot;android.permission.RECORD_AUDIO&quot;</span> /&gt;</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">uses-permission</span> <span class="ot">android:name=</span><span class="st">&quot;android.permission.BLUETOOTH_SCAN&quot;</span> /&gt;</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">uses-permission</span> <span class="ot">android:name=</span><span class="st">&quot;android.permission.BLUETOOTH_CONNECT&quot;</span> /&gt;</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">uses-permission</span> <span class="ot">android:name=</span><span class="st">&quot;android.permission.POST_NOTIFICATIONS&quot;</span> /&gt;</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">uses-permission</span> <span class="ot">android:name=</span><span class="st">&quot;android.permission.ACCESS_NETWORK_STATE&quot;</span> /&gt;</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- Health Connect --&gt;</span></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">uses-permission</span> <span class="ot">android:name=</span><span class="st">&quot;android.permission.health.READ_STEPS&quot;</span> /&gt;</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">uses-permission</span> <span class="ot">android:name=</span><span class="st">&quot;android.permission.health.READ_HYDRATION&quot;</span> /&gt;</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">uses-permission</span> <span class="ot">android:name=</span><span class="st">&quot;android.permission.health.WRITE_STEPS&quot;</span> /&gt;</span></code></pre></div>
+<h3 id="step-4.6-build-release-aab-android-app-bundle">Step 4.6 — Build
+Release AAB (Android App Bundle)</h3>
+<p>Play Store requires <code>.aab</code> format (not
+<code>.apk</code>).</p>
+<div class="sourceCode" id="cb19"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /Users/nitin/Desktop/FoodDetectionApp/android</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="ex">./gradlew</span> bundleRelease</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Output: android/app/build/outputs/bundle/release/app-release.aab</span></span></code></pre></div>
+<p>Verify the AAB is signed:</p>
+<div class="sourceCode" id="cb20"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">jarsigner</span> <span class="at">-verify</span> <span class="at">-verbose</span> <span class="at">-certs</span> app/build/outputs/bundle/release/app-release.aab <span class="kw">|</span> <span class="fu">head</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Should say: &quot;jar verified.&quot;</span></span></code></pre></div>
+<h3 id="step-4.7-create-app-in-play-console">Step 4.7 — Create App in
+Play Console</h3>
+<p>https://play.google.com/console → <strong>Create app</strong></p>
+<ul>
+<li>App name: <strong>FoodSense — AI Nutrition Tracker</strong></li>
+<li>Default language: English (US)</li>
+<li>App or game: App</li>
+<li>Free or paid: Free</li>
+<li>Declarations: Check all relevant boxes (privacy policy, ads,
+etc.)</li>
+</ul>
+<h3 id="step-4.8-data-safety-declaration-required">Step 4.8 — Data
+Safety Declaration (Required)</h3>
+<p>Play Console → your app → <strong>Policy → Data safety</strong>:</p>
+<p>Answer truthfully:</p>
+<p><strong>Data collected and shared:</strong> | Category | Collected |
+Shared | Processed in Transit | Optional | Purpose |
+|———-|———–|——–|———————|———-|———| | Email | Yes | No | Yes (TLS) | No |
+Account mgmt | | Name | Yes | No | Yes | Yes | Account mgmt | | Photos |
+No* | No | No (on-device) | N/A | App functionality | | Health info |
+Yes | No | Yes | Yes | App functionality | | App performance | Yes | No
+| Yes | Yes | Analytics | | Crash logs | Yes | No | Yes | No |
+Diagnostics |</p>
+<p>*Photos are processed on-device via Gemma 4 / YOLO. Only uploaded if
+user provides a Gemini API key, and even then only to Google’s Gemini
+API, not our servers.</p>
+<p><strong>Data encryption:</strong> Yes, in transit (HTTPS) and at rest
+(platform keychain + EncryptedSharedPreferences for API keys).</p>
+<p><strong>Data deletion:</strong> Users can delete account via Settings
+→ Delete Account. Server-side cascading delete removes all associated
+data.</p>
+<h3 id="step-4.9-content-rating">Step 4.9 — Content Rating</h3>
+<p>Complete the IARC questionnaire. For a nutrition tracker: - Violence:
+None - Gambling: None - Profanity: None - Controlled substances: None -
+User-generated content: Yes (challenges, feed) - <strong>Expected
+rating: Everyone (E)</strong></p>
+<h3 id="step-4.10-target-audience">Step 4.10 — Target Audience</h3>
+<ul>
+<li>Target age: 13+</li>
+<li>Appeals to children: No</li>
+</ul>
+<h3 id="step-4.11-store-listing">Step 4.11 — Store Listing</h3>
+<p>Play Console → your app → <strong>Grow → Store presence → Main store
+listing</strong>:</p>
+<ul>
+<li><strong>App name</strong>: FoodSense — AI Nutrition Tracker</li>
+<li><strong>Short description</strong> (80 chars): On-device AI calorie
+tracker. No cloud, no subscription, 100% private.</li>
+<li><strong>Full description</strong>: (see Section 5)</li>
+<li><strong>App icon</strong>: 512x512 PNG (see Section 5)</li>
+<li><strong>Feature graphic</strong>: 1024x500 PNG</li>
+<li><strong>Screenshots</strong>: 2-8 per device type (phone, 7” tablet,
+10” tablet)</li>
+<li><strong>Contact details</strong>:
+<ul>
+<li>Email: your-support@foodsensescale.tech</li>
+<li>Website: https://foodsensescale.tech</li>
+<li>Privacy Policy: https://foodsensescale.tech/privacy</li>
+</ul></li>
+</ul>
+<h3 id="step-4.12-app-bundle-explorer-release">Step 4.12 — App Bundle
+Explorer &amp; Release</h3>
+<ol type="1">
+<li>Play Console → <strong>Production</strong> → <strong>Create new
+release</strong></li>
+<li><strong>Upload</strong> your <code>app-release.aab</code></li>
+<li>Play Console handles signing with Play App Signing</li>
+<li><strong>Release name:</strong> <code>1.0.0 (1)</code></li>
+<li><strong>Release notes</strong>: “Initial release of FoodSense — the
+first open-source nutrition tracker with on-device AI.”</li>
+<li><strong>Review release</strong> → <strong>Start rollout to
+Production</strong></li>
+</ol>
+<h3 id="step-4.13-internal-testing-track-recommended-first">Step 4.13 —
+Internal Testing Track (Recommended First)</h3>
+<p>Before production: 1. Play Console → <strong>Testing → Internal
+testing</strong> 2. Create a release → upload AAB → Add testers (Google
+accounts) 3. Share opt-in URL with testers → test for a few days 4. When
+satisfied, promote to production</p>
+<h3 id="step-4.14-play-store-review">Step 4.14 — Play Store Review</h3>
+<p>Review takes 1-7 days typically. Common rejection reasons: -
+Missing/broken privacy policy URL - Missing data safety declarations -
+Permissions not justified (explain each in description) - App crashes on
+launch</p>
+<hr />
+<h2 id="store-listing-assets">5. Store Listing Assets</h2>
+<h3 id="icons">Icons</h3>
+<p><strong>iOS App Icon:</strong> 1024x1024 PNG (no transparency, no
+rounded corners — Apple applies them) - Place in
+<code>FoodDetectionApp/Assets.xcassets/AppIcon.appiconset/</code></p>
+<p><strong>Android App Icon:</strong> - 512x512 PNG for Play Store
+listing - Adaptive icon XML in
+<code>android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml</code>
+(already exists)</p>
+<h3 id="screenshots-both-stores">Screenshots (Both Stores)</h3>
+<p><strong>iPhone (required — 6.7” display):</strong> 1290x2796 or
+1320x2868 px</p>
+<p>Capture 5-6 screenshots showing: 1. <strong>Hero:</strong> Scan
+camera pointed at food with “Powered by On-Device AI” badge visible 2.
+<strong>Results:</strong> Food detected with calories/macros 3.
+<strong>AI Coach:</strong> Chat conversation with Gemma 4. <strong>Meal
+Plan:</strong> 7-day meal plan screen 5. <strong>Settings:</strong> AI
+Configuration showing “Active Provider: On-Device AI” 6.
+<strong>Dashboard:</strong> Daily nutrition dashboard</p>
+<p><strong>Android Phone:</strong> 1080x1920 or similar (16:9 or 9:16
+ratio, min 320px short side, max 3840px)</p>
+<h3 id="feature-graphic-play-store-only">Feature Graphic (Play Store
+only)</h3>
+<p>1024x500 PNG. Should visually communicate “on-device AI” — include: -
+App icon - “Runs Gemma 4 On-Device” tagline - Sample food photo with
+detected nutrition overlay</p>
+<h3 id="app-store-description-ios">App Store Description (iOS)</h3>
+<pre><code>FoodSense is the first open-source calorie tracker that runs Google&#39;s Gemma 4 AI model entirely on your phone. No cloud. No API key required. No subscription.
+
+Your food photos NEVER leave your device.
+
+★ WHAT MAKES FOODSENSE DIFFERENT ★
+
+• On-device AI: Gemma 4 E2B runs locally via llama.cpp
+• Privacy-first: Food photos processed on-device, never uploaded
+• Free forever: No subscription, no hidden fees
+• Offline: Works in airplane mode after model download
+• Indian food: 94+ Indian dishes detected (Biryani, Dal, Samosa, etc.)
+• Open source: Fully auditable code on GitHub
+
+★ FEATURES ★
+
+• Scan food with camera for instant calorie/macro analysis
+• AI Health Coach powered by Gemma 4
+• 7-day meal plan generation
+• Weekly nutrition insights with charts
+• Apple Health integration
+• BLE smart scale support
+• Friends, challenges, leaderboards
+
+★ HOW IT WORKS ★
+
+1. Point camera at food
+2. YOLO detector identifies the dish (instant)
+3. Gemma 4 estimates calories, protein, carbs, fats
+4. Log it to your daily intake
+
+★ PRIVACY ★
+
+FoodSense is built privacy-first. The Gemma 4 AI model runs entirely on your iPhone using llama.cpp with Metal GPU acceleration. Your food photos, nutrition data, and personal stats never leave your device unless you explicitly choose to sync for multi-device support.
+
+Optional: Enter your own Google Gemini API key in Settings for cloud-based analysis with higher accuracy. Even then, your data goes directly to Google&#39;s API — we never see it.
+
+★ REQUIREMENTS ★
+
+• iOS 17 or later
+• iPhone with A14 Bionic or newer (iPhone 12+)
+• 5 GB free storage (3.2 GB AI model + app data)
+
+★ OPEN SOURCE ★
+
+Source code: https://github.com/nitinyadav26/FoodDetectionApp
+License: Apache 2.0
+
+Join the community pushing on-device AI forward.</code></pre>
+<p><strong>Keywords (100 chars):</strong></p>
+<pre><code>calorie,nutrition,food scanner,indian food,gemma,AI,on-device,offline,privacy,macros,diet</code></pre>
+<h3 id="play-store-full-description-4000-chars">Play Store Full
+Description (4000 chars)</h3>
+<p>Use the same text as App Store, extend with:</p>
+<pre><code>[...same core content...]
+
+★ WHY ON-DEVICE AI? ★
+
+Most calorie trackers upload every photo you take to their cloud. We think that&#39;s wrong. FoodSense proves that modern phones are powerful enough to run state-of-the-art AI models directly — no cloud needed.
+
+When you download FoodSense, you get a 3.2 GB AI model (Gemma 4 E2B by Google DeepMind) that runs entirely on your phone&#39;s GPU. No internet required for AI features.
+
+★ BUILT FOR INDIAN CUISINE ★
+
+Most calorie trackers were built for Western food. FoodSense includes a custom YOLO model trained on 94+ Indian dishes including:
+Biryani, Dal, Sambhar, Idli, Dosa, Paneer, Chole, Rajma, Poha, Khichdi, Samosa, Gulab Jamun, Jalebi, Rasgulla, Vada, Chaat, and many more.
+
+★ FREE, FOREVER ★
+
+No subscription. No freemium limits. No ads. If you want to support the project, star us on GitHub.
+
+[...rest of core content...]</code></pre>
+<hr />
+<h2 id="legal-privacy">6. Legal &amp; Privacy</h2>
+<h3 id="privacy-policy-host-at-foodsensescale.techprivacy">Privacy
+Policy (Host at foodsensescale.tech/privacy)</h3>
+<p>Your existing <code>docs/privacy.html</code> needs these
+sections:</p>
+<ol type="1">
+<li><p><strong>What data we collect:</strong></p>
+<ul>
+<li>Account: email, display name (optional)</li>
+<li>Health data: via Apple Health / Health Connect (with
+permission)</li>
+<li>Food logs: stored locally, optionally synced to your account</li>
+<li>Analytics: Firebase Analytics (anonymous usage stats, crash
+reports)</li>
+</ul></li>
+<li><p><strong>What we DON’T collect:</strong></p>
+<ul>
+<li>Food photos (processed on-device, never uploaded)</li>
+<li>Contents of AI Coach conversations (on-device)</li>
+<li>Your Gemini API key (stored in iOS Keychain / Android
+EncryptedSharedPreferences)</li>
+</ul></li>
+<li><p><strong>Where data goes:</strong></p>
+<ul>
+<li>Your own device (primary storage)</li>
+<li>Our servers at foodsensescale.tech (optional, for multi-device
+sync)</li>
+<li>Firebase (auth, analytics, crash reports)</li>
+<li>Google Gemini API (only if you provide your own key)</li>
+</ul></li>
+<li><p><strong>Third parties:</strong> Firebase (Google), Apple
+HealthKit, Health Connect</p></li>
+<li><p><strong>Your rights:</strong> Export data, delete account, revoke
+permissions anytime</p></li>
+<li><p><strong>Children:</strong> Not directed at children under 13
+(required for both stores)</p></li>
+<li><p><strong>Contact:</strong> your-email@foodsensescale.tech</p></li>
+</ol>
+<h3 id="terms-of-service-host-at-foodsensescale.techterms">Terms of
+Service (Host at foodsensescale.tech/terms)</h3>
+<p>Standard terms covering: - Service description - User conduct -
+AI-generated content disclaimer (“calorie estimates are approximate”) -
+No warranty (medical disclaimer: “consult a dietitian for real advice”)
+- Indemnification, limitation of liability - Governing law</p>
+<p>Both HTML files already exist in <code>docs/</code>. Update email
+addresses and dates.</p>
+<hr />
+<h2 id="post-launch">7. Post-Launch</h2>
+<h3 id="monitoring">Monitoring</h3>
+<ul>
+<li><strong>Crashlytics:</strong> Firebase Console → Crashlytics → watch
+for crashes in first 48h</li>
+<li><strong>Analytics:</strong> Firebase Console → Analytics → track
+DAU, retention, feature usage</li>
+<li><strong>Server logs:</strong> <code>ssh droplet</code> →
+<code>docker compose logs -f app</code> → watch for errors</li>
+<li><strong>Uptime:</strong> Set up https://uptimerobot.com (free) to
+ping <code>foodsensescale.tech/health</code> every 5 min</li>
+</ul>
+<h3 id="respond-to-reviews">Respond to Reviews</h3>
+<p>Reply to every review in first 2 weeks. Positive reviews boost
+ranking; responding to negative ones often flips them.</p>
+<h3 id="version-updates">Version Updates</h3>
+<p><strong>iOS:</strong> Increment build number → Archive → Upload →
+Submit for Review → Manual release <strong>Android:</strong> Increment
+versionCode → <code>./gradlew bundleRelease</code> → upload AAB → Create
+release → Rollout</p>
+<h3 id="staged-rollout-android">Staged Rollout (Android)</h3>
+<p>Don’t release to 100% immediately. In Play Console → Production →
+Release → roll out to 20% first, monitor for 24h, then 50%, then
+100%.</p>
+<hr />
+<h2 id="final-checklist-before-submission">Final Checklist Before
+Submission</h2>
+<h3 id="both-platforms">Both Platforms</h3>
+<ul class="task-list">
+<li><label><input type="checkbox" />Privacy policy live at
+https://foodsensescale.tech/privacy (200+ OK)</label></li>
+<li><label><input type="checkbox" />Terms live at
+https://foodsensescale.tech/terms (200+ OK)</label></li>
+<li><label><input type="checkbox" />Backend deployed at
+https://foodsensescale.tech/api (responds 200 on /health, 401 on
+protected routes)</label></li>
+<li><label><input type="checkbox" />Screenshots captured (5-6 per
+store)</label></li>
+<li><label><input type="checkbox" />App icon (1024x1024)</label></li>
+<li><label><input type="checkbox" />Feature graphic for Play Store
+(1024x500)</label></li>
+<li><label><input type="checkbox" />App description written and
+proofread</label></li>
+<li><label><input type="checkbox" />Keywords chosen (iOS: 100
+chars)</label></li>
+<li><label><input type="checkbox" />Firebase project configured for both
+iOS + Android bundle IDs</label></li>
+<li><label><input type="checkbox" />Firebase Auth method enabled
+(Anonymous + Email/Password)</label></li>
+<li><label><input type="checkbox" />Crashlytics initialized (both
+platforms)</label></li>
+</ul>
+<h3 id="ios-specific">iOS-Specific</h3>
+<ul class="task-list">
+<li><label><input type="checkbox" />Apple Developer account enrolled
+($99 paid)</label></li>
+<li><label><input type="checkbox" />App ID created with HealthKit + Push
+capabilities</label></li>
+<li><label><input type="checkbox" />Xcode project configured with
+correct bundle ID + signing</label></li>
+<li><label><input type="checkbox" />PrivacyInfo.xcprivacy file added to
+target</label></li>
+<li><label><input type="checkbox" />Version 1.0.0, Build 1 (or
+higher)</label></li>
+<li><label><input type="checkbox" />Archive uploaded to App Store
+Connect</label></li>
+<li><label><input type="checkbox" />App Privacy Nutrition Labels
+declared</label></li>
+<li><label><input type="checkbox" />Content rating: 4+</label></li>
+<li><label><input type="checkbox" />Demo account credentials prepared
+for App Review</label></li>
+</ul>
+<h3 id="android-specific">Android-Specific</h3>
+<ul class="task-list">
+<li><label><input type="checkbox" />Play Console account ($25 paid +
+identity verified)</label></li>
+<li><label><input type="checkbox" />Release keystore generated + backed
+up (<code>foodsense-release.keystore</code>)</label></li>
+<li><label><input type="checkbox" /><code>RELEASE_STORE_FILE</code> etc.
+set in gradle.properties (NOT committed)</label></li>
+<li><label><input type="checkbox" /><code>./gradlew bundleRelease</code>
+produces signed AAB</label></li>
+<li><label><input type="checkbox" />Data Safety declaration
+completed</label></li>
+<li><label><input type="checkbox" />Content rating:
+Everyone</label></li>
+<li><label><input type="checkbox" />Target audience set
+(13+)</label></li>
+<li><label><input type="checkbox" />All required screenshots
+uploaded</label></li>
+<li><label><input type="checkbox" />Internal testing track
+configured</label></li>
+</ul>
+<hr />
+<p><strong>Ship it. The Gemma 4 hype window is closing
+fast.</strong></p>
+</body>
+</html>

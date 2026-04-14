@@ -30,7 +30,7 @@ final class NetworkService {
         // Override at runtime via `NetworkService.shared.baseURL = ...` if needed.
         let infoPlistURL = (Bundle.main.object(forInfoDictionaryKey: "SOCIAL_API_BASE_URL") as? String)
             .flatMap { URL(string: $0) }
-        self.baseURL = infoPlistURL ?? URL(string: "http://localhost:3000")!
+        self.baseURL = infoPlistURL ?? URL(string: "https://foodsensescale.tech/api")!
 
         let config = URLSessionConfiguration.default
         config.timeoutIntervalForRequest = 30
